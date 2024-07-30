@@ -16,6 +16,9 @@ export default {
       theme: '#6b6a51',
       tingGreen: '#64AE06'
     },
+    fontFamily: {
+      groastek: ["Space Grotesk", "sans-serif"],
+    },
       maxWidth: {
         maxContent: "1260px",
         maxContentTab: "650px"
