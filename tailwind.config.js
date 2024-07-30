@@ -14,7 +14,8 @@ export default {
       greenGrey: '#7B9367',
       yellow: '#BCFF9F',
       theme: '#6b6a51',
-      tingGreen: '#64AE06'
+      tingGreen: '#64AE06',
+      dargGreen: '#0F1B09'
     },
     fontFamily: {
       groastek: ["Space Grotesk", "sans-serif"],
