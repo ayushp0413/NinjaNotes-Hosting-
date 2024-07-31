@@ -7,7 +7,8 @@ import ServiceCard from '../components/core/Home/ServiceCard'
 import { services } from '../assets/data/serviceCardData'
 import NumberTicker from '../components/magicui/NumberTicker'
 import serviceImage from '../assets/images/Service Image.png'
-
+import Footer from '../components/common/Footer'
+import ParticlesBackground from '../components/Particles/ParticlesBackground'
 const Home = () => {
   const color = '#64AE06'
 
@@ -24,6 +25,7 @@ const Home = () => {
           color={color}
           size={2}
         />
+        {/* <ParticlesBackground />  SOLVE THIS  */}
 
         {/*  Main Part of Hero section */}
         <div className='relative mx-auto w-11/12 max-w-maxContent mt-[11.2rem] text-black flex flex-col justify-between gap-y-6 items-center lg:flex-row '>
@@ -82,7 +84,7 @@ const Home = () => {
       </div>
 
       {/*---------------------- SERVICES SECTION ----------------------*/}
-      <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border-4 p-[2.3rem] rounded-md bg-[#f3f3f3] mb-12'>
+      <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border-4 p-[2.3rem] rounded-md bg-[#f3f3f3] mt-8 mb-8'>
         <div className='w-[340px] h-[80px] bg-dargGreen opacity-90 mx-auto flex items-center justify-center rounded-xl'>
           <h2 className='text-white pt-3'>Our Services</h2>
         </div>
@@ -113,30 +115,35 @@ const Home = () => {
         
       </div>
 
-      {/* Service Div */}
-      <div className='max-w-maxContent text-black flex flex-col-reverse mx-auto lg:flex-row items-center justify-between gap-8 mt-[-50px] px-6 md:px-0'>
+      {/* ---------------------   Service Div ------------------- */}
+      <div className='w-11/12 max-w-maxContent text-black flex flex-col-reverse items-center justify-center gap-y-4 mx-auto lg:flex-row lg:items-center lg:justify-between  mb-14 px-6 md:px-0'>
           <img
             className='h-[400px] w-[600px] rounded-[30px]'
             src={serviceImage}
             alt=''
           />
 
-          <div className='lg:w-[40%] flex flex-col gap-y-4'>
-            <h2 className=' text-black font-semibold text-4xl md:text-5xl text-center lg:text-right w-full '>
+          <div className='lg:w-[50%] flex flex-col items-center justify-center p-7 lg:items-start '>
+            
+            <h2 className=' text-black font-semibold text-4xl text-center lg:text-left md:text-5xl'>
               Unlock Your Academic Potential with Us
             </h2>
-
-            <p className='text-md text-black font-normal tracking-wide text-center lg:text-right '>
+            <p className='text-md text-black font-normal tracking-wide text-center lg:text-left'>
               Welcome to our notes website, where you can access a wide range of
               university notes and last year papers. Explore our collection and
               enhance your learning experience today.
             </p>
-
-            <button className='bg-[#0F1B09] text-white rounded-xl py-2 w-40 md:w-64 mx-auto lg:ml-[248px]'>
+            <button className=' bg-dargGreen px-[2rem] text-white rounded-xl py-2 mt-4'>
               Learn More
             </button>
+
           </div>
         </div>
+
+
+      {/* ------------------ FOOTER ------------------------------------- */}
+      <Footer />
+          
     </div>
   )
 }
