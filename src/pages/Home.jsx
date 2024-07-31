@@ -114,7 +114,7 @@ const Home = () => {
       </div>
 
       {/* Service Div */}
-      <div className='max-w-maxContent text-black flex flex-col-reverse mx-auto lg:flex-row items-center justify-between gap-8 mt-[-50px] px-6'>
+      <div className='max-w-maxContent text-black flex flex-col-reverse mx-auto lg:flex-row items-center justify-between gap-8 mt-[-50px] px-6 md:px-0'>
           <img
             className='h-[400px] w-[600px] rounded-[30px]'
             src={serviceImage}
