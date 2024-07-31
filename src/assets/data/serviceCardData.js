@@ -1,6 +1,5 @@
 import { MdAutoStories } from "react-icons/md";
 import { MdArticle } from "react-icons/md";
-import { GiPapers } from "react-icons/gi";
 import { GiNewspaper } from "react-icons/gi";
 export const services = [
     {

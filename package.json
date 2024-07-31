@@ -12,6 +12,8 @@
   "dependencies": {
     "@geist-ui/core": "^2.3.8",
     "@tabler/icons-react": "^3.11.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.19",
     "react": "^18.3.1",

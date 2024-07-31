@@ -13,7 +13,7 @@ const ServiceCard = ({icon: Icon, heading, description, btnText}) => {
                     <p className='font-groastek font-light text-center -mt-3'>{description}</p>
                 </div>
             
-                <button className='bg-black py-4 px-20 rounded-full text-xl'>{btnText}</button>
+                <button className=' bg-dargGreen py-4 px-20 rounded-full text-xl'>{btnText}</button>
             </div>
         </div>
          
