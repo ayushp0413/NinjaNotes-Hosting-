@@ -11,12 +11,12 @@ const Navbar = () => {
   const handleMenu = () => MenuRef.current.classList.toggle("show__menu");
   
   return (
-    <div className='fixed top-0 left-0 z-10 w-screen  flex flex-col gap-y-12 h-14 items-center bg-richblack-800 justify-center'>
-        <div className='w-11/12 max-w-maxContent mt-20 flex flex-row justify-between items-center'>
+    <div className='bg-theme fixed top-0 left-0 z-10 w-screen flex flex-col gap-y-12 h-[80px] items-center justify-center'>
+        <div className=' w-11/12 max-w-maxContent  flex flex-row justify-between items-center'>
             
             <div className=''>
                 <Link to={"/"}>
-                    <img src={logo} width={160} alt='logo'></img>
+                    <img src={logo} width={130} alt='logo'></img>
                 </Link>
             </div>
 
@@ -59,6 +59,6 @@ const Navbar = () => {
         </div>
     </div>
   )
-}
+} 
 
 export default Navbar
