@@ -54,6 +54,7 @@ const Home = () => {
           </div>
         </div>
 
+
         {/*---------------------- VELOCITY SCROLL ----------------------*/}
         <div className='bg-gray-600 opacity-50 mt-10'>
           <VelocityScroll
@@ -63,6 +64,7 @@ const Home = () => {
           />
         </div>
       </div>
+
 
       {/*---------------------- SERVICES SECTION ----------------------*/}
       <div className='relative w-11/12 max-w-max mx-auto '>
@@ -82,11 +84,12 @@ const Home = () => {
           need to succeed.
         </p>
 
-        {/* Cards */}
-        <div className='grid '>
+        {/*------------------------ Cards ------------------------ */}
+
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-24'>
           {/* Card 1 */}
           <div>
-            <div className='bg-black w-[300px] h-[400px] rounded-[30px] relative'></div>
+            <div className='relative bg-black w-[300px] h-[400px] rounded-[30px]'>
             <div className='absolute w-[300px] h-[400px] rounded-[30px] bg-tingGreen left-[6px] bottom-[6px] hover:left-0 hover:bottom-0 transition-all duration-200 text-white p-2 flex flex-col items-center'>
               <img src={serviceIcon1} className='h-20 w-20 mt-10' alt='' />
 
@@ -103,7 +106,53 @@ const Home = () => {
                 Learn More
               </button>
             </div>
+            </div>
           </div>
+
+          {/* Catd 2 */}
+          <div>
+            <div className='relative bg-black w-[300px] h-[400px] rounded-[30px]'>
+            <div className='absolute w-[300px] h-[400px] rounded-[30px] bg-tingGreen left-[6px] bottom-[6px] hover:left-0 hover:bottom-0 transition-all duration-200 text-white p-2 flex flex-col items-center'>
+              <img src={serviceIcon1} className='h-20 w-20 mt-10' alt='' />
+
+              <h3 className='font-groastek text-[32px] mt-4'>
+                University Notes
+              </h3>
+
+              <p className='font-groastek font-light text-center mb-10 '>
+                Access a wide variety of university notes covering various
+                subjects and topics.
+              </p>
+
+              <button className='bg-black py-4 px-20 rounded-full text-xl '>
+                Learn More
+              </button>
+            </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div>
+            <div className='relative bg-black w-[300px] h-[400px] rounded-[30px]'>
+            <div className='absolute w-[300px] h-[400px] rounded-[30px] bg-tingGreen left-[6px] bottom-[6px] hover:left-0 hover:bottom-0 transition-all duration-200 text-white p-2 flex flex-col items-center'>
+              <img src={serviceIcon1} className='h-20 w-20 mt-10' alt='' />
+
+              <h3 className='font-groastek text-[32px] mt-4'>
+                University Notes
+              </h3>
+
+              <p className='font-groastek font-light text-center mb-10 '>
+                Access a wide variety of university notes covering various
+                subjects and topics.
+              </p>
+
+              <button className='bg-black py-4 px-20 rounded-full text-xl '>
+                Learn More
+              </button>
+            </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
