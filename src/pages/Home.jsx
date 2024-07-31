@@ -2,12 +2,9 @@ import heroImg from '../assets/images/heroImg.png'
 import Navbar from '../components/common/Navbar'
 import Particles from '../components/magicui/Particles'
 import { VelocityScroll } from '../components/magicui/VelocityScroll'
-import WordPullUp from '../components/magicui/WordPullUp'
-import { motion } from 'framer-motion'
-import { LampContainer } from '../components/magicui/Lamp'
-
-import serviceIcon1 from '../assets/images/cardIcon1.svg'
 import { Link } from 'react-router-dom'
+import ServiceCard from '../components/core/Home/ServiceCard'
+import { services } from '../assets/data/serviceCardData'
 
 const Home = () => {
   
@@ -17,7 +14,7 @@ const Home = () => {
     <div className='relative w-screen rounded-lg bg-white md:shadow-xl flex flex-col gap-y-10'>
       <Navbar />
       
-      {/* ----------- HERO SECTION ----------------------------- */}
+      {/* ---------------------- HERO SECTION ----------------------------- */}
       <div className='bg-theme pb-12 w-full lg:max-h-[740px] lg:h-[740px] lg:pb-0'>
         <Particles
               className='absolute left-0 top-0 w-full h-[1010px] sm:h-[1000px] md:h-[980px] lg:h-[740px] xl:h-[740px]'
@@ -27,12 +24,12 @@ const Home = () => {
               size={2}
         />
 
-        
         {/*  Main Part of Hero section */}
         <div className='relative mx-auto w-11/12 max-w-maxContent mt-[11.2rem] text-black flex flex-col justify-between gap-y-6 items-center lg:flex-row '>
          
           <div className='lg:w-[50%] max-w-maxContent flex flex-col items-center lg:items-start gap-y-5'>
             <h2 className=' text-black font-semibold text-5xl md:text-6xl text-center lg:text-left w-full'>
+
               Unlock Your Academic Potential with Us
             </h2>
             <p className='text-md text-black font-normal tracking-wide text-center lg:text-left'>
@@ -55,12 +52,10 @@ const Home = () => {
           </div>
 
           <div className='mx-auto pt-10 md:pt-0 '>
-            <img src={heroImg} width={500} />
+              <img src={heroImg} width={500} />
           </div>
         </div>
-
       </div>
-    
 
       {/*---------------------- VELOCITY SCROLL ----------------------*/}
       <div className='bg-[#f3f3f3] p-[2rem] -mt-10 '>
@@ -70,18 +65,16 @@ const Home = () => {
           className='font-display text-center text-6xl font-bold tracking-[-0.06em] drop-shadow-sm  text-dargGreen opacity-70 md:text-7xl md:leading-[5rem]'
         />
       </div>
-     
 
       {/*---------------------- SERVICES SECTION ----------------------*/}
-      <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border-4 p-[2.3rem] rounded-md bg-[#f3f3f3]'>
+      <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border-4 p-[2.3rem] rounded-md bg-[#f3f3f3] mb-12'>
+        
         <div className='w-[340px] h-[80px] bg-dargGreen opacity-90 mx-auto flex items-center justify-center rounded-xl'>
           <h2 className='text-white pt-3'>Our Services</h2>
         </div>
-
         <h2 className='text-black font-semibold text-5xl max-w-[980px] mx-auto md:text-[3.1rem] text-center'>
           Discover the Power of Knowledge with Us
         </h2>
-
         <p className='text-center max-w-[900px] mx-auto text-md text-black font-normal tracking-wide -mt-7'>
           At our website, we offer a comprehensive range of features to support
           your academic journey. Explore our extensive collection of university
@@ -90,75 +83,13 @@ const Home = () => {
           need to succeed.
         </p>
 
-        {/*------------------------ Cards ------------------------ */}
-        
+        {/*------------------------ Service Cards ------------------------ */}
         <div className='grid place-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-24'>
-          {/* Card 1 */}
-          <div>
-            <div className='relative bg-black w-[300px] h-[400px] rounded-[30px]'>
-            <div className='absolute w-[300px] h-[400px] rounded-[30px] bg-[#7B9367] left-[6px] bottom-[6px] hover:left-0 hover:bottom-0 transition-all duration-200 text-white p-2 flex flex-col items-center'>
-              <img src={serviceIcon1} className='h-20 w-20 mt-10' alt='' />
-
-              <h3 className='font-groastek text-[32px] mt-4'>
-                University Notes
-              </h3>
-
-              <p className='font-groastek font-light text-center mb-10 '>
-                Access a wide variety of university notes covering various
-                subjects and topics.
-              </p>
-
-              <button className='bg-black py-4 px-20 rounded-full text-xl '>
-                Learn More
-              </button>
-            </div>
-            </div>
-          </div>
-
-          {/* Catd 2 */}
-          <div>
-            <div className='relative bg-black w-[300px] h-[400px] rounded-[30px]'>
-            <div className='absolute w-[300px] h-[400px] rounded-[30px] bg-tingGreen left-[6px] bottom-[6px] hover:left-0 hover:bottom-0 transition-all duration-200 text-white p-2 flex flex-col items-center'>
-              <img src={serviceIcon1} className='h-20 w-20 mt-10' alt='' />
-
-              <h3 className='font-groastek text-[32px] mt-4'>
-                University Notes
-              </h3>
-
-              <p className='font-groastek font-light text-center mb-10 '>
-                Access a wide variety of university notes covering various
-                subjects and topics.
-              </p>
-
-              <button className='bg-black py-4 px-20 rounded-full text-xl '>
-                Learn More
-              </button>
-            </div>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div>
-            <div className='relative bg-black w-[300px] h-[400px] rounded-[30px]'>
-            <div className='absolute w-[300px] h-[400px] rounded-[30px] bg-tingGreen left-[6px] bottom-[6px] hover:left-0 hover:bottom-0 transition-all duration-200 text-white p-2 flex flex-col items-center'>
-              <img src={serviceIcon1} className='h-20 w-20 mt-10' alt='' />
-
-              <h3 className='font-groastek text-[32px] mt-4'>
-                University Notes
-              </h3>
-
-              <p className='font-groastek font-light text-center mb-10 '>
-                Access a wide variety of university notes covering various
-                subjects and topics.
-              </p>
-
-              <button className='bg-black py-4 px-20 rounded-full text-xl '>
-                Learn More
-              </button>
-            </div>
-            </div>
-          </div>
-          
+            {
+              services.map((card) => (
+                <ServiceCard key={card.id} icon={card.icon} heading={card.heading} description={card.description} btnText={card.btnText}  />
+              ))
+            }
         </div>
 
       </div>
