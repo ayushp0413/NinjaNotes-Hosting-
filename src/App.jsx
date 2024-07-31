@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
 import Home from './pages/Home'
-import Navbar from './components/common/Navbar'
 import Notes from './pages/Notes'
 import Blogs from './pages/Blogs'
 import Papers from './pages/Papers'
@@ -10,7 +9,7 @@ import Login from './pages/Login'
 
 const App = () => {
   return (
-    <div className="realtive w-screen min-h-screen font-inter flex flex-col gap-y-12">
+    <div className="realtive w-screen min-h-screen font-inter flex flex-col gap-y-12 font-groastek">
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/home" element={<Home/>} />

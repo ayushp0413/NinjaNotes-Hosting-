@@ -22,7 +22,7 @@ const Navbar = () => {
 
 
             <nav onClick={handleMenu} ref={MenuRef} className='menu'>
-                <ul className='md:opacity-100 hidden md:flex flex-row gap-3 items-center before:list-none'>
+                <ul className='md:opacity-100 hidden md:flex flex-row md:gap-3 lg:gap-16 lg:mt-7 items-center before:list-none mr-4 '>
                     <Link to={"/notes"}>
                       <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-md px-2 py-0 transition-all duration-300 before:list-none'>Notes</li>
                     </Link>
