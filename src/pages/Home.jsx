@@ -26,6 +26,8 @@ const Home = () => {
               color={color}
               size={2}
         />
+
+        
         {/*  Main Part of Hero section */}
         <div className='relative mx-auto w-11/12 max-w-maxContent mt-[11.2rem] text-black flex flex-col justify-between gap-y-6 items-center lg:flex-row '>
          
