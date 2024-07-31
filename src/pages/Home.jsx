@@ -5,31 +5,30 @@ import { VelocityScroll } from '../components/magicui/VelocityScroll'
 import { Link } from 'react-router-dom'
 import ServiceCard from '../components/core/Home/ServiceCard'
 import { services } from '../assets/data/serviceCardData'
+import NumberTicker from '../components/magicui/NumberTicker'
+import serviceImage from '../assets/images/Service Image.png'
 
 const Home = () => {
-  
-  const color = '#64AE06' 
+  const color = '#64AE06'
 
   return (
     <div className='relative w-screen rounded-lg bg-white md:shadow-xl flex flex-col gap-y-10'>
       <Navbar />
-      
+
       {/* ---------------------- HERO SECTION ----------------------------- */}
       <div className='bg-theme pb-12 w-full lg:max-h-[740px] lg:h-[740px] lg:pb-0'>
         <Particles
-              className='absolute left-0 top-0 w-full h-[1010px] sm:h-[1000px] md:h-[980px] lg:h-[740px] xl:h-[740px]'
-              quantity={300}
-              ease={30}
-              color={color}
-              size={2}
+          className='absolute left-0 top-0 w-full h-[1010px] sm:h-[1000px] md:h-[980px] lg:h-[740px] xl:h-[740px]'
+          quantity={300}
+          ease={30}
+          color={color}
+          size={2}
         />
 
         {/*  Main Part of Hero section */}
         <div className='relative mx-auto w-11/12 max-w-maxContent mt-[11.2rem] text-black flex flex-col justify-between gap-y-6 items-center lg:flex-row '>
-         
           <div className='lg:w-[50%] max-w-maxContent flex flex-col items-center lg:items-start gap-y-5'>
             <h2 className=' text-black font-semibold text-5xl md:text-6xl text-center lg:text-left w-full'>
-
               Unlock Your Academic Potential with Us
             </h2>
             <p className='text-md text-black font-normal tracking-wide text-center lg:text-left'>
@@ -38,21 +37,37 @@ const Home = () => {
               enhance your learning experience today.
             </p>
             <div className='flex gap-x-5 justify-center lg:justify-start'>
-              <Link to="">
+              <Link to=''>
                 <button className='p-3 bg-tingGreen text-dargGreen font-semibold rounded-md'>
                   Learn More
                 </button>
               </Link>
-              <Link to="">
+              <Link to=''>
                 <button className='p-3 bg-dargGreen text-white font-semibold rounded-md'>
                   Get Notes
                 </button>
               </Link>
             </div>
+
+            {/* Number Ticker */}
+            <div className='flex gap-14 justify-center items-center md:justify-start'>
+              <div>
+                <h2>
+                  <NumberTicker value={50} />+
+                </h2>
+                <p className='text-black font-mono mt-[-24px]'>Subjects</p>
+              </div>
+              <div>
+                <h2>
+                  <NumberTicker value={100} />+
+                </h2>
+                <p className='text-black font-mono mt-[-24px]'>Papers</p>
+              </div>
+            </div>
           </div>
 
           <div className='mx-auto pt-10 md:pt-0 '>
-              <img src={heroImg} width={500} />
+            <img src={heroImg} width={500} />
           </div>
         </div>
       </div>
@@ -68,7 +83,6 @@ const Home = () => {
 
       {/*---------------------- SERVICES SECTION ----------------------*/}
       <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border-4 p-[2.3rem] rounded-md bg-[#f3f3f3] mb-12'>
-        
         <div className='w-[340px] h-[80px] bg-dargGreen opacity-90 mx-auto flex items-center justify-center rounded-xl'>
           <h2 className='text-white pt-3'>Our Services</h2>
         </div>
@@ -85,14 +99,44 @@ const Home = () => {
 
         {/*------------------------ Service Cards ------------------------ */}
         <div className='grid place-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-24'>
-            {
-              services.map((card) => (
-                <ServiceCard key={card.id} icon={card.icon} heading={card.heading} description={card.description} btnText={card.btnText}  />
-              ))
-            }
+          {services.map(card => (
+            <ServiceCard
+              key={card.id}
+              icon={card.icon}
+              heading={card.heading}
+              description={card.description}
+              btnText={card.btnText}
+            />
+          ))}
         </div>
 
+        
       </div>
+
+      {/* Service Div */}
+      <div className='max-w-maxContent text-black flex flex-col-reverse mx-auto lg:flex-row items-center justify-between gap-8 mt-[-50px] px-6'>
+          <img
+            className='h-[400px] w-[600px] rounded-[30px]'
+            src={serviceImage}
+            alt=''
+          />
+
+          <div className='lg:w-[40%] flex flex-col gap-y-4'>
+            <h2 className=' text-black font-semibold text-4xl md:text-5xl text-center lg:text-right w-full '>
+              Unlock Your Academic Potential with Us
+            </h2>
+
+            <p className='text-md text-black font-normal tracking-wide text-center lg:text-right '>
+              Welcome to our notes website, where you can access a wide range of
+              university notes and last year papers. Explore our collection and
+              enhance your learning experience today.
+            </p>
+
+            <button className='bg-[#0F1B09] text-white rounded-xl py-2 w-40 md:w-64 mx-auto lg:ml-[248px]'>
+              Learn More
+            </button>
+          </div>
+        </div>
     </div>
   )
 }
