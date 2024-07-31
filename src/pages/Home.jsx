@@ -7,8 +7,9 @@ import ServiceCard from '../components/core/Home/ServiceCard'
 import { services } from '../assets/data/serviceCardData'
 import NumberTicker from '../components/magicui/NumberTicker'
 import serviceImage from '../assets/images/Service Image.png'
+import Testimonial from '../components/core/Home/Tesimonial'
 import Footer from '../components/common/Footer'
-import ParticlesBackground from '../components/Particles/ParticlesBackground'
+// import ParticlesBackground from '../components/Particles/ParticlesBackground'
 const Home = () => {
   const color = '#64AE06'
 
@@ -139,6 +140,18 @@ const Home = () => {
 
           </div>
         </div>
+
+        {/*---------------------- TESTIMONIAL SECTION ----------------------*/}
+      <div className='bg-[#f3f3f3] pt-10 ' >
+        <div className='w-[340px] h-[80px] bg-dargGreen opacity-90 mx-auto flex items-center justify-center rounded-xl'>
+          <h2 className='text-white pt-3'>Testimonials</h2>
+        </div>
+        <p className='text-center text-xl font-semibold '>
+          Read what our students have to say about us.
+        </p>
+        <Testimonial />
+      </div>
+
 
 
       {/* ------------------ FOOTER ------------------------------------- */}
