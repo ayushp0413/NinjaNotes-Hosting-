@@ -12,7 +12,7 @@ const Community = ["Forums", "Chapters", "Events"];
 const Footer = () => {
 
   return (
-    <div className="bg-theme">
+    <div className="bg-theme z-10">
       
       <div className="flex lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-dargGreen leading-6 mx-auto relative py-14">
         <div className="border-b w-[100%] flex flex-col lg:flex-row pb-5 border-dargGreen">
