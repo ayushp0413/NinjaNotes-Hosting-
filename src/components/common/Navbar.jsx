@@ -24,16 +24,16 @@ const Navbar = () => {
             <nav onClick={handleMenu} ref={MenuRef} className='menu'>
                 <ul className='md:opacity-100 hidden md:flex flex-row md:gap-3 lg:gap-16 lg:mt-7 items-center before:list-none mr-4 '>
                     <Link to={"/notes"}>
-                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-md px-2 py-0 transition-all duration-300 before:list-none'>Notes</li>
+                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-full px-2 py-0 transition-all duration-300   before:list-none'>Notes</li>
                     </Link>
                     <Link to={"/papers"}>
-                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-md px-2 py-0 transition-all duration-300 before:list-none'>Papers</li>
+                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-full px-2 py-0 transition-all duration-300 before:list-none'>Papers</li>
                     </Link>
                     <Link to={"/blogs"}>
-                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-md px-2 py-0 transition-all duration-300 before:list-none'>Blogs</li>
+                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-full px-2 py-0 transition-all duration-300 before:list-none'>Blogs</li>
                     </Link>
                     <Link to={"/joinus"}>
-                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-md px-2 py-0 transition-all duration-300 before:list-none'>Join Us</li>
+                      <li className='text-black text-xl font-semibold cursor-pointer hover:bg-tingGreen rounded-full px-2 py-0 transition-all duration-300 before:list-none'>Join Us</li>
                     </Link>
                     
                 </ul>

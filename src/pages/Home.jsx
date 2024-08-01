@@ -9,6 +9,7 @@ import NumberTicker from '../components/magicui/NumberTicker'
 import serviceImage from '../assets/images/Service Image.png'
 import Testimonial from '../components/core/Home/Tesimonial'
 import Footer from '../components/common/Footer'
+import OurTeam from '../components/core/Home/OurTeam'
 // import ParticlesBackground from '../components/Particles/ParticlesBackground'
 const Home = () => {
   const color = '#64AE06'
@@ -58,25 +59,25 @@ const Home = () => {
                 <h2>
                   <NumberTicker value={50} />+
                 </h2>
-                <p className='text-black font-mono mt-[-24px]'>Subjects</p>
+                <p className='text-black font-semibold mt-[-24px]'>Subjects</p>
               </div>
               <div>
                 <h2>
                   <NumberTicker value={100} />+
                 </h2>
-                <p className='text-black font-mono mt-[-24px]'>Papers</p>
+                <p className='text-black font-semibold pl-[6px] mt-[-24px]'>Papers</p>
               </div>
             </div>
           </div>
 
-          <div className='mx-auto pt-10 md:pt-0 '>
+          <div className='pt-10 md:pt-0 '>
             <img src={heroImg} width={500} />
           </div>
         </div>
       </div>
 
       {/*---------------------- VELOCITY SCROLL ----------------------*/}
-      <div className='bg-[#f3f3f3] p-[2rem] -mt-10 '>
+      <div className='bg-[#f3f3f3] py-[2rem] -mt-10 shadow-sm'>
         <VelocityScroll
           text='Computer Networks Machine Learning TOC Compiler Design Operating System Project Management DSA '
           default_velocity={2}
@@ -151,6 +152,9 @@ const Home = () => {
         </p>
         <Testimonial />
       </div>
+
+      {/*---------------------- OUR TEAM SECTION ----------------------*/}
+      <OurTeam/>
 
 
 
