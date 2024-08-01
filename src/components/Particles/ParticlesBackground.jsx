@@ -24,7 +24,7 @@ const ParticlesBackground = () => {
     //  I Tried with App.css also but not working #tsparticles { height:100px} NOT WORKING
 
   return (
-    <div>
+    <div className='z-0'>
 
     { 
         init && <Particles
@@ -68,7 +68,7 @@ const ParticlesBackground = () => {
                     distance: 150,
                     enable: true,
                     opacity: 1,
-                    width: 3,
+                    width: 2,
                 },
                 move: {
                     direction: "none",
@@ -101,7 +101,7 @@ const ParticlesBackground = () => {
         }}
     />
   }
-</div>
+    </div>
   )
 }
 

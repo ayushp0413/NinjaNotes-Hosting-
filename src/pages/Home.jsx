@@ -10,74 +10,21 @@ import serviceImage from '../assets/images/Service Image.png'
 import Testimonial from '../components/core/Home/Tesimonial'
 import Footer from '../components/common/Footer'
 import OurTeam from '../components/core/Home/OurTeam'
+import HeroSection from '../components/core/Home/HeroSection'
+
 // import ParticlesBackground from '../components/Particles/ParticlesBackground'
 const Home = () => {
-  const color = '#64AE06'
+  
 
   return (
     <div className='relative w-screen rounded-lg bg-white md:shadow-xl flex flex-col gap-y-10'>
       <Navbar />
 
       {/* ---------------------- HERO SECTION ----------------------------- */}
-      <div className='bg-theme pb-12 w-full lg:max-h-[740px] lg:h-[740px] lg:pb-0'>
-        <Particles
-          className='absolute left-0 top-0 w-full h-[1010px] sm:h-[1000px] md:h-[980px] lg:h-[740px] xl:h-[740px]'
-          quantity={300}
-          ease={30}
-          color={color}
-          size={2}
-        />
-        {/* <ParticlesBackground />  SOLVE THIS  */}
-
-        {/*  Main Part of Hero section */}
-        <div className='relative mx-auto w-11/12 max-w-maxContent mt-[11.2rem] text-black flex flex-col justify-between gap-y-6 items-center lg:flex-row '>
-          <div className='lg:w-[50%] max-w-maxContent flex flex-col items-center lg:items-start gap-y-5'>
-            <h2 className=' text-black font-semibold text-5xl md:text-6xl text-center lg:text-left w-full'>
-              Unlock Your Academic Potential with Us
-            </h2>
-            <p className='text-md text-black font-normal tracking-wide text-center lg:text-left'>
-              Welcome to our notes website, where you can access a wide range of
-              university notes and last year papers. Explore our collection and
-              enhance your learning experience today.
-            </p>
-            <div className='flex gap-x-5 justify-center lg:justify-start'>
-              <Link to=''>
-                <button className='p-3 bg-tingGreen text-dargGreen font-semibold rounded-md'>
-                  Learn More
-                </button>
-              </Link>
-              <Link to=''>
-                <button className='p-3 bg-dargGreen text-white font-semibold rounded-md'>
-                  Get Notes
-                </button>
-              </Link>
-            </div>
-
-            {/* Number Ticker */}
-            <div className='flex gap-14 justify-center items-center md:justify-start'>
-              <div>
-                <h2>
-                  <NumberTicker value={50} />+
-                </h2>
-                <p className='text-black font-semibold mt-[-24px]'>Subjects</p>
-              </div>
-              <div>
-                <h2>
-                  <NumberTicker value={100} />+
-                </h2>
-                <p className='text-black font-semibold pl-[6px] mt-[-24px]'>Papers</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='pt-10 md:pt-0 '>
-            <img src={heroImg} width={500} />
-          </div>
-        </div>
-      </div>
+      <HeroSection />
 
       {/*---------------------- VELOCITY SCROLL ----------------------*/}
-      <div className='bg-[#f3f3f3] py-[2rem] -mt-10 shadow-sm'>
+      <div className='bg-[#f3f3f3] py-[2rem] -mt-10 shadow-sm z-10'>
         <VelocityScroll
           text='Computer Networks Machine Learning TOC Compiler Design Operating System Project Management DSA '
           default_velocity={2}
@@ -86,7 +33,7 @@ const Home = () => {
       </div>
 
       {/*---------------------- SERVICES SECTION ----------------------*/}
-      <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border-4 p-[2.3rem] rounded-md bg-[#f3f3f3] mt-8 mb-8'>
+      <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border-4 p-[2.3rem] rounded-md bg-[#f3f3f3] mt-8 mb-8 z-10'>
         <div className='w-[340px] h-[80px] bg-dargGreen opacity-90 mx-auto flex items-center justify-center rounded-xl'>
           <h2 className='text-white pt-3'>Our Services</h2>
         </div>
@@ -118,7 +65,7 @@ const Home = () => {
       </div>
 
       {/* ---------------------   Service Div ------------------- */}
-      <div className='w-11/12 max-w-maxContent text-black flex flex-col-reverse items-center justify-center gap-y-4 mx-auto lg:flex-row lg:items-center lg:justify-between  mb-14 px-6 md:px-0'>
+      <div className='w-11/12 max-w-maxContent text-black flex flex-col-reverse items-center justify-center gap-y-4 mx-auto lg:flex-row lg:items-center lg:justify-between  mb-14 px-6 md:px-0 z-10'>
           <img
             className='h-[400px] w-[600px] rounded-[30px]'
             src={serviceImage}
@@ -143,20 +90,18 @@ const Home = () => {
         </div>
 
         {/*---------------------- TESTIMONIAL SECTION ----------------------*/}
-      <div className='bg-[#f3f3f3] pt-10 ' >
+      <div className='bg-[#f3f3f3] pt-10 -mt-4 z-10' >
         <div className='w-[340px] h-[80px] bg-dargGreen opacity-90 mx-auto flex items-center justify-center rounded-xl'>
           <h2 className='text-white pt-3'>Testimonials</h2>
         </div>
         <p className='text-center text-xl font-semibold '>
-          Read what our students have to say about us.
+        Hear from learners who have transformed their study habits and achieved outstanding results with our resources.
         </p>
         <Testimonial />
       </div>
 
       {/*---------------------- OUR TEAM SECTION ----------------------*/}
       <OurTeam/>
-
-
 
       {/* ------------------ FOOTER ------------------------------------- */}
       <Footer />

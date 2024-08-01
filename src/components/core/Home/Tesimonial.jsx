@@ -1,6 +1,7 @@
 import { cn } from '../../../lib/utils'
 import Marquee from '../../magicui/Marquee'
 
+// data will come from backend
 const reviews = [
   {
     name: 'Kunal Choudhary',
@@ -56,14 +57,15 @@ const ReviewCard = ({ img, name, username, body }) => {
     >
       <div className='flex flex-row items-center gap-2'>
         <img className='rounded-full' width='32' height='32' alt='' src={img} />
-        <div className='flex flex-col space-y-0'>
-          <figcaption className='text-sm font-medium dark:text-white'>
+        <div className='flex flex-col justify-center space-y-0'>
+          <figcaption className='text-sm font-medium text-dargGreen'>
             {name}
           </figcaption>
-          <p className='text-xs font-medium dark:text-white/40'>{username}</p>
+          <p className='text-xs font-medium text-dargGreen'>{username}</p>
         </div>
       </div>
-      <blockquote className='mt-5 text-sm'>{body}</blockquote>
+
+      <blockquote className='mt-5 text-sm text-theme'>{body}</blockquote>
     </figure>
   )
 }
