@@ -33,7 +33,7 @@ const ParticlesBackground = () => {
         options={{
             background: {
                 color: {
-                    value: "#6b6a51",
+                    value: "#ffffff",
                 },
             },
             fpsLimit: 100,
@@ -61,14 +61,14 @@ const ParticlesBackground = () => {
             },
             particles: {
                 color: {
-                    value: "#64AE08",
+                    value: "#5ae5a9",
                 },
                 links: {
-                    color: "#64AE06",
+                    color: "#5ae5a9",
                     distance: 150,
                     enable: true,
                     opacity: 1,
-                    width: 2,
+                    width: 1,
                 },
                 move: {
                     direction: "none",
@@ -77,7 +77,7 @@ const ParticlesBackground = () => {
                         default: "bounce",
                     },
                     random: false,
-                    speed: 6,
+                    speed: 3,
                     straight: false,
                 },
                 number: {

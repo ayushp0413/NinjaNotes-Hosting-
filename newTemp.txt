@@ -1,0 +1,7 @@
+1. Homepage ki image ko right me karna hai 
+2. Papers wale no. ticker ko shi karna hai 
+3. Navlinks ki animations handle karna hai
+5. Responsive me Navbar pe cross icon lagana hai
+6. blog card ka logo change karna hai (itna shi nhi lag rha vo )
+7. Testimonial cards ko vertical banana hai
+8. Testimonial and Footer ke beech ek blank patti aa rhi hai 

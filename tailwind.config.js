@@ -7,15 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-      black: '#040D12',
-      blue: '#CAF4FF',
-      offWhite: '#FDFFE2',
-      grey: '#F3F3F3',
-      greenGrey: '#7B9367',
-      yellow: '#BCFF9F',
-      theme: '#6b6a51',
-      tingGreen: '#64AE06',
-      dargGreen: '#0F1B09'
+        green: "#B9FF66",
+        grey: "#F3F3F3",
+        lightBlack: "#191A23",
+
+        tempPrimary: "#5ae5a9",
+        tempSecondary: "#d5f6e7",
+        tempGrey: "#d5f6e7",
+        tempDark: "#1b2e35",
+
+
     },
     fontFamily: {
       groastek: ["Space Grotesk", "sans-serif"],

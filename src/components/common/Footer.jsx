@@ -1,7 +1,7 @@
 import React from "react";
 import { footerData } from "../../assets/data/footer-links";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/tempLogo.svg"
 import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
@@ -12,7 +12,7 @@ const Community = ["Forums", "Chapters", "Events"];
 const Footer = () => {
 
   return (
-    <div className="bg-theme z-10">
+    <div className="bg-tempSecondary z-10">
       
       <div className="flex lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-dargGreen leading-6 mx-auto relative py-14">
         <div className="border-b w-[100%] flex flex-col lg:flex-row pb-5 border-dargGreen">
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-dargGreen pl-3 lg:pr-5 gap-3">
             <div className="w-[30%] flex flex-col gap-3 lg:w-[30%] mb-7 lg:pl-0">
               <Link to={"/"}>
-              <img src={logo} alt="" width={100} className="object-contain shadow-lg" />
+              <img src={logo} alt="" width={100} className="object-contain" />
               </Link>
               <h1 className="font-semibold text-[16px] -mb-1">
                 Company
@@ -33,7 +33,7 @@ const Footer = () => {
                       className="text-[14px] cursor-pointer transition-all duration-200"
                     >
                       <Link to={ele.toLowerCase()}>
-                      <span className=" hover:text-tingGreen text-gray-300">{ele}</span></Link>
+                      <span className=" hover:text-tingGreen text-tempDark">{ele}</span></Link>
                     </div>
                   );
                 })}
@@ -60,7 +60,7 @@ const Footer = () => {
                       className="text-[14px] cursor-pointer  transition-all duration-200"
                     >
                       <Link to={ele.split(" ").join("-").toLowerCase()}>
-                      <span className=" hover:text-tingGreen text-gray-300">{ele}</span>
+                      <span className=" hover:text-tingGreen text-tempDark">{ele}</span>
                       </Link>
                     </div>
                   );
@@ -71,7 +71,7 @@ const Footer = () => {
                 Support
               </h1>
               <div className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200 mt-2">
-                <Link to={"/help-center"} className=" hover:text-tingGreen text-gray-300">Help Center</Link>
+                <Link to={"/help-center"} className=" hover:text-tingGreen text-tempDark">Help Center</Link>
               </div>
             </div>
 
@@ -88,7 +88,7 @@ const Footer = () => {
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
                       <Link to={ele.split(" ").join("-").toLowerCase()}>
-                      <span className=" hover:text-tingGreen text-gray-300">{ele}</span>
+                      <span className=" hover:text-tingGreen text-tempDark">{ele}</span>
                       </Link>
                     </div>
                   );
@@ -106,7 +106,7 @@ const Footer = () => {
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
                       <Link to={ele.split(" ").join("-").toLowerCase()}>
-                      <span className=" hover:text-tingGreen text-gray-300">{ele}</span>
+                      <span className=" hover:text-tingGreen text-tempDark">{ele}</span>
                       </Link>
                     </div>
                   );
@@ -131,7 +131,7 @@ const Footer = () => {
                           className="text-[14px] cursor-pointer transition-all duration-200"
                         >
                           <Link to={link.link}>
-                          <span className=" hover:text-tingGreen text-gray-300">{link.title}</span>
+                          <span className=" hover:text-tingGreen text-tempDark">{link.title}</span>
                           </Link>
                         </div>
                       );
@@ -155,18 +155,18 @@ const Footer = () => {
                   className={` ${
                     BottomFooter.length - 1 === i
                       ? ""
-                      : "border-r border-dargGreen cursor-pointer transition-all duration-200"
+                      : "border-r border-dargGreen cursor-pointer transition-all duration-200 "
                   } px-3 `}
                 >
                   <Link to={ele.split(" ").join("-").toLocaleLowerCase()}>
-                  <span className=" hover:text-tingGreen cursor-pointer text-gray-300">{ele}</span>
+                  <span className=" hover:text-tingGreen cursor-pointer text-black">{ele}</span>
                   </Link>
                 </div>
               );
             })}
           </div>
 
-          <div className="text-center text-gray-300">Developed with 💚 by Team AK © All Rights Reserved 2024 Ninja Notes</div>
+          <div className="text-center text-black">Developed with 💚 by Team AK © All Rights Reserved 2024 Ninja Notes</div>
         </div>
       </div>
 
