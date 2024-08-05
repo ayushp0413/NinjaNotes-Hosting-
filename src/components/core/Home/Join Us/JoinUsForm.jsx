@@ -27,8 +27,6 @@ const JoinUsForm = () => {
      setLoading(false);
   }
 
-
-
   useEffect(()=>{
     reset({
         email:"",
@@ -42,8 +40,8 @@ const JoinUsForm = () => {
 
 
   return (
-    <div data-aos="fade-down" data-aos-duration='1200' className='w-11/12 max-w-maxContent mx-auto px-5 lg:px-0 mt-10'>
-
+    <div>
+      <div data-aos="fade-down" data-aos-duration='1200' className='w-11/12 max-w-maxContent mx-auto px-5 lg:px-0 mt-28'>
       <h1 className='font-semibold leading-[40px] text-4xl md:text-6xl text-center '>Let's Create Something Awesome Together!</h1>
 
       <div className='grid grid-cols-1 lg:grid-cols-2'>
@@ -140,7 +138,11 @@ const JoinUsForm = () => {
           </form>
         </div>
       </div>
+      </div>
+
     </div>
+
+    
   )
 }
 

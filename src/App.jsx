@@ -5,9 +5,11 @@ import Home from './pages/Home'
 import Notes from './pages/Notes'
 import Blogs from './pages/Blogs'
 import Papers from './pages/Papers'
-import JoinUs from './pages/JoinUs'
+import JoinUsForm from './components/core/Home/Join Us/JoinUsForm';
 import Login from './pages/Login'
 import Error from './pages/Error';
+import Navbar from './components/common/Navbar';
+import NotesDetails from './pages/NotesDetails';
 
 const App = () => {
 
@@ -18,14 +20,16 @@ const App = () => {
 
   return (
     <div className="realtive w-screen min-h-screen font-inter flex flex-col gap-y-12 font-groastek">
+    <Navbar />
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/home" element={<Home/>} />
       <Route path="/notes" element={<Notes/>} />
       <Route path="/blogs" element={<Blogs/>} />
       <Route path="/papers" element={<Papers/>} />
-      <Route path="/joinus" element={<JoinUs/>} />
+      <Route path="/joinus" element={<JoinUsForm/>} />
       <Route path="/login" element={<Login/>} />
+      <Route path="/notes/Engineering/:year/:subject" element={<NotesDetails/>} />
       <Route path="*" element={<Error/>} />
       
     </Routes>

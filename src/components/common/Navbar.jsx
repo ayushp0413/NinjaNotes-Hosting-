@@ -33,7 +33,7 @@ const Navbar = () => {
               <li className='navLink'>Blogs</li>
             </Link>
             <Link to={'/joinus'}>
-              <li className='navLink'>Join Us</li>
+              <li className='navLink'>Join Us</li> 
             </Link>
           </ul>
         </nav>
