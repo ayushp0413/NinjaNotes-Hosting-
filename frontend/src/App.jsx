@@ -29,7 +29,7 @@ const App = () => {
       <Route path="/papers" element={<Papers/>} />
       <Route path="/joinus" element={<JoinUsForm/>} />
       <Route path="/login" element={<Login/>} />
-      <Route path="/notes/Engineering/:year/:subject" element={<NotesDetails/>} />
+      <Route path="/notes/:course/:branch/:sem/:subject/:unit" element={<NotesDetails/>} />
       <Route path="*" element={<Error/>} />
       
     </Routes>
