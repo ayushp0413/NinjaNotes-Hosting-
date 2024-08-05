@@ -1,6 +1,4 @@
-import Navbar from '../components/common/Navbar'
 import { VelocityScroll } from '../components/magicui/VelocityScroll'
-import { Link } from 'react-router-dom'
 import ServiceCard from '../components/core/Home/ServiceCard'
 import { services } from '../assets/data/serviceCardData'
 import serviceImage from '../assets/images/ourServices.svg'
@@ -14,13 +12,10 @@ import { useState } from 'react'
 
 
 const Home = () => {
-  
-  const [activeForm, setActiveForm] = useState(false);
+
 
   return (
     <div className='relative w-screen rounded-lg bg-white md:shadow-xl flex flex-col gap-y-10'>
-      <Navbar />
-
       {/* ---------------------- HERO SECTION ----------------------------- */}
       <HeroSection />
 
@@ -104,12 +99,7 @@ const Home = () => {
       <OurTeam/>
 
       {/*---------------------- JOIN US SECTION ----------------------*/}
-      <JoinUs setActiveForm={setActiveForm} />
-      {
-        activeForm && (<JoinUsForm/>)
-      }
-
-      
+      <JoinUs />
 
       {/* ------------------ FOOTER ------------------------------------- */}
       <Footer />

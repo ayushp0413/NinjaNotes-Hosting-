@@ -5,7 +5,8 @@ import { Tree } from '@geist-ui/core'
 const Notes = () => {
   return (
 
-    <div className='w-11/12 max-w-maxContent mx-auto'>
+    <div data-aos='fade-down'
+          data-aos-duration='1200'  className='w-11/12 max-w-maxContent mx-auto mt-20'>
     
       <h1 className='heading my-10 text-center '>
         Organized pervious years papers by subjects and departments for easy access
