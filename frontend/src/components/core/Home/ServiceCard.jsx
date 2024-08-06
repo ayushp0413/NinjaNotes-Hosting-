@@ -14,9 +14,9 @@ const ServiceCard = ({icon: Icon, heading, description}) => {
                     <p className='font-groastek font-light text-center leading-6 -mt-3'>{description}</p>
                 </div>
             
-                <button className='flex flex-row justify-center items-center  bg-tempSecondary hover:bg-tempPrimary transition-all duration-300 px-6 rounded-full gap-x-4 border '>
+                <button className='flex flex-row justify-center items-center  bg-tempSecondary border border-tempPrimary hover:bg-tempPrimary  transition-all duration-300 px-4 rounded-full gap-x-4 '>
                 <p className='para font-md my-3'>Learn More</p>
-                <div className='bg-black h-10 w-10 rounded-full'>
+                <div className='bg-black h-10 w-10 rounded-full '>
                 <FiArrowUpRight className='text-white h-10 w-10 hover:text-tempPrimary' />
                 </div>
                 

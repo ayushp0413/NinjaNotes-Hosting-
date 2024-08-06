@@ -3,7 +3,6 @@ import toast from 'react-hot-toast';
 import { getNotesForSubjects } from '../services/operations/getNotesForSubjects';
 import { useParams } from 'react-router';
 
-
 const NotesDetails = () => {
 
   const [notes, setNotes] = useState(null);
@@ -40,16 +39,16 @@ const NotesDetails = () => {
 
 
   return (
-    <div className='mt-28'>
+    <div className='mt-40 w-11/12 max-w-maxContent mx-auto flex justify-center items-center'>
     {
       !loading && notes?.length > 0 && (
        notes?.map((item, index) => (
-        <div key={index}>
-          <h1>Course : {item?.course}</h1>
-          <h2>Branch : {item?.branch}</h2>
-          <h3>Semester : {item?.sem}</h3>
-          <h4>Subject : {item?.subject}</h4>
-          <a href={item?.content}><h5>Click to get your notes</h5></a>
+        <div className='border-2 border-tempPrimary inline-block p-6 rounded  ' key={index}>
+          <p className='para '>Course : {item?.course}</p>
+          <p className='para'>Branch : {item?.branch}</p>
+          <p className='para'>Semester : {item?.sem}</p>
+          <p className='para '>Subject : {item?.subject}</p>
+          <a target='_blank' href={item?.content} onClick={expandHandler}><h5 className='para bg-tempSecondary text-center py-2 rounded-md '>Click to get your notes</h5></a>
         </div>
        ))
       )
