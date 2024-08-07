@@ -10,3 +10,9 @@ export const joinUsEndpoints = {
 export const notesEndpoints = {
     GET_ALL_NOTES : BASE_URL + "/notes/getNotes",
 }
+
+// Rating and Reviews 
+export const testimonials = {
+    CREATE_RATING : BASE_URL + "/testimonials/createRatingAndReviews",
+    GET_ALL_RATINGS : BASE_URL + "/testimonials/getAllRatings"
+}

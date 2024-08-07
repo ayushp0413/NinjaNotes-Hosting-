@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { getNotesForSubjects } from '../services/operations/getNotesForSubjects';
 import { useParams } from 'react-router';
+import Testimonial from '../components/common/Testimonial';
 
 const NotesDetails = () => {
 
   const [notes, setNotes] = useState(null);
   const [loading, setLoading] = useState(false);
   const {course, branch, sem, subject, unit } = useParams();  
+  const [active, setActive] = useState(false);
+
 
   const getAllNotes = async() => {  
     try
@@ -39,7 +42,7 @@ const NotesDetails = () => {
 
 
   return (
-    <div className='mt-40 w-11/12 max-w-maxContent mx-auto flex justify-center items-center'>
+    <div className='mt-40 w-11/12 max-w-maxContent mx-auto flex flex-col justify-center items-center'>
     {
       !loading && notes?.length > 0 && (
        notes?.map((item, index) => (
@@ -49,11 +52,12 @@ const NotesDetails = () => {
           <p className='para'>Semester : {item?.sem}</p>
           <p className='para '>Subject : {item?.subject}</p>
           <p className='para '>Unit : {item?.unit}</p>
-          <a target='_blank' href={item?.content}><h5 className='para bg-tempSecondary text-center py-2 rounded-md '>Click to get your notes</h5></a>
+          <a target='_blank' href={item?.content} onClick={() => setActive(true)}><h5 className='para bg-tempSecondary text-center py-2 rounded-md '>Click to get your notes</h5></a>
         </div>
        ))
       )
     }
+    {active && (<Testimonial/>)}
     </div>
   )
 }
