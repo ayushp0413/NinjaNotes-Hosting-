@@ -29,7 +29,7 @@ export const createTestimonial = async(formData) => {
 
 export const getAllTestimonials = async() => {
     
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading....")
     let result = [];
     try
     {
@@ -39,8 +39,6 @@ export const getAllTestimonials = async() => {
         if (!response.data.success) {
             throw new Error(response.data.message)
           }
-
-        toast.success(response?.data?.message || "DONE");  
         result = response?.data?.data;
 
     }catch(err)
