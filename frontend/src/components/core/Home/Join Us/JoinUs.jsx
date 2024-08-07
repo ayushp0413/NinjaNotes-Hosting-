@@ -17,8 +17,9 @@ const JoinUs = () => {
         <p className='para text-center lg:text-left'>
           Contribute your coding skills and notes to be a part of our educational community.
         </p>
-        <button onClick={joinUsHandler} className='btn w-50 flex flex-row justify-center items-center gap-2 bg-tempSecondary hover:bg-tempPrimary  transition-all duration-200'>
+        <button onClick={joinUsHandler}  className='btn w-50 flex flex-row justify-center items-center gap-2 bg-tempSecondary hover:bg-tempPrimary border border-tempPrimary transition-all duration-200'>
           Join Us
+          
           <FaArrowRight className='' />
         </button>
       </div>

@@ -136,7 +136,7 @@ const Notes = () => {
             </div>
 
             {/* Pharmacy */}
-            <div className='mx-auto border-2 border-tempPrimary p-4 rounded-lg '>
+            <div className='mx-auto border-2 min-w-[475.025px] border-tempPrimary p-4 rounded-lg '>
               <Tree>
                 <Tree.Folder name='B-Pharmacy'>
                   <Tree.Folder name='1st Sem'>

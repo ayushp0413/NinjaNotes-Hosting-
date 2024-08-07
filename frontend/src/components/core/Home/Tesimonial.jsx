@@ -50,23 +50,23 @@ const secondRow = reviews.slice(reviews.length / 2)
 const ReviewCard = ({ img, name, username, body }) => {
 
 
-  const  getTestimonials = async()=>{
-    try
-    {
-      const response = await getAllTestimonials();
-      console.log("All Testimonials : ", response);
-      // data aa agaya hai backend se 
+  // const  getTestimonials = async()=>{
+  //   try
+  //   {
+  //     const response = await getAllTestimonials();
+  //     console.log("All Testimonials : ", response);
+  //     // data aa agaya hai backend se 
 
-    }catch(err)
-    {
-      console.log("Error in fetching testimonials..");
-      toast.error(err);
-    }
-  }
+  //   }catch(err)
+  //   {
+  //     console.log("Error in fetching testimonials..");
+  //     toast.error(err);
+  //   }
+  // }
 
-  useEffect(() => {
-    getTestimonials();
-  },[])
+  // useEffect(() => {
+  //   getTestimonials();
+  // },[])
 
   return (
     <figure

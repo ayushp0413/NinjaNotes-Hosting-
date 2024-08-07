@@ -52,7 +52,7 @@ const NotesDetails = () => {
           <p className='para'>Semester : {item?.sem}</p>
           <p className='para '>Subject : {item?.subject}</p>
           <p className='para '>Unit : {item?.unit}</p>
-          <a target='_blank' href={item?.content} onClick={() => setActive(true)}><h5 className='para bg-tempSecondary text-center py-2 rounded-md '>Click to get your notes</h5></a>
+          <a target='_blank' href={item?.content} onClick={() => setActive(true)}><h5 className='para bg-tempSecondary hover:bg-tempPrimary border border-tempPrimary  text-center py-2 rounded-md '>Click to get your notes</h5></a>
         </div>
        ))
       )

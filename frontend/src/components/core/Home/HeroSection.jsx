@@ -4,6 +4,7 @@ import NumberTicker from '../../magicui/NumberTicker'
 import Particles from '../../magicui/Particles'
 import heroImg from "../../../assets/images/1.png"
 import ParticlesBackground from  "../../Particles/ParticlesBackground"
+import ServiceCard from './ServiceCard'
 
 const HeroSection = () => {
 
@@ -35,7 +36,7 @@ const HeroSection = () => {
             </p>
             <div className='flex gap-x-5 justify-center lg:justify-start'>
               <Link to=''>
-                <button className='btn border-2 hover:bg-tempPrimary bg-tempSecondary border-tempSecondary hover:border-tempPrimary transition-all duration-300'>
+                <button className='btn hover:bg-tempPrimary bg-tempSecondary border-2 border-tempPrimary transition-all duration-300'>
                   Learn More
                 </button>
               </Link>
