@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const RatingAndReviews = require('./Testimonials');
 
 const noteSchema = new mongoose.Schema(
     {

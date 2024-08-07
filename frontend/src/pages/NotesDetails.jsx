@@ -48,7 +48,8 @@ const NotesDetails = () => {
           <p className='para'>Branch : {item?.branch}</p>
           <p className='para'>Semester : {item?.sem}</p>
           <p className='para '>Subject : {item?.subject}</p>
-          <a target='_blank' href={item?.content} onClick={expandHandler}><h5 className='para bg-tempSecondary text-center py-2 rounded-md '>Click to get your notes</h5></a>
+          <p className='para '>Unit : {item?.unit}</p>
+          <a target='_blank' href={item?.content}><h5 className='para bg-tempSecondary text-center py-2 rounded-md '>Click to get your notes</h5></a>
         </div>
        ))
       )
