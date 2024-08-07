@@ -57,7 +57,7 @@ const NotesDetails = () => {
        ))
       )
     }
-    {active && (<Testimonial/>)}
+    {active && (<Testimonial setActive={setActive}/>)}
     </div>
   )
 }
