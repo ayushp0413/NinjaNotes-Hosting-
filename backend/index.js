@@ -22,13 +22,13 @@ app.use(fileUpload({
 // routing
 const joinUs = require("./routes/JoinUs");
 const notes = require("./routes/Notes");
+const testimonials = require("./routes/Testimonial");
 
 
 // use routing
 app.use("/api/v1/join", joinUs);
 app.use("/api/v1/notes", notes);
-
-
+app.use("/api/v1/testimonials", testimonials);
 
 
 
