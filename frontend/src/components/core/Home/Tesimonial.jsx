@@ -2,72 +2,15 @@ import { useEffect, useState } from 'react'
 import { cn } from '../../../lib/utils'
 import Marquee from '../../magicui/Marquee'
 import toast from 'react-hot-toast'
+import ReactStars from 'react-rating-stars-component'
 import { getAllTestimonials } from '../../../services/operations/testimonialsAPI'
 
 // data will come from backend
-const reviews = [
-  {
-    name: 'Kunal Choudhary',
-    username: '@kunalKunnu',
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: 'https://avatar.vercel.sh/jack'
-  },
-  {
-    name: 'Aditya Solanki',
-    username: '@iamAsol',
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: 'https://avatar.vercel.sh/jill'
-  },
-  {
-    name: 'Piyush Parmar',
-    username: '@chiragP',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/john'
-  },
-  {
-    name: 'Aditya Sharma',
-    username: '@adityaChinu',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/jane'
-  },
-  {
-    name: 'Vikas Jain',
-    username: '@vksJain',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/jenny'
-  },
-  {
-    name: 'Rajdeep Porwal',
-    username: '@creativePorwal',
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: 'https://avatar.vercel.sh/james'
-  }
-]
-
-const firstRow = reviews.slice(0, reviews.length / 2)
-const secondRow = reviews.slice(reviews.length / 2)
- 
-const ReviewCard = ({ img, name, username, body }) => {
 
 
-  // const  getTestimonials = async()=>{
-  //   try
-  //   {
-  //     const response = await getAllTestimonials();
-  //     console.log("All Testimonials : ", response);
-  //     // data aa agaya hai backend se 
+const ReviewCard = ({ image, name, rating, review }) => {
 
-  //   }catch(err)
-  //   {
-  //     console.log("Error in fetching testimonials..");
-  //     toast.error(err);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   getTestimonials();
-  // },[])
-
+  console.log("safdssd" , image, name, rating, review)
   return (
     <figure
       className={cn(
@@ -79,36 +22,67 @@ const ReviewCard = ({ img, name, username, body }) => {
       )}
     >
       <div className='flex flex-row items-center gap-2'>
-        <img className='rounded-full' width='32' height='32' alt='' src={img} />
+        <img className='rounded-full' width='32' height='32' alt='' src={image} />
         <div className='flex flex-col justify-center space-y-0'>
           <figcaption className='text-sm font-medium text-dargGreen'>
             {name}
           </figcaption>
-          <p className='text-xs font-medium text-dargGreen'>{username}</p>
+          <p className='text-xs font-medium text-dargGreen'>
+          <ReactStars
+                count={5}
+                value={rating}
+                size={24}
+                activeColor='#ffd700'
+              />
+          </p>
         </div>
       </div>
 
-      <blockquote className='mt-5 text-sm text-theme'>{body}</blockquote>
+      <blockquote className='mt-5 text-sm text-theme'>{review}</blockquote>
     </figure>
   )
 }
 
 const Tesimonial = () => {
+  
+  const [firstRow,setFirstRow] = useState([]);
+  const [secondRow,setSecondRow] = useState([]);
+
+  const  getTestimonials = async()=>{
+    try
+    {
+      const response = await getAllTestimonials();
+      console.log("All Testimonials : ", response);
+      setFirstRow(response.slice(0, response?.length / 2));
+      setSecondRow(response.slice(response?.length / 2));
+
+    }catch(err)
+    {
+      console.log("Error in fetching testimonials..");
+      toast.error(err);
+    }
+  }
+
+  useEffect(() => {
+    getTestimonials();
+  },[])
+
   return (
     <div className='relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden '>
       <Marquee pauseOnHover className='[--duration:20s]'>
-        {firstRow.map(review => (
-          <ReviewCard key={review.username} {...review} />
+        {firstRow?.map(review => (
+          <ReviewCard key={review._id} {...review} />
         ))}
       </Marquee>
       <Marquee reverse pauseOnHover className='[--duration:20s]'>
-        {secondRow.map(review => (
-          <ReviewCard key={review.username} {...review} />
+        {secondRow?.map(review => (
+          <ReviewCard key={review._id} {...review} />
         ))}
       </Marquee>
       <div className='pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background'></div>
       <div className='pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background'></div>
     </div>
+
   )
 }
 

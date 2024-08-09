@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
 import { HashLoader } from 'react-spinners'
 import { PiSelectionSlash } from 'react-icons/pi'
+import Footer from '../../../common/Footer'
 
 const JoinUsForm = () => {
 
@@ -41,20 +42,20 @@ const JoinUsForm = () => {
 
   return (
     <div>
-      <div data-aos="fade-down" data-aos-duration='1200' className='w-11/12 max-w-maxContent mx-auto px-5 lg:px-0 mt-28'>
-      <h1 className='font-semibold leading-[40px] text-4xl md:text-6xl text-center '>Let's Create Something Awesome Together!</h1>
+      <div className='w-11/12 max-w-maxContent mx-auto px-5 lg:px-0 mt-28'>
+      <h1 data-aos="fade-down" data-aos-duration='1200' className='font-semibold leading-[40px] text-4xl md:text-6xl text-center '>Let's Create Something Awesome Together!</h1>
 
       <div className='grid grid-cols-1 lg:grid-cols-2'>
 
         {/* ---------------- IMAGE ---------------- */}
-        <div className='hidden lg:block my-auto'>
+        <div data-aos="fade-right" data-aos-duration='1200' className='hidden lg:block my-auto'>
           <figure className='rounded-lg'>
             <img src={signupImg} alt='' className='w-full rounded-l-lg ' />
           </figure>
         </div>
 
         {/* ---------------- SIGNUP FORM ---------------- */}
-        <div className='rounded-l-lg lg:pl-16 py-10'>
+        <div className='rounded-l-lg lg:pl-16 py-10' data-aos="fade-left" data-aos-duration='1200'>
         
           <form onSubmit={handleSubmit(joinUsFromSubmit)}>
             <div className='mb-5'>
@@ -139,7 +140,8 @@ const JoinUsForm = () => {
         </div>
       </div>
       </div>
-
+      
+      <Footer />
     </div>
 
     
