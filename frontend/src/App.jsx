@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import Error from './pages/Error';
 import Navbar from './components/common/Navbar';
 import NotesDetails from './pages/NotesDetails';
+import SignUp from './pages/SignUp';
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
       <Route path="/papers" element={<Papers/>} />
       <Route path="/joinus" element={<JoinUsForm/>} />
       <Route path="/login" element={<Login/>} />
+      <Route path="/signup" element={<SignUp/>} />
       <Route path="/notes/:course/:branch/:sem/:subject/:unit" element={<NotesDetails/>} />
       <Route path="*" element={<Error/>} />
       

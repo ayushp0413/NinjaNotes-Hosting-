@@ -54,7 +54,7 @@ const JoinUsForm = () => {
           </figure>
         </div>
 
-        {/* ---------------- SIGNUP FORM ---------------- */}
+        {/* ---------------- JOIN-US FORM ---------------- */}
         <div className='rounded-l-lg lg:pl-16 py-10' data-aos="fade-left" data-aos-duration='1200'>
         
           <form onSubmit={handleSubmit(joinUsFromSubmit)}>
