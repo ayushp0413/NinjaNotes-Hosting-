@@ -29,6 +29,8 @@ const Testimonial = ({ setActive }) => {
       setValue('name', '')
       setValue('rating', 0)
       setValue('review', '')
+      setActive(false);
+      
     } catch (err) {
       console.log('ERROR in TESTIMONIAL')
       toast.error(err)

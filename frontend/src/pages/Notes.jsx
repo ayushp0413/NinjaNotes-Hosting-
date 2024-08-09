@@ -2,6 +2,8 @@ import React from 'react'
 import notesImage from '../assets/images/notesImage.svg'
 import { Tree } from '@geist-ui/core'
 import { useNavigate } from 'react-router'
+import Footer from '../components/common/Footer'
+import Tesimonial from '../components/core/Home/Tesimonial'
 
 const Notes = () => {
 
@@ -15,13 +17,16 @@ const Notes = () => {
 
 
   return (
-    <div  data-aos='fade-down'
-          data-aos-duration='1200' className='w-11/12 max-w-maxContent mx-auto mt-20'>
-      <h1 className='heading my-10 text-center '>
+    <div className='mt-12'>
+      <div  className='w-11/12 max-w-maxContent mx-auto mt-20'>
+      <h1 data-aos='fade-down'
+          data-aos-duration='1200' className='heading my-10 text-center '>
         Organized university notes by subjects and departments for easy access
       </h1>
-      <div className=' text-black flex flex-col-reverse items-center justify-center  mx-auto lg:flex-row lg:items-center lg:justify-between  mb-14 px-6 md:px-0 z-10'>
+      <div  className=' text-black flex flex-col-reverse items-center justify-center  mx-auto lg:flex-row lg:items-center lg:justify-between  mb-14 px-6 md:px-0 z-10'>
         <div
+          data-aos='fade-right'
+          data-aos-duration='1200'
           className='lg:w-[50%] flex flex-col items-center justify-center p-7 lg:items-start '
         >
           <div className='flex flex-col gap-4 '>
@@ -164,11 +169,27 @@ const Notes = () => {
         </div>
 
         <img
+          data-aos='fade-left'
+          data-aos-duration='1200'
           className='h-[400px] w-[600px] rounded-[30px]'
           src={notesImage}
           alt=''
         />
       </div>
+      </div>
+
+
+      <div>ALSO GO TO OUR PYQ's SECTION</div>
+      <div className='bg-[#f3f3f3] pt-10 z-10' >
+        <div className=' mx-auto flex items-center justify-center '>
+        <span className='text-3xl font-bold bg-tempPrimary p-[6px] px-3 rounded-md w-fit mx-auto text-tempDark'>What Other Students Says</span>
+        </div>
+        <p className='para text-center w-11/12 mx-auto text-tempDark'>
+           Hear from learners who have transformed their study habits and achieved outstanding results with our resources.
+        </p>
+        <Tesimonial />
+      </div>
+      <Footer />
     </div>
   )
 }

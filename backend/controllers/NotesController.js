@@ -138,8 +138,6 @@ exports.getNotes = async(req,res) => {
     subject = subject.replaceAll("-"," ");
     unit = unit.replaceAll("-"," ");
 
-    console.log("filtered data" , course, branch, sem, subject, unit )
-
     const notes = await Note.find({
         course:course,
         branch:branch,
@@ -164,3 +162,41 @@ exports.getNotes = async(req,res) => {
     })
 }
 }
+
+exports.getNotesByCourse = async(req,res) => {
+    
+  try{
+    let {course} = req?.params;
+    console.log(course);  
+    course = course.replaceAll("-"," ");
+
+    const details = await Course.find({name:course})
+                                    .populate({
+                                      path:"branches",
+                                      populate: {
+                                        path:"semesters",
+                                        populate:{
+                                          path:"subjects",
+                                          populate:"notes"
+                                        }
+                                      }
+                                    }).exec();
+
+    console.log("NOTES FETCHED :  ", details)
+
+    return res.status(200).json({
+        success:true,
+        message:"Notes Fetched",
+        data:details,
+    })
+
+}catch(err)
+{
+    return res.status(500).json({
+        success: false,
+        message: "failed to fetch all notes."
+    })
+}
+}
+
+

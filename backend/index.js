@@ -23,9 +23,10 @@ app.use(fileUpload({
 const joinUs = require("./routes/JoinUs");
 const notes = require("./routes/Notes");
 const testimonials = require("./routes/Testimonial");
-
+const auth = require("./routes/Auth")
 
 // use routing
+app.use("/api/v1/auth", auth);
 app.use("/api/v1/join", joinUs);
 app.use("/api/v1/notes", notes);
 app.use("/api/v1/testimonials", testimonials);
