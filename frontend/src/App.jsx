@@ -11,6 +11,12 @@ import Error from './pages/Error';
 import Navbar from './components/common/Navbar';
 import NotesDetails from './pages/NotesDetails';
 import SignUp from './pages/SignUp';
+import OpenRoute from './components/core/Auth/OpenRoute';
+import PrivateRoute from './components/core/Auth/PrivateRoute';
+import ProfileDropdown from './pages/ProfileDropdown';
+import Dashboard from './pages/Dashboard';
+import MyProfile from './components/core/Dashboard/MyProfile';
+
 
 const App = () => {
 
@@ -25,13 +31,31 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/home" element={<Home/>} />
+
+      <Route path="/login" element={<OpenRoute> <Login/> </OpenRoute>} />
+      <Route path="/signup" element={<OpenRoute> <SignUp/> </OpenRoute>} />
+      
       <Route path="/notes" element={<Notes/>} />
       <Route path="/blogs" element={<Blogs/>} />
       <Route path="/papers" element={<Papers/>} />
       <Route path="/joinus" element={<JoinUsForm/>} />
-      <Route path="/login" element={<Login/>} />
-      <Route path="/signup" element={<SignUp/>} />
       <Route path="/notes/:course/:branch/:sem/:subject/:unit" element={<NotesDetails/>} />
+      
+      {/* This is only for that two dropdown buttons */}
+      <Route path="/dashboard/my-profile" element={
+                                       <OpenRoute>
+                                        <ProfileDropdown/>  
+                                       </OpenRoute> 
+        } /> 
+
+      {/* Dashboard Routes using outlet and nested Routes*/}
+      <Route element={<PrivateRoute><Dashboard/></PrivateRoute>} >
+        <Route path='/dashboard/myProfile'  element={<MyProfile/>} />
+      </Route>
+      
+      
+      
+      
       <Route path="*" element={<Error/>} />
       
     </Routes>

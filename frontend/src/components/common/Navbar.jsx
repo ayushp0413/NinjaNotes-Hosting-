@@ -3,9 +3,14 @@ import logo from '../../assets/images/tempLogo.svg'
 import { Link } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { ImCross } from "react-icons/im";
+import { useSelector } from 'react-redux';
+import ProfileDropdownComponent from '../core/Auth/ProfileDropdownComponent';
+import { setLoading } from '../../slices/authSlice';
 
 const Navbar = () => {
-  const token = null // it will come from redux
+
+  const {token} = useSelector((state) => state.auth);
+  const {user} = useSelector((state) => state.profile);
 
   const MenuRef = useRef(null)
   const handleMenu = () => MenuRef.current.classList.toggle('show__menu')
@@ -55,6 +60,9 @@ const Navbar = () => {
           ) : (
             <div></div>
           )}
+          {
+            token!=null  && ( <ProfileDropdownComponent/>)
+          }
         </div>
       </div>
     </div>

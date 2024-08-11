@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import img from '../assets/images/loginImage.svg'
+import toast from 'react-hot-toast'
+import { login } from '../services/operations/authAPI'
+import { useDispatch } from "react-redux";
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -9,19 +13,24 @@ const Login = () => {
   })
 
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
   function inputHandler(event){
     setFormData({ ...formData, [event.target.name]: event.target.value })
   }
 
-  function submitHandler(event){
+  async function submitHandler(event){
     event.preventDefault();
-    setLoading(true);
-
-    // Baaki ka tu karlena ab
-    // toaster use kar lena agar error aaye toh
-
-
+    try{
+      setLoading(true);
+      await login(formData, navigate, dispatch);
+      setLoading(false);
+    }catch(err)
+    {
+      console.log("Error in login");
+      toast.error("Login Failed");
+    }
   }
 
 

@@ -9,7 +9,7 @@ import Footer from '../../../common/Footer'
 
 const JoinUsForm = () => {
 
-  
+   
   const navigate = useNavigate();
   const {register, handleSubmit, reset, formState:{errors, isSubmitSuccessful}} = useForm();
   const [loading, setLoading] = useState(false);
