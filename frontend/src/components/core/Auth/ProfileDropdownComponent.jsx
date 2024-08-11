@@ -33,12 +33,12 @@ const ProfileDropdownComponent = () => {
         </div>
         {
           active && (   
-            <div className=' absolute top-[3.7rem] flex flex-col justify-center items-start z-[1000] overflow-hidden rounded-md border-2 px-3 border-tempSecondary'
+            <div className=' absolute top-[3.7rem] flex flex-col justify-center items-start z-[1000] overflow-hidden rounded-md border-2  border-tempPrimary'
                onClick={(e) => e.stopPropagation()}
                ref={ref}
               >
                 <Link to="/dashboard/myProfile">
-                  <div className='flex gap-1 justify-center items-center text-tempDark font-semibold' onClick={() => {setActive(false)}}>
+                  <div className='flex gap-1 justify-center px-4 py-1 items-center hover:bg-tempSecondary transition duration-200 ease-in text-tempDark font-semibold' onClick={() => {setActive(false)}}>
                     <VscDashboard size={19}/>
                     <button>Dashboard</button>
                   </div>
@@ -48,7 +48,7 @@ const ProfileDropdownComponent = () => {
                   dispatch(logout(navigate))
                   setActive(false)
                   }}
-                  className='flex gap-1 justify-center items-center text-tempDark font-semibold'
+                  className='flex gap-1 justify-center px-[30px] py-1 items-center hover:bg-tempSecondary transition duration-200 ease-in text-tempDark font-semibold'
                   >
                   <VscSignOut size={19}/>
                   <button>Logout</button>
