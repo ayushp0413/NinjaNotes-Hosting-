@@ -1,5 +1,11 @@
 const BASE_URL = "http://localhost:5000/api/v1"
 
+// AUTH 
+export const authEndpoints = {
+    LOGIN_API : BASE_URL + "/auth/login",
+    SIGN_UP : BASE_URL + "/auth/signup",
+}
+
 // JOIN US 
 export const joinUsEndpoints = {
     JOIN_US_API : BASE_URL + "/join/joinUs",

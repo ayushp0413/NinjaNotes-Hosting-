@@ -1,7 +1,7 @@
 import {toast} from "react-hot-toast"
 import { apiConnector } from "../apiConnector";
 import { joinUsEndpoints } from "../apis"
-import { data } from "autoprefixer";
+
 
 const { JOIN_US_API , GET_ALL_JOIN_US_MESSAGES} = joinUsEndpoints;
 

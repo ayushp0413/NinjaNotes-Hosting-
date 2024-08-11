@@ -1,29 +1,42 @@
 import React, { useState } from 'react'
 import img from '../assets/images/signupImage.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { singUp } from '../services/operations/authAPI';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
 
     const [loading, setLoading] = useState(false);
-
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '',
         password: '',
-        confirmPasword: '',
+        confirmPassword: '',
     })
 
     function inputHandler(event){
         setFormData({...formData, [event.target.name] : event.target.value})
     }
 
-    function submitHandler(event){
-        event.preventDefault();
+    const signUpServices = async(formData) => {
+      try
+      {
         setLoading(true);
+        await singUp(formData, navigate);
+        setLoading(false);
+      }catch(err)
+      {
+        toast.error("ERROR");
+        console.log("Sign up error ...");
+      }
+    }
 
-        // Again yaha ka bhi tu hi handle kar lena
-        
+    function submitHandler(event){
+      event.preventDefault();
+      setLoading(true);
+      console.log("DATA : ", formData);
+      signUpServices(formData); 
     }
 
 
@@ -68,16 +81,6 @@ const SignUp = () => {
               />
             </div>
             <div className="mb-5">
-              <input type="tel"
-                placeholder="Enter your Phone No."
-                name="phone"
-                value={formData.phone}
-                onChange={inputHandler}
-                className="w-full pr-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer"
-                required
-              />
-            </div>
-            <div className="mb-5">
               <input type="password"
                 placeholder="Password"
                 name="password"
@@ -88,17 +91,15 @@ const SignUp = () => {
               />
             </div>
             <div className="mb-5">
-              <input type="password"
+              <input type=""
                 placeholder="Confirm Password"
                 name="confirmPassword"
-                value={formData.confirmPasword}
+                value={formData.confirmPassword}
                 onChange={inputHandler}
                 className="w-full pr-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer"
                 required
               />
             </div>
-
-            
 
             <div className="mt-7">
             <button
