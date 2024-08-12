@@ -7,6 +7,7 @@ import { FaInstagram } from 'react-icons/fa'
 import { FaWhatsapp } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { teamData } from '../../../assets/data/teamData'
+import HighlightText from '../../common/HighlightText';
 
 const OurTeam = () => {
   return (
@@ -57,6 +58,8 @@ const TeamCard = ({ img, name, about, description, link1, link2, link3 }) => {
         <div className='flex flex-col justify-end p-3 gap-4 text-tempDark'>
           <div className=''>
             <h3 className='text-2xl md:text-3xl font-gorastek text-tempDark '>{name}</h3>
+
+            
 
             <p className='mb-[-5px] mt-[-12px] font-medium text-sm '>{about}</p>
 

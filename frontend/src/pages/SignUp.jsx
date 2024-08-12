@@ -3,6 +3,7 @@ import img from '../assets/images/signupImage.svg'
 import { Link, useNavigate } from 'react-router-dom';
 import { singUp } from '../services/operations/authAPI';
 import toast from 'react-hot-toast';
+import HighlightText from '../components/common/HighlightText';
 
 const SignUp = () => {
 
@@ -47,16 +48,16 @@ const SignUp = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 mt-20 ">
 
         {/* =============== IMG BOX =============== */}
-        <div className="hidden lg:block bg-primaryColor rounded-l-lg">
+        <div data-aos='fade-right' data-aos-duration='1200' className="hidden lg:block bg-primaryColor rounded-l-lg">
           <figure className='rounded-lg'>
-            <img src={img} alt="" className='w-full rounded-l-lg mt-24' />
+            <img src={img} alt="" width={540} className='rounded-l-lg mt-24' />
           </figure>
         </div>
 
         {/* =============== SIGNUP FORM =============== */}
-        <div className="rounded-lg lg:pl-16 py-10 p-4">
+        <div className=" w-full max-w-[570px] mx-auto  rounded-lg shadow-md border-2 p-6 px-10 mt-4">
           <h3 className='text-headingColor text-[22px] leading-9 font-bold mb-10 '>
-            Create an <span className='text-tempPrimary'>Account</span>
+            Create an <HighlightText text={"Account"} className={"text-3xl"} />
           </h3>
 
           <form onSubmit={submitHandler}>

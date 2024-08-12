@@ -5,12 +5,11 @@ import { setToken }  from "../../slices/authSlice"
 import { setUser } from "../../slices/profileSlice"
 
 
-const {LOGIN_API , SIGN_UP} = authEndpoints;
+const {LOGIN_API , SIGN_UP, FORGOT_PASSWORD_API , RESET_PASSWORD_API} = authEndpoints;
 
 export const singUp = async(formData, navigate) => {
     
     const toastId = toast.loading("Loading...");
-    let result =[];
     try
     {
         const response = await apiConnector("POST", SIGN_UP, formData);
@@ -26,7 +25,7 @@ export const singUp = async(formData, navigate) => {
     }catch(error)
     {
         console.log("SIGNUP API ERROR............", error)
-        toast.error(error)
+        toast.error(error?.response?.data?.message);
     }
     toast.remove(toastId);
 }
@@ -39,11 +38,11 @@ export const login = async(formData, navigate, dispatch) => {
         const response = await apiConnector("POST", LOGIN_API, formData);
         console.log("RESPONSE of LOGIN API : ", response);
 
-        if (!response.data.success) {
-            throw new Error(response.data.message)
+        if (!response?.data?.message) {
+            throw new Error(response?.data?.message)
         }
 
-        toast.success(response?.data?.message || "Message Saved"); 
+        toast.success(response?.data?.message || "Login Successfully"); 
         dispatch(setToken(response?.data?.token));
         
         const userImage = response.data?.exsistingUser?.image
@@ -61,7 +60,7 @@ export const login = async(formData, navigate, dispatch) => {
     }catch(error)
     {
         console.log("LOGIN API ERROR............", error)
-        toast.error(error)
+        toast.error(error?.response?.data?.message);
     }
     toast.remove(toastId);
 }
@@ -78,3 +77,48 @@ export function logout(navigate) {
     }
 }
   
+export const forgotPassword = async(email) => {
+    
+    const toastId = toast.loading("Loading...");
+    console.log("email : ", email);
+    try
+    {
+        const response = await apiConnector("POST", FORGOT_PASSWORD_API, {email});
+        console.log("RESPONSE of FORGOT PASSWORD API : ", response);
+
+        if (!response.data.success) {
+            throw new Error(response.data.message)
+        }
+        toast.success(response?.data?.message || "Check your Email"); 
+        console.log("URL for reset Password : ", response?.data?.url);
+
+    }catch(error)
+    {
+        console.log("FORGOT PASSWORD API ERROR............", error)
+        toast.error(error)
+    }
+    toast.remove(toastId);
+}
+
+export const resetPassword = async(password, confirmPassword, token) => {
+    
+    const toastId = toast.loading("Loading...");
+    console.log("PRINTING data : ", password, confirmPassword, token)
+
+    try
+    {
+        const response = await apiConnector("POST", RESET_PASSWORD_API, {password, confirmPassword, token});
+        console.log("RESPONSE of RESET PASSWORD API : ", response);
+
+        if (!response.data.success) {
+            throw new Error(response.data.message)
+        }
+        toast.success(response?.data?.message || "Password Updated Sussessfully"); 
+        
+    }catch(error)
+    {
+        console.log("RESET PASSWORD API ERROR............", error)
+        toast.error(error)
+    }
+    toast.remove(toastId);
+}

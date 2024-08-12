@@ -5,6 +5,8 @@ import Particles from '../../magicui/Particles'
 import heroImg from "../../../assets/images/1.png"
 import ParticlesBackground from  "../../Particles/ParticlesBackground"
 import ServiceCard from './ServiceCard'
+import HighlightText from '../../common/HighlightText'
+import CountUp from "react-countup"
 
 const HeroSection = () => {
 
@@ -27,7 +29,7 @@ const HeroSection = () => {
         <div className='relative mx-auto w-11/12 max-w-maxContent mt-[11.2rem] pt-[7.7rem] text-tempDark flex flex-col justify-between gap-y-6 items-center lg:flex-row '>
           <div data-aos="fade-right" data-aos-duration='1200' className='lg:w-[50%] max-w-maxContent flex flex-col items-center lg:items-start gap-y-5'>
             <h2  className='text-tempDark font-semibold text-5xl md:text-6xl text-center lg:text-left w-full'>
-              Unlock Your Academic Potential with Us
+              Unlock Your <HighlightText text={" Academic Potential "} className={"text-6xl"}/>  with Us
             </h2>
             <p  className='para text-center lg:text-left text-tempDark'>
               Welcome to our notes website, where you can access a wide range of
@@ -50,18 +52,19 @@ const HeroSection = () => {
             {/* Number Ticker */}
             <div className='flex gap-14 justify-center items-center md:justify-start'>
               <div>
-                <h2 className='font-bold text-offWhite'>
-                  <NumberTicker value={50}/>+
+                <h2 className='font-bold text-tempDark'>
+                   <CountUp start={-100} end={30} duration={2.75} suffix=" +"></CountUp>
                 </h2>
                 <p className=' text-dargGreen font-semibold mt-[-24px]'>Subjects</p>
               </div>
               <div>
-                <h2 className='font-bold text-offWhite'>
-                  <NumberTicker value={100} />+
+                <h2 className='font-bold text-tempDark'>
+                  <CountUp start={-100} end={50} duration={3.75} suffix=" +"></CountUp>
                 </h2>
-                <p className=' text-dargGreen font-semibold pl-[6px] mt-[-24px]'>Papers</p>
+                <p className=' text-dargGreen font-semibold pl-[6px] mt-[-24px]'>Notes</p>
               </div>
             </div>
+
           </div>
 
           <div data-aos="fade-left" data-aos-duration='1200' className='pt-10 md:pt-0  '>

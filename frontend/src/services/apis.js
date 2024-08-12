@@ -4,6 +4,8 @@ const BASE_URL = "http://localhost:5000/api/v1"
 export const authEndpoints = {
     LOGIN_API : BASE_URL + "/auth/login",
     SIGN_UP : BASE_URL + "/auth/signup",
+    FORGOT_PASSWORD_API : BASE_URL + "/auth/forgotPassword",
+    RESET_PASSWORD_API : BASE_URL + "/auth/resetPassword" 
 }
 
 // JOIN US 

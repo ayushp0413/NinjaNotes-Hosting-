@@ -10,6 +10,7 @@ import JoinUs from '../components/core/Home/Join Us/JoinUs'
 import JoinUsForm from '../components/core/Home/Join Us/JoinUsForm'
 import { useState } from 'react'
 import Login from './Login'
+import HighlightText from '../components/common/HighlightText'
 
 
 const Home = () => {
