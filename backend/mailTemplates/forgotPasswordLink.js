@@ -1,11 +1,10 @@
-
-exports.joinusEmail = (name) => {
+exports.forgotPasswordLink = (name,url) => {
 	return `<!DOCTYPE html>
     <html>
     
     <head>
         <meta charset="UTF-8">
-        <title>Thanks to Join Us - Ninja Notes</title>
+        <title>Forget Password Confirmation</title>
         <style>
             body {
                 background-color: #ffffff;
@@ -57,20 +56,20 @@ exports.joinusEmail = (name) => {
     <body>
         <div class="container">
             <a href="https://studynotion-edtech-project.vercel.app"><img class="logo"
-                    src="https://res.cloudinary.com/dex0vcx6i/image/upload/v1722692172/logo_yfqpty.png" alt="Ninja Notes Logo"></a>
-            <div class="message">Join our Team form Ninja Notes </div>
+                  src="https://res.cloudinary.com/dex0vcx6i/image/upload/v1722692172/logo_yfqpty.png"  alt="Ninja Notes Logo"></a>
+            <div class="message">Reset password Link</div>
             <div class="body">
                 <p>Hey ${name},</p>
-                <p>Thank you for choosing us. Ninja Notes will process your details and update you soon.
-                 Stay tuned and have a good day. 
+                <p>For updating your password click on the link <span class="highlight">${url}</span>.
                 </p>
-                <p>If you did not request for Join Us , please contact us immediately to secure your account.</p>
+                <p>If you did not request this reset password , please contact us immediately to secure your account.</p>
             </div>
             <div class="support">If you have any questions or need further assistance, please feel free to reach out to us
                 at
-                <a href="mailto:info@ninjanotes.com">Infoninjanotes@gmail.com</a>. We are here to help!
+                <<a href="mailto:info@ninjanotes.com">Infoninjanotes@gmail.com</a>. We are here to help!
             </div>
         </div>
     </body>
+    
     </html>`;
 };

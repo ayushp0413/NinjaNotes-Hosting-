@@ -4,7 +4,7 @@ import img from '../assets/images/loginImage.svg'
 import toast from 'react-hot-toast'
 import { login } from '../services/operations/authAPI'
 import { useDispatch } from "react-redux";
-
+import HighlightText from "../components/common/HighlightText"
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -53,8 +53,7 @@ const Login = () => {
         <div className='w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10 border p-4 '>
           <h3 className='text-left text-[22px] leading-9 font-bold mb-10 '>
             Hello!
-            <span className='text-tempPrimary px-2 '>Welcome</span>
-            Back
+            <HighlightText text={" Welcome Back"} className={"text-3xl"} />             
           </h3>
 
           <form className='py-4 md:py-0' onSubmit={submitHandler}>
@@ -100,7 +99,9 @@ const Login = () => {
             </p>
 
             {/* Forgot password pe modal ya page vo dekh lena , abhi khali rakh rha hu */}
-            <p className='text-tempDark -mt-5 hover:text-tempPrimary cursor-pointer'>Forgot Password ?</p>
+            <Link to="/forgot-password">
+              <p  className='text-tempDark -mt-5 hover:text-tempPrimary cursor-pointer'>Forgot Password ?</p>
+            </Link>
             </div>
           </form>
         </div>

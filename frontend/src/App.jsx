@@ -16,6 +16,8 @@ import PrivateRoute from './components/core/Auth/PrivateRoute';
 import ProfileDropdown from './pages/ProfileDropdown';
 import Dashboard from './pages/Dashboard';
 import MyProfile from './components/core/Dashboard/MyProfile';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 
 
 const App = () => {
@@ -34,6 +36,8 @@ const App = () => {
 
       <Route path="/login" element={<OpenRoute> <Login/> </OpenRoute>} />
       <Route path="/signup" element={<OpenRoute> <SignUp/> </OpenRoute>} />
+      <Route path="/forgot-password" element={<OpenRoute> <ForgotPassword/> </OpenRoute>} />
+      <Route path="/update-password/:token" element={<ResetPassword/>} />
       
       <Route path="/notes" element={<Notes/>} />
       <Route path="/blogs" element={<Blogs/>} />
@@ -59,6 +63,7 @@ const App = () => {
       <Route path="*" element={<Error/>} />
       
     </Routes>
+
    </div>
   )
 }
