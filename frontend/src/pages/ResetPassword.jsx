@@ -32,45 +32,51 @@ function ResetPassword() {
 
   return (
      <div className='w-11/12 max-w-maxContent mx-auto h-screen flex flex-col justify-center items-center '>
-            <div className='lg:w-[350px]  flex flex-col gap-y-2'>
+            <div className='w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10 border-2 border-tempPrimary p-4 '>
 
             <h1 className='font-bold text-xl'> Choose your password</h1>
             <p className='text-sm'>Almost done. Enter your new password and youre all set.</p>
             <form onSubmit={submitHandler} className='flex flex-col mt-3'>
 
-                <label>
-                    <p className='text-sm'>New Password<span  className='text-red-600'>*</span></p>
-                    <input className='p-2 outline-none border-0 rounded-md bg-tempSecondary w-full mb-3 border-b-2  hover:border-blue-25 transition-all duration-200'
-                        required
-                        type='password'
-                        name='password'
-                        value={password}
-                        onChange={(e)=> setPassword(e.target.value)}
-                        placeholder='Enter your new password'
-                    >
-                    </input>
-                </label>   
-                <label>
-                    <p className='text-sm text-richblack-300'>Confirm new Password<span  className=' text-red-600'>*</span></p>
-                    <input className='p-2 outline-none border-0 rounded-md bg-tempSecondary w-full mb-3 border-b-2 hover:border-blue-25 transition-all duration-200'
-                        required
-                        type='password'
-                        name='confirmPassword'
-                        value={confirmPassword}
-                        onChange={(e)=> setConfirmPassword(e.target.value)}
-                        placeholder='Re-enter your new password'
-                    >
-                    </input>
-                </label>   
+
+            <div className='mb-5'>
+              <input
+                type='password'
+                placeholder=' Enter your new password'
+                name='email'
+                value={password}
+                onChange={(e)=> setPassword(e.target.value)}
+                className='w-full py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
+                required
+              />
+            </div>
+
+            <div className='mb-5'>
+              <input
+                type='password'
+                placeholder='Re-enter your New Password'
+                name='confirmPassword'
+                value={confirmPassword}
+                onChange={(e)=> setConfirmPassword(e.target.value)}
+                className='w-full py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
+                required
+              />
+            </div>
+ 
         
-                <button className=' bg-tempPrimary rounded-md p-2 font-semibold transition-all duration-200'>
-                    Reset Password
-                </button>
+            <div className='mt-7'>
+              <button
+                type='submit'
+                className='w-full bg-tempSecondary hover:bg-tempPrimary border border-tempPrimary transition duration-300 ease-in font-semibold  text-[18px] leading-[30px] rounded-lg px-4 py-3 '
+              >
+                Reset Password
+              </button>
+            </div>
             </form>
 
-            <Link to="/login" className='flex flex-row gap-2 items-center '>
+            <Link to="/login" className='flex flex-row gap-2 items-center'>
                 <IoArrowBack className='text-sm'/>
-                <p className='text-xs'>Back to login</p>
+                <p className='text-xs hover:underline'>Back to login</p>
             </Link>
             </div>
         

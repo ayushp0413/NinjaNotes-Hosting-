@@ -98,7 +98,7 @@ const Login = () => {
               </Link>
             </p>
 
-            {/* Forgot password pe modal ya page vo dekh lena , abhi khali rakh rha hu */}
+          
             <Link to="/forgot-password">
               <p  className='text-tempDark -mt-5 hover:text-tempPrimary cursor-pointer'>Forgot Password ?</p>
             </Link>

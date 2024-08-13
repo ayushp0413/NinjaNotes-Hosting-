@@ -11,6 +11,7 @@ import JoinUsForm from '../components/core/Home/Join Us/JoinUsForm'
 import { useState } from 'react'
 import Login from './Login'
 import HighlightText from '../components/common/HighlightText'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -80,9 +81,11 @@ const Home = () => {
             <p className='para text-center lg:text-left'>
               High-quality notes, previous year papers, and educational blogs for Engineering and Pharmacy students. Access a wide range of materials to enrich your learning experience. 
             </p>
-            <button className=' bg-dargGreen px-[2rem] text-white rounded-xl py-2 mt-4'>
-              Learn More
-            </button>
+            <Link to='/notes'>
+                <button className='btn hover:bg-tempPrimary bg-tempSecondary border-2 border-tempPrimary transition-all duration-300'>
+                  Learn More
+                </button>
+              </Link>
 
           </div>
         </div>
