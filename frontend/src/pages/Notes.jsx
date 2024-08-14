@@ -1,19 +1,41 @@
-import React from 'react'
+import React ,{ useState, useEffect } from 'react'
 import notesImage from '../assets/images/notesImage.svg'
 import { Tree } from '@geist-ui/core'
 import { useNavigate } from 'react-router'
 import Footer from '../components/common/Footer'
-import Tesimonial from '../components/core/Home/Tesimonial'
 import NotesCard from '../components/common/NotesCard'
+import toast from 'react-hot-toast'
+import { getAllSpecialNotes } from '../services/operations/getNotesForSubjects'
+import HighlightText from '../components/common/HighlightText'
 
 const Notes = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [specialNotes, setSpecialNotes] = useState([]);
 
   const handler = path => {
-    console.log('PATH: ', path)
     let url = path.split(' ').join('-')
     navigate(url)
   }
+
+  const getSpecialNotes = async() => {
+    try
+    {
+      const result = await getAllSpecialNotes();
+      if(!result){
+        toast.error("Unable to fetch notes");
+      }
+      setSpecialNotes(result);
+
+    }catch(err)
+    {
+      console.log("Error in fetching Special Notes");
+      toast.error("Unable to fetch notes");
+    }
+  }
+
+  useEffect(() => {
+      getSpecialNotes(); 
+  },[])
 
   return (
     <div className='mt-12'>
@@ -180,32 +202,20 @@ const Notes = () => {
       {/* ------------------------- NEW CHANGES ------------------------- */}
 
       <div className='w-11/12 max-w-maxContent mx-auto p-8'>
-      <h3 className="heading text-center pb-10">Also checkout our Special notes curated for Placement Prepration</h3>
-      <p className='para text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia velit vitae facere, suscipit incidunt quam libero iste rem esse nam!</p>
-
-      <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-20'>
-        <NotesCard/>
-        <NotesCard/>
-        <NotesCard/>
-
-      </div>
-
+        <h3 className="heading text-center">Checkout our <HighlightText text={" Special "} /> notes curated for <HighlightText  text={" Placement "}/> Prepration</h3>
+        {/* <p className='para text-center max-w-[1000px] mx-auto -mt-1'>Explore our specially curated notes designed to give you an edge in placement preparation. These resources are tailored to help you master key concepts, and tackle interview questions.</p> */}
+        <div className=' flex flex-row flex-wrap justify-center items-center gap-x-12 gap-y-12 w-full mt-10'>
+        {
+          specialNotes?.map((notes, index) => (
+              <div key={index}>
+                  <NotesCard notes={notes} />
+              </div>))
+        }
+        </div>
+        
       </div>
 
       {/* ------------------------- NEW CHANGES ------------------------- */}
-
-      <div className='bg-[#f3f3f3] pt-10 z-10'>
-        <div className=' mx-auto flex items-center justify-center '>
-          <span className='text-3xl font-bold bg-tempPrimary p-[6px] px-3 rounded-md w-fit mx-auto text-tempDark'>
-            What Other Students Says
-          </span>
-        </div>
-        <p className='para text-center w-11/12 mx-auto text-tempDark'>
-          Hear from learners who have transformed their study habits and
-          achieved outstanding results with our resources.
-        </p>
-        <Tesimonial />
-      </div>
       <Footer />
     </div>
   )

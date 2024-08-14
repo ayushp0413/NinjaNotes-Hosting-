@@ -57,7 +57,7 @@ const JoinUsForm = () => {
         {/* ---------------- JOIN-US FORM ---------------- */}
         <div className='rounded-l-lg lg:pl-16 py-10' data-aos="fade-left" data-aos-duration='1200'>
         
-          <form onSubmit={handleSubmit(joinUsFromSubmit)}>
+          <form onSubmit={handleSubmit(joinUsFromSubmit)} className=' shadow-lg px-10 py-4 pb-7'>
             <div className='mb-5'>
               <input
                 type='text'

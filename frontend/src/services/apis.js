@@ -17,6 +17,7 @@ export const joinUsEndpoints = {
 // Notes APIS
 export const notesEndpoints = {
     GET_ALL_NOTES : BASE_URL + "/notes/getNotes",
+    GET_ALL_SPECIAL_NOTES_API : BASE_URL + "/specialNotes/getSpecialNotes"
 }
 
 // Rating and Reviews 
