@@ -424,16 +424,6 @@ const Notes = () => {
         />
       </div>
     </div>
-    <div>ALSO GO TO OUR NOTES SECTION</div>
-      <div className='bg-[#f3f3f3] pt-10 -mt-4 z-10' >
-        <div className=' mx-auto flex items-center justify-center '>
-        <span className='text-3xl font-bold bg-tempPrimary p-[6px] px-3 rounded-md w-fit mx-auto text-tempDark'>What Other Students Says</span>
-        </div>
-        <p className='para text-center w-11/12 mx-auto text-tempDark'>
-           Hear from learners who have transformed their study habits and achieved outstanding results with our resources.
-        </p>
-        <Tesimonial />
-      </div>
       <Footer />
    </>
   )
