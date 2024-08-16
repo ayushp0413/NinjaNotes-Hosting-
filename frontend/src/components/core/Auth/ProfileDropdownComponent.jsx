@@ -24,7 +24,7 @@ const ProfileDropdownComponent = () => {
   }
 
   return (
-    <div className='text-black flex flex-col justify-center items-center'>
+    <div className='text-black flex flex-col justify-center items-center '>
         <div className=' rounded-full border-4 border-tempPrimary cursor-pointer'
           onClick={() => {setActive(true)}}  
         >
@@ -33,7 +33,7 @@ const ProfileDropdownComponent = () => {
         </div>
         {
           active && (   
-            <div className=' absolute top-[3.7rem] flex flex-col justify-center items-start z-[1000] overflow-hidden rounded-md border-2  border-tempPrimary'
+            <div className=' absolute top-[3.7rem] flex flex-col justify-center items-start z-[1000] overflow-hidden rounded-md border-2  border-tempPrimary bg-white'
                onClick={(e) => e.stopPropagation()}
                ref={ref}
               >
