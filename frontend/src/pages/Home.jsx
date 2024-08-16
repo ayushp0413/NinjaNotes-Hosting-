@@ -12,6 +12,7 @@ import { useState } from 'react'
 import Login from './Login'
 import HighlightText from '../components/common/HighlightText'
 import { Link } from 'react-router-dom'
+import SidebarDemo from '../components/aceternity/sidebar/sidebarComponent'
 
 
 const Home = () => {
@@ -106,6 +107,7 @@ const Home = () => {
 
       {/*---------------------- JOIN US SECTION ----------------------*/}
       <JoinUs />
+
 
       {/* ------------------ FOOTER ------------------------------------- */}
       <Footer />

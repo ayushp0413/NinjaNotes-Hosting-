@@ -2,8 +2,36 @@ import React from 'react'
 
 function MyProfile() {
   return (
-    <div className='text-4xl text-black mt-40 '>
-        My Profile
+    <div className='ml-[4rem] md:ml-[20rem]  text-4xl text-black'>
+        <div className=''>
+            MyProfile Outlet
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+         
+        </div>
     </div>
   )
 }
