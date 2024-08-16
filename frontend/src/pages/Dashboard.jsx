@@ -1,12 +1,14 @@
 import React from 'react'
 import { Outlet } from 'react-router'
-
+import SidebarDemo from '../components/aceternity/sidebar/sidebarComponent'
+import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
+
+  const {user} = useSelector((state) => state.profile);
   return (
     <div className='text-black text-3xl mt-20'>
-        {/* Alag se component banega side baar jesa lekin abhi side bar nahi banayenge usko handle krna complex hota hai , apn nav jesa bana lenge */}
-        {/* <div>Options to change in profile -- my profile, settings, logout, my blogs , my notes etc.</div> */}
+        <SidebarDemo img={user?.image} name={user?.name} />
         <div>
           <Outlet />
         </div>

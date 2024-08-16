@@ -18,6 +18,9 @@ import Dashboard from './pages/Dashboard';
 import MyProfile from './components/core/Dashboard/MyProfile';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
+import MySettings from './components/core/Dashboard/MySettings';
+import MyNotes from './components/core/Dashboard/MyNotes';
+import MyBlogs from './components/core/Dashboard/MyBlogs';
 
 
 const App = () => {
@@ -55,6 +58,9 @@ const App = () => {
       {/* Dashboard Routes using outlet and nested Routes*/}
       <Route element={<PrivateRoute><Dashboard/></PrivateRoute>} >
         <Route path='/dashboard/myProfile'  element={<MyProfile/>} />
+        <Route path='/dashboard/settings'  element={<MySettings/>} />
+        <Route path='/dashboard/notes'  element={<MyNotes/>} />
+        <Route path='/dashboard/blogs'  element={<MyBlogs/>} />
       </Route>
       
       
