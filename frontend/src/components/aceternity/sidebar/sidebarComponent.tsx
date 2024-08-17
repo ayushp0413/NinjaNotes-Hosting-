@@ -10,6 +10,7 @@ import {
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cn } from "../../../lib/utils";
+import logoImg from '../../../assets/images/minLogo.svg';
 import {AiOutlineBook} from "react-icons/ai"
 
 
@@ -55,7 +56,7 @@ export default function SidebarDemo({img, name}) {
   return (
     <div
       className={cn(
-        "fixed rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-[27opx] flex-1  mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
+        "fixed rounded-md flex flex-col md:flex-row bg-tempSecondary dark:bg-neutral-800 w-[27opx] flex-1  mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
         "h-screen " // for your use case, use `h-screen` instead of `h-[60vh]`
       )}
     >
@@ -99,7 +100,7 @@ export const Logo = () => {
       to="/home"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
-      <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0"/>
+      <img src={logoImg} className="h-5 w-6 dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" /> 
       <motion.span
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
@@ -116,7 +117,7 @@ export const LogoIcon = () => {
       to="#"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
-      <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
+      <img src={logoImg} className="h-5 w-6 dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" /> 
     </Link>
   );
 };

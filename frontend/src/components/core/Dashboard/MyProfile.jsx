@@ -12,7 +12,7 @@ function MyProfile () {
     <div className='ml-[4rem] md:ml-[20rem] mb-2'>
       <div className=' '>
         {/* Profile Details */}
-        <div className='p-4 flex flex-col lg:flex-row items-center gap-10 bg-slate-200'>
+        <div className='p-4 flex flex-col lg:flex-row items-center rounded-md gap-10 bg-[#f3f3f3]'>
           {/* Profile Image */}
           <div className='h-[350px] w-[80%] lg:w-[40%] border-2 border-black bg-pink-400 rounded-md'></div>
 
