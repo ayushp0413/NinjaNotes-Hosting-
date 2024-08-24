@@ -42,8 +42,8 @@ const Testimonial = ({ setActive }) => {
       <div className='fixed inset-0 grid place-items-center z-[1000] overflow-auto bg-white bg-opacity-10 backdrop-blur-sm'>
         <div className='flex flex-col bg-tempSecondary  rounded-md overflow-hidden border-2 border-tempPrimary  max-w-[400px] md:max-w-[650px] md:w-[540px]'>
           {/* Modal header */}
-          <div className='flex flex-col-reverse py-0 justify-between bg-tempPrimary p-2'>
-            <p className='para text-2xl text-center mx-auto font-semibold mt-[-10px] pt-2 '>
+          <div className='flex justify-between items-center bg-tempPrimary'>
+            <p className='para text-2xl text-center mx-auto font-semibold '>
               Rate Ninja Notes
             </p>
             <button

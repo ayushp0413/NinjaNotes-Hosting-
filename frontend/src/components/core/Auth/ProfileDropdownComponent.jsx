@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../../services/operations/authAPI';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import {AiOutlineCaretDown} from "react-icons/ai"
+import {AiFillDashboard, AiOutlineCaretDown, AiOutlineDropbox} from "react-icons/ai"
 import { VscDashboard, VscSignOut } from "react-icons/vsc"
 import  dropdownHook  from "../../../hooks/dropdownHook"
+import { GiDrippingSword } from 'react-icons/gi';
+import { MdOutlineArrowDropDown } from "react-icons/md"
 
 const ProfileDropdownComponent = () => {
 
@@ -25,12 +27,16 @@ const ProfileDropdownComponent = () => {
 
   return (
     <div className='text-black flex flex-col justify-center items-center '>
-        <div className=' rounded-full border-4 border-tempPrimary cursor-pointer'
-          onClick={() => {setActive(true)}}  
-        >
-          <img src={user?.image} width={40} className=' rounded-full'/>   
-         
+        
+        <div onClick={() => {setActive(true)}} className='flex justify-center items-center'  >
+          <div className=' rounded-full border-4 border-tempPrimary cursor-pointer'>
+            <img src={user?.image} width={40} className=' rounded-full'/>   
+          </div>        
+          <div className=' cursor-pointer'>
+            <MdOutlineArrowDropDown size={24}/>
+          </div>
         </div>
+
         {
           active && (   
             <div className=' absolute top-[3.7rem] flex flex-col justify-center items-start z-[1000] overflow-hidden rounded-md border-2  border-tempPrimary bg-white'

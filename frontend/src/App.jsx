@@ -21,6 +21,7 @@ import ResetPassword from './pages/ResetPassword';
 import MySettings from './components/core/Dashboard/MySettings';
 import MyNotes from './components/core/Dashboard/MyNotes';
 import MyBlogs from './components/core/Dashboard/MyBlogs';
+import MyPapers from './components/core/Dashboard/MyPapers';
 
 
 const App = () => {
@@ -60,6 +61,7 @@ const App = () => {
         <Route path='/dashboard/myProfile'  element={<MyProfile/>} />
         <Route path='/dashboard/settings'  element={<MySettings/>} />
         <Route path='/dashboard/notes'  element={<MyNotes/>} />
+        <Route path='/dashboard/papers'  element={<MyPapers />} />
         <Route path='/dashboard/blogs'  element={<MyBlogs/>} />
       </Route>
       

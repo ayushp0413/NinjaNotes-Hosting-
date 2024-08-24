@@ -13,6 +13,7 @@ import Login from './Login'
 import HighlightText from '../components/common/HighlightText'
 import { Link } from 'react-router-dom'
 import SidebarDemo from '../components/aceternity/sidebar/sidebarComponent'
+import HeroHighlightDemo from '../components/aceternity/HeroHighlight/HeroHighlightComponent'
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
     <div className='relative w-screen rounded-lg bg-white md:shadow-xl flex flex-col gap-y-10'>
       {/* ---------------------- HERO SECTION ----------------------------- */}
       <HeroSection />
+      <HeroHighlightDemo />
       
 
       {/*---------------------- VELOCITY SCROLL ----------------------*/}

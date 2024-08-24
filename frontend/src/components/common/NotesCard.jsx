@@ -1,19 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img from '../../assets/images/Homepage Image.png'
+import notesImg1 from "../../assets/images/notesImg1.jpeg"
+import notesImg2 from "../../assets/images/notesImg2.jpeg"
 import { GoGoal } from 'react-icons/go'
 import { MdFolderSpecial } from 'react-icons/md'
 import { BorderBeam } from '../magicui/BorderBeam'
+import { FaRegBookmark } from "react-icons/fa";
+import { FaBookmark } from "react-icons/fa";
+import { addToCart, removeFromCart } from '../../slices/cartSlice'
+import toast from 'react-hot-toast'
+import { useDispatch } from 'react-redux'
+
 
 const NotesCard = ({notes}) => {
+
+  // const [added, setAdded] = useState(false);
+  // const dispatch = useDispatch();
+
+  // const pushToCart = () => {
+  //   setAdded(true);
+  //   dispatch(addToCart(notes));
+  // }
+  // const popFromCart = () => {
+  //   setAdded(false);
+  //   dispatch(removeFromCart(notes?._id));
+  // }
 
   return (
     <div className='relative over shadow-md rounded-md max-w-[320px] h-[420px] max-h-[420px] flex flex-col '>
       <BorderBeam size={450} duration={9} delay={5} />
-      <img className='w-full p-1 rounded-lg  h-52 rounded-t-md object-cover' src={img} alt='' />
+      <img className='w-full p-1 rounded-lg  h-52 rounded-t-md object-cover' src={notesImg1} alt='' />
 
       <div className='flex flex-col px-2 w-full h-full justify-between '>
         <h3 className='mt-1'>{notes?.subject}</h3>
         <p className='leading-4 mt-0 text-sm'>{notes?.description.substring(0,100) + "..."}</p>
+        
         <div className='flex justify-between -mt-5'>
           <div className='flex justify-center items-center gap-2'>
             <MdFolderSpecial />
@@ -25,9 +46,16 @@ const NotesCard = ({notes}) => {
             <p>{notes?.company || "Placement Essentials"}</p>
           </div>
         </div>
-        <a href={notes?.content} target='blank' className='max-w-[140px]'>
-          <button className=' bg-tempSecondary hover:bg-tempPrimary transition duration-300 border-2 border-tempPrimary rounded-md btn mb-3 '>Get Notes</button>
-        </a>
+
+        <div className='flex flex-row justify-between items-center'>
+          <a href={notes?.content} target='blank' className='max-w-[140px]'>
+            <button className=' bg-tempSecondary hover:bg-tempPrimary transition duration-300 border-2 border-tempPrimary rounded-md btn mb-3 '>Get Notes</button>
+          </a>
+          {/* {
+              added ? (<div onClick={popFromCart} className='pr-4 pb-2 cursor-pointer'><FaBookmark size={22}/></div>) : (<div onClick={pushToCart} className='pr-4 pb-2 cursor-pointer'><FaRegBookmark size={22}/></div>)
+          } */}
+        </div>
+
       </div>
     </div>
   )

@@ -6,12 +6,14 @@ import {
   IconBrandTabler,
   IconSettings,
   IconUserBolt,
+
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cn } from "../../../lib/utils";
 import logoImg from '../../../assets/images/minLogo.svg';
 import {AiOutlineBook} from "react-icons/ai"
+import { HiOutlineNewspaper } from "react-icons/hi2";
 
 
 export default function SidebarDemo({img, name}) {
@@ -23,18 +25,25 @@ export default function SidebarDemo({img, name}) {
         <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     }, 
-    {
-      label: "Settings",
-      href: "/dashboard/settings",
-      icon: (
-        <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
+    // {
+    //   label: "Edit Profile",
+    //   href: "/dashboard/settings",
+    //   icon: (
+    //     <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+    //   ),
+    // },
     {
       label: "Notes",
       href: "/dashboard/notes",
       icon: (
         <AiOutlineBook className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Papers",
+      href: "/dashboard/papers",
+      icon: (
+        <HiOutlineNewspaper className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
@@ -44,24 +53,18 @@ export default function SidebarDemo({img, name}) {
         <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
-    {
-      label: "Logout",
-      href: "#",
-      icon: (
-        <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
+    
   ];
   const [open, setOpen] = useState(false);
   return (
     <div
       className={cn(
-        "fixed rounded-md flex flex-col md:flex-row bg-tempSecondary dark:bg-neutral-800 w-[27opx] flex-1  mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
-        "h-screen " // for your use case, use `h-screen` instead of `h-[60vh]`
+        "fixed rounded-md flex flex-col md:flex-row bg-tempSecondary border-tempPrimary dark:bg-neutral-800 w-[27opx] flex-1  mx-auto border dark:border-neutral-700 overflow-hidden",
+        "h-full z-20 " // for your use case, use `h-screen` instead of `h-[60vh]`
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={false}>     
-        <SidebarBody className="justify-between border-2 rounded-md">
+        <SidebarBody className="justify-between rounded-md">
           <div className="flex flex-col flex-1 overflow-hidden"  onClick={() => setOpen(false)}>
             {open ? <Logo /> : <Logo/> }
             <div className="mt-8 flex flex-col gap-2" >

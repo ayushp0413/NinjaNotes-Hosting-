@@ -3,6 +3,11 @@ const RatingAndReviews = require('./Testimonials');
 
 const noteSchema = new mongoose.Schema(
     {
+        type:
+        {
+            type:String,
+            required:true,
+        },
         course:{
             type:String,
             required:true,
