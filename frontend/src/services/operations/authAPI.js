@@ -19,7 +19,7 @@ export const singUp = async(formData, navigate) => {
             throw new Error(response.data.message)
         }
 
-        toast.success(response?.data?.message || "Message Saved"); 
+        toast.success(response?.data?.message || "User Registered"); 
         navigate("/login");
 
     }catch(error)

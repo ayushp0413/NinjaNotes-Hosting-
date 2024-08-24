@@ -40,6 +40,9 @@ const Navbar = () => {
             <Link to={'/joinus'}>
               <li className='navLink'>Join Us</li> 
             </Link>
+            <Link to={'/dashboard/myProfile'}>
+              <li className='navLink md:hidden'>Dashboard</li> 
+            </Link>
           </ul>
         </nav>
         <span

@@ -116,7 +116,7 @@ exports.login = async (req,res)=> {
         exsistingUser.token = token;
         exsistingUser.password = undefined;
 
-        res.cookie("jwt", token, {httpsOnly: true, expiresIn: '48h'}).status(200).json({
+        res.cookie("jwt", token, {httpsOnly: true, expiresIn: '48h' }).status(200).json({
             success: true,
             message: "User LoggedIn successfully",
             exsistingUser,

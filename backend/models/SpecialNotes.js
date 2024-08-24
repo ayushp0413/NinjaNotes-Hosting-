@@ -3,6 +3,10 @@ const RatingAndReviews = require('./Testimonials');
 
 const specialNotesSchema = new mongoose.Schema(
     {
+        type: {
+            type:String,
+            required:true,
+        },
         subject:{
             type:String,
             required:true,

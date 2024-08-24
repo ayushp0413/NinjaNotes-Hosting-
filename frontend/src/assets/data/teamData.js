@@ -27,7 +27,5 @@ export const teamData = [
         link2:"github",
         link3:"insta",
         link4:"whatsapp",
-
-
     },
 ]

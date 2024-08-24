@@ -8,6 +8,15 @@ export const authEndpoints = {
     RESET_PASSWORD_API : BASE_URL + "/auth/resetPassword" 
 }
 
+// PROFILE APIS
+
+export const profileEndpoints = {
+    GET_USER_DETAILS_API : BASE_URL + "/profile/getUserDetails",
+    UPDATE_PROFILE_API : BASE_URL + "/profile/updateProfile",
+    UPDATE_PROFILE_PICTURE_API : BASE_URL + "/profile/updateProfilePicture",
+    DELETE_PROFILE_API : BASE_URL + "/profile/deleteProfile"
+}
+
 // JOIN US 
 export const joinUsEndpoints = {
     JOIN_US_API : BASE_URL + "/join/joinUs",

@@ -24,10 +24,12 @@ const joinUs = require("./routes/JoinUs");
 const notes = require("./routes/Notes");
 const specialNotes = require("./routes/SpecialNotes");
 const testimonials = require("./routes/Testimonial");
-const auth = require("./routes/Auth")
+const auth = require("./routes/Auth");
+const profile = require("./routes/Profile");
 
 // use routing
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/profile", profile);
 app.use("/api/v1/join", joinUs);
 app.use("/api/v1/notes", notes);
 app.use("/api/v1/specialNotes", specialNotes);
