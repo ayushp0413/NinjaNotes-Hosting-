@@ -29,6 +29,12 @@ export const notesEndpoints = {
     GET_ALL_SPECIAL_NOTES_API : BASE_URL + "/specialNotes/getSpecialNotes"
 }
 
+// Blogs APIS
+export const blogsEndpoints = {
+    GET_ALL_BLOGS : BASE_URL + "/blogs/getAllBlogs",
+}
+
+
 // Rating and Reviews 
 export const testimonials = {
     CREATE_RATING : BASE_URL + "/testimonials/createRatingAndReviews",
