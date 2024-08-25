@@ -14,10 +14,9 @@ const BlogDetails = () => {
   if (!blog) return <div className='loader mt-20 absolute top-[13rem] left-[45rem]'></div>;
 
   return (
-    <div className='mt-20 w-11/12 max-w-maxContent mx-auto'>
-      Entire Blog is given here console to see , style it !! 
-      <h1>{blog.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+    <div className='mt-20 w-11/12 max-w-maxContent mx-auto text-black border rounded-md shadow-md my-6 '>
+      <h1 className='text-center leading-10 my-4'>{blog.title}</h1>
+      <div className='p-4' dangerouslySetInnerHTML={{ __html: blog.content }} />
     </div>
   );
 };
