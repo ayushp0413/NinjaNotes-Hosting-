@@ -22,6 +22,7 @@ import MySettings from './components/core/Dashboard/MySettings';
 import MyNotes from './components/core/Dashboard/MyNotes';
 import MyBlogs from './components/core/Dashboard/MyBlogs';
 import MyPapers from './components/core/Dashboard/MyPapers';
+import BlogsDetails from './pages/BlogsDetails';
 
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
       
       <Route path="/notes" element={<Notes/>} />
       <Route path="/blogs" element={<Blogs/>} />
+      <Route path="/blogs/:url" element={<BlogsDetails/>} />
       <Route path="/papers" element={<Papers/>} />
       <Route path="/joinus" element={<JoinUsForm/>} />
       <Route path="/notes/:course/:branch/:sem/:subject/:unit" element={<NotesDetails/>} />

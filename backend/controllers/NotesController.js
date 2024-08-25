@@ -10,8 +10,8 @@ exports.addNotes = async(req, res) => {
 try
 {
 
-  const { course, branch, sem , subject, unit, content} = req.body;
-  if(!course || !branch || !sem || !subject || !unit || !content){
+  const {type, course, branch, sem , subject, unit, content} = req.body;
+  if(!type || !course || !branch || !sem || !subject || !unit || !content){
     return res.status(401).json({
       success:false,
       message: "All fields required",
@@ -19,6 +19,7 @@ try
   }
 
   const note = await Note.create({
+    type:type,
     course:course,
     branch:branch,
     sem:sem,
