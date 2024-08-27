@@ -15,8 +15,10 @@ const BlogDetails = () => {
 
   return (
     <div className='mt-20 w-11/12 max-w-maxContent mx-auto text-black border rounded-md shadow-md my-6 '>
-      <h1 className='text-center leading-10 my-4'>{blog.title}</h1>
+      {/* <h1 className='text-center text-tempDark leading-10 mb-4 my-6'>{blog.title}</h1> */}
       <div className='p-4' dangerouslySetInnerHTML={{ __html: blog.content }} />
+      <p className='text-tempDark text-center'>Author - {blog?.author}</p>
+
     </div>
   );
 };

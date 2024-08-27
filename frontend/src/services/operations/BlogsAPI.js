@@ -4,13 +4,20 @@ import { apiConnector } from "../apiConnector";
 
 const { GET_ALL_BLOGS } = blogsEndpoints
 
-export const getAllBlogs = async() => {
+export const getAllBlogs = async(query) => {
     
     const toastId = toast.loading("Loading...");
     let result = [];
+    console.log("query at servces : ", query);
     try
     {
-        const response = await apiConnector("GET", GET_ALL_BLOGS, null);
+        let response;
+        if(query){
+             response = await apiConnector("GET", `${GET_ALL_BLOGS}?query=${query}`, null);
+        }
+        else{
+            response = await apiConnector("GET", GET_ALL_BLOGS, null);
+        }
         console.log("RESPONSE of GET Blogs API : ", response?.data?.data);
 
         if (!response.data.success) {
@@ -18,7 +25,7 @@ export const getAllBlogs = async() => {
           }
         
         if(!response?.data?.data.length <= 0) {
-            toast.success(response?.data?.message || "DONE");  
+           console.log("Blogs fetched..")
         }
         result = response?.data?.data;
         

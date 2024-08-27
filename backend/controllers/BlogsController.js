@@ -42,8 +42,26 @@ exports.createBlog = async(req, res) => {
 
 exports.getAllBlogs = async(req, res) => {
     try{
+       
+        const query = req?.query?.query;
 
-        const blogs = await Blogs.find({});
+        let blogs;    
+        if(query)
+        {
+            blogs = await Blogs.find({
+                type:"Blogs",
+                $or: [
+                    {title:{ $regex: query, $options: "i" } },
+                    {category: { $regex: query, $options: "i" } },
+                    {tags: { $regex: query, $options: "i" } },
+                ],
+            });
+        }
+        else
+        {
+            blogs = await Blogs.find({});
+        }
+        
         return res.status(200).json({
             success:true,
             message:"Blogs Fetched",
