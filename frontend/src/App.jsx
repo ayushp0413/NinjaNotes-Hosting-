@@ -23,6 +23,8 @@ import MyNotes from './components/core/Dashboard/MyNotes';
 import MyBlogs from './components/core/Dashboard/MyBlogs';
 import MyPapers from './components/core/Dashboard/MyPapers';
 import BlogsDetails from './pages/BlogsDetails';
+import BannerHeader from './components/common/BannerHeader';
+import { Banner } from 'flowbite-react';
 
 
 const App = () => {
@@ -33,48 +35,50 @@ const App = () => {
 
 
   return (
-    <div className="realtive w-screen min-h-screen font-inter flex flex-col gap-y-12 font-groastek">
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/home" element={<Home/>} />
+    <>
+      <div className="realtive w-screen min-h-screen font-inter flex flex-col gap-y-12 font-groastek">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/home" element={<Home/>} />
 
-      <Route path="/login" element={<OpenRoute> <Login/> </OpenRoute>} />
-      <Route path="/signup" element={<OpenRoute> <SignUp/> </OpenRoute>} />
-      <Route path="/forgot-password" element={<OpenRoute> <ForgotPassword/> </OpenRoute>} />
-      <Route path="/update-password/:token" element={<ResetPassword/>} />
-      
-      <Route path="/notes" element={<Notes/>} />
-      <Route path="/blogs" element={<Blogs/>} />
-      <Route path="/blogs/:url" element={<BlogsDetails/>} />
-      <Route path="/papers" element={<Papers/>} />
-      <Route path="/joinus" element={<JoinUsForm/>} />
-      <Route path="/notes/:course/:branch/:sem/:subject/:unit" element={<NotesDetails/>} />
-      
-      {/* This is only for that two dropdown buttons */}
-      <Route path="/dashboard/my-profile" element={
-                                       <OpenRoute>
-                                        <ProfileDropdown/>  
-                                       </OpenRoute> 
-        } /> 
+        <Route path="/login" element={<OpenRoute> <Login/> </OpenRoute>} />
+        <Route path="/signup" element={<OpenRoute> <SignUp/> </OpenRoute>} />
+        <Route path="/forgot-password" element={<OpenRoute> <ForgotPassword/> </OpenRoute>} />
+        <Route path="/update-password/:token" element={<ResetPassword/>} />
+        
+        <Route path="/notes" element={<Notes/>} />
+        <Route path="/blogs" element={<Blogs/>} />
+        <Route path="/blogs/:url" element={<BlogsDetails/>} />
+        <Route path="/papers" element={<Papers/>} />
+        <Route path="/joinus" element={<JoinUsForm/>} />
+        <Route path="/notes/:course/:branch/:sem/:subject/:unit" element={<NotesDetails/>} />
+        
+        {/* This is only for that two dropdown buttons */}
+        <Route path="/dashboard/my-profile" element={
+                                        <OpenRoute>
+                                          <ProfileDropdown/>  
+                                        </OpenRoute> 
+          } /> 
 
-      {/* Dashboard Routes using outlet and nested Routes*/}
-      <Route element={<PrivateRoute><Dashboard/></PrivateRoute>} >
-        <Route path='/dashboard/myProfile'  element={<MyProfile/>} />
-        <Route path='/dashboard/settings'  element={<MySettings/>} />
-        <Route path='/dashboard/notes'  element={<MyNotes/>} />
-        <Route path='/dashboard/papers'  element={<MyPapers />} />
-        <Route path='/dashboard/blogs'  element={<MyBlogs/>} />
-      </Route>
-      
-      
-      
-      
-      <Route path="*" element={<Error/>} />
-      
-    </Routes>
-
-   </div>
+        {/* Dashboard Routes using outlet and nested Routes*/}
+        <Route element={<PrivateRoute><Dashboard/></PrivateRoute>} >
+          <Route path='/dashboard/myProfile'  element={<MyProfile/>} />
+          <Route path='/dashboard/settings'  element={<MySettings/>} />
+          <Route path='/dashboard/notes'  element={<MyNotes/>} />
+          <Route path='/dashboard/papers'  element={<MyPapers />} />
+          <Route path='/dashboard/blogs'  element={<MyBlogs/>} />
+        </Route>
+        
+        
+        
+        
+        <Route path="*" element={<Error/>} />
+        
+      </Routes>
+      </div>
+    </>
+    
   )
 }
 

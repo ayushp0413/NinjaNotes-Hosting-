@@ -23,8 +23,6 @@ const Home = () => {
     <div className='relative w-screen rounded-lg bg-white md:shadow-xl flex flex-col gap-y-10'>
       {/* ---------------------- HERO SECTION ----------------------------- */}
       <HeroSection />
-      <HeroHighlightDemo />
-      
 
       {/*---------------------- VELOCITY SCROLL ----------------------*/}
       <div className='bg-[#f3f3f3] py-[2rem] -mt-10 shadow-sm z-10'>

@@ -6,6 +6,7 @@ import { ImCross } from "react-icons/im";
 import { useSelector } from 'react-redux';
 import ProfileDropdownComponent from '../core/Auth/ProfileDropdownComponent';
 import { setLoading } from '../../slices/authSlice';
+import BannerHeader from './BannerHeader';
 
 const Navbar = () => {
 
@@ -16,8 +17,10 @@ const Navbar = () => {
   const handleMenu = () => MenuRef.current.classList.toggle('show__menu')
 
   return (
-    <div className='bg-white fixed top-0 left-0  w-screen flex flex-col gap-y-12 h-[80px]  items-center justify-center z-30'>
-      <div className=' w-11/12 max-w-maxContent  flex flex-row justify-between items-center'>
+    <>  
+      <div className='bg-white fixed top-0 left-0  w-screen  flex flex-col gap-y-12 h-[100px]  items-center justify-center z-30 '>
+      <BannerHeader/>
+      <div className=' w-11/12 max-w-maxContent  flex flex-row justify-between items-center pb-4'>
         <div className=' '>
           <Link to={'/'}>
             <img src={logo} width={130} alt='logo'></img>
@@ -68,7 +71,9 @@ const Navbar = () => {
           }
         </div>
       </div>
-    </div>
+      </div>
+     
+    </>
   )
 }
 

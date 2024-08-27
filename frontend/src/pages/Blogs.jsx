@@ -6,68 +6,20 @@ import { getAllBlogs } from '../services/operations/BlogsAPI';
 import { FaTags } from "react-icons/fa";
 import { useNavigate } from 'react-router';
 import logoImg from '../assets/images/minLogo.svg';
+import HighlightText from '../components/common/HighlightText';
 
-const API_KEY = '0cda72e516ba41289b31ed67269da1bb';
 
 const Blogs = () => {
-  const [topic, setTopic] = useState('technology');
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const cache = useRef({});
   const navigate = useNavigate();
 
-  const fetchWithRetry = async (url, retries = 3, backoff = 3000) => {
-    try {
-      const response = await axios.get(url);
-      return response.data;
-    } catch (error) {
-      if (error.response && error.response.status === 429 && retries > 0) {
-        console.warn(`Rate limited. Retrying in ${backoff} ms...`);
-        await new Promise((resolve) => setTimeout(resolve, backoff));
-        return fetchWithRetry(url, retries - 1, backoff * 2);
-      }
-      throw error;
-    }
-  };
+  const [query, setQuery] = useState('');
+  const [debouncingQuery, setDebouncingQuery] = useState('');
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      setLoading(true);
-
-      // Check if the data for this topic is in cache
-      if (cache.current[topic]) {
-        setBlogs(cache.current[topic]);
-        setLoading(false);
-        return;
-      }
-
-      try {
-        // const url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${API_KEY}`;
-        // const data = await fetchWithRetry(url);
-        // cache.current[topic] = data.articles; // Cache the data
-        // setBlogs(data.articles);
-        const data = await getAllBlogs();
-        console.log("Data Fetched : ", data);
-        cache.current[topic] = data.title; // Cache the data
-        setBlogs(data);
-
-      } catch (error) {
-        console.error('Error fetching the news articles:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
-  }, [topic]);
-
-  const handleTopicChange = (event) => {
-    setTopic(event.target.value);
-  };
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    setTopic(event.target.elements.topic.value);
+  const handleSearch = () => {
+    setQuery(query.trim());
+    console.log("handle search : ", query);
   };
 
   const handleReadMore = (blog) => {
@@ -77,27 +29,56 @@ const Blogs = () => {
     navigate(`/blogs/${url}`);
   }
 
+  const fetchBlogs = async (query) => {
+    setLoading(true);
+    try {
+      const data = await getAllBlogs(query);
+      console.log("Data Fetched : ", data);
+      setBlogs(data);
+
+    } catch (error) {
+      console.error('Error fetching the news articles:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs(query);
+  }, []);
+
+  useEffect(()=>{
+    const timeout = setTimeout(() => {
+      fetchBlogs(query);
+    },700)
+
+    return () => clearTimeout(timeout);
+  },[query]);
+
+
+
   return (
     <>
-      <div className="w-11/12 max-w-maxContent mx-auto mt-36 p-4">
+      <div className="w-11/12 max-w-maxContent mx-auto mt-24 p-4">
 
-        <h1 className="heading text-tempDark text-center mb-10">Blogs on {<span className='text-tempPrimary uppercase'>{topic}</span>}</h1>
-        <form onSubmit={handleSearch} className="mb-6">
-        <label className="block mb-2 text-xl font-bold" htmlFor="topic">
-          Search for a Topic:
-        </label>
-        <input
-          id="topic"
-          name="topic"
-          type="text"
-          value={topic}
-          onChange={handleTopicChange}
-          className="w-full p-2 border border-gray-300 rounded mb-4"
-        />
-        <button type="submit" className="w-full btn bg-tempSecondary hover:bg-tempPrimary border border-tempPrimary">
-          Search
-        </button>
-        </form>
+        <h1 className="heading text-tempDark text-center mb-10">Blogs on {<HighlightText text={`${query}`}/>}</h1>
+        <div>
+          <label className="block mb-2 text-xl font-bold" htmlFor="topic">
+            Search for Topic or Category :
+          </label>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder='for eg. Web Development'
+            className="w-full p-2 border border-gray-300 rounded mb-4"
+          />
+          <button type="submit" className="w-full btn bg-tempSecondary hover:bg-tempPrimary border border-tempPrimary mb-5"
+          onClick={handleSearch}
+          >
+            Search
+          </button>
+        </div>
 
       {/* BLOG CARDS STARTED */}
 
@@ -128,10 +109,10 @@ const Blogs = () => {
               
               <div className='flex justify-between items-center'>
                   {
-                    blog?.tags.map((tag) => (
-                      <div className='flex gap-3 justify-center items-center'>
-                        <FaTags />
-                        <p key={tag}>{tag}</p>
+                    blog?.tags.splice(0,3).map((tag) => (
+                      <div  key={tag} className='flex flex-col md:flex-row flex-wrap gap-x-3 justify-center items-center'>
+                        <FaTags className='hidden sm:block' />
+                        <p>{tag}</p>
                       </div>
                     ))
                   }
@@ -142,9 +123,9 @@ const Blogs = () => {
         </div>
       ) : 
       (
-        <p>No blogs found.</p>
+        <p className='w-full text-center'>No blogs found for {<span className=' text-tempDark font-bold'>{query}!</span>}</p>
       )}
-      <p>Writing your own blog will be coming soon....</p>
+      <p className=' absolute left-[33.4rem] bottom-[-10]'>Writing your own blog will be coming soon....</p>
       </div>
     </>
   );

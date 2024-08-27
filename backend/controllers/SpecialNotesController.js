@@ -20,7 +20,6 @@ exports.addSpecialNotes = async(req, res) => {
           company:company,
 
       });
-      console.log("Special Notes Created : ", note);
       return res.status(200).json({
         success:true,
         message:"Special Notes Created"
