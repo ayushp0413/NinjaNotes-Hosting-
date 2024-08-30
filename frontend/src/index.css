@@ -20,10 +20,6 @@
   .btn{
     @apply px-4 py-2 text-black text-xl font-medium leading-7 rounded-md cursor-pointer
   }
-
-  
-
-
 }
 
 
@@ -149,5 +145,41 @@ html , body {
   }
   87% {
     box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+
+
+
+/* NewsTicker.css */
+.news-ticker-container {
+  overflow: hidden; /* Hides overflow content */
+  white-space: nowrap; /* Prevents text wrapping */
+  width: 100%; /* Takes full width of the parent */
+  background-color: #333; /* Background color for ticker */
+  color: #5ae5a9; /* Text color */
+  padding: 10px 0; /* Padding for some breathing space */
+  box-sizing: border-box; /* Ensures padding does not affect width */
+  position: fixed; /* Position relative for child absolute positioning */
+  top: 4.2rem;
+  z-index: 30;
+}
+
+.news-ticker {
+  display: inline-block; /* Allows the content to slide in a single line */
+  padding-left: 100%; 
+  animation: slide-left 25s linear infinite; /* Animation to slide left */
+}
+
+.news-text {
+  display: block; /* Ensures text stays in one line */
+}
+
+/* Animation for sliding text */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0%); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* End position */
   }
 }

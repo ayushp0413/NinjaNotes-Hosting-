@@ -7,6 +7,7 @@ import NotesCard from '../components/common/NotesCard'
 import toast from 'react-hot-toast'
 import { getAllSpecialNotes } from '../services/operations/getNotesForSubjects'
 import HighlightText from '../components/common/HighlightText'
+import Banner from '../components/common/Banner'
 
 const Notes = () => {
   const navigate = useNavigate()
@@ -30,12 +31,17 @@ const Notes = () => {
     }
   }
 
+  const [active, setActive] = useState(true);
+
   useEffect(() => {
     getSpecialNotes()
   }, [])
 
   return (
     <div className='mt-12'>
+      {
+        active ? <Banner setActive={setActive} /> : ("")
+      }
       <div className='w-11/12 max-w-maxContent mx-auto mt-20'>
         <h1
           data-aos='fade-down'
