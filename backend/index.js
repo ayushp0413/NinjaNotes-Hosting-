@@ -22,6 +22,7 @@ app.use(fileUpload({
 // routing
 const joinUs = require("./routes/JoinUs");
 const notes = require("./routes/Notes");
+const papers = require("./routes/Papers");
 const blogs = require("./routes/Blog");
 const specialNotes = require("./routes/SpecialNotes");
 const testimonials = require("./routes/Testimonial");
@@ -33,6 +34,7 @@ app.use("/api/v1/auth", auth);
 app.use("/api/v1/profile", profile);
 app.use("/api/v1/join", joinUs);
 app.use("/api/v1/notes", notes);
+app.use("/api/v1/papers", papers);
 app.use("/api/v1/blogs", blogs);
 app.use("/api/v1/specialNotes", specialNotes);
 app.use("/api/v1/testimonials", testimonials);

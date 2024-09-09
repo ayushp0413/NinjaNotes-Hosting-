@@ -56,8 +56,7 @@ function MyProfile () {
               <HighlightText text={`${user?.name}`} className={'text-5xl '} />
               <div className='flex flex-col lg:flex-row gap-2'>
                 <Link to="/dashboard/settings">
-                <button
-                  disabled 
+                <button 
                   className='text-lg text-black px-2 py-2 rounded-md border-2 border-black hover:bg-tempPrimary hover:text-black transition-all duration-300 hidden lg:block'>
                   Edit Profile
                 </button>
@@ -151,7 +150,7 @@ function MyProfile () {
                 </div>
                 
                 <Link to="/dashboard/notes">
-                <h6 className=' text-tempDark  flex items-center gap-1 cursor-pointer'>
+                <h6 className=' text-tempDark  flex items-center gap-1 cursor-pointer hover:border-b-[1.3px] hover:border-tempPrimary transition-all duration-150 '>
                   Show All Notes
                 </h6>
                 </Link>
@@ -169,7 +168,7 @@ function MyProfile () {
                 </div>
                 
                 <Link to="/dashboard/papers">
-                <h6 className=' text-tempDark  flex items-center gap-1 cursor-pointer'>
+                <h6 className=' text-tempDark  flex items-center gap-1 cursor-pointer hover:border-b-[1.3px] hover:border-tempPrimary transition-all duration-150 '>
                   Show All Papers
                 </h6>
                 </Link>
@@ -187,7 +186,7 @@ function MyProfile () {
                 </div>
                 
                 <Link to="/dashboard/blogs">
-                <h6 className=' text-tempDark  flex items-center gap-1 cursor-pointer'>
+                <h6 className=' text-tempDark  flex items-center gap-1 cursor-pointer hover:border-b-[1.3px] hover:border-tempPrimary transition-all duration-150 '>
                   Show All Blogs
                 </h6>
                 </Link>

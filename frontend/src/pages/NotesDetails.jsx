@@ -68,7 +68,7 @@ const NotesDetails = () => {
       !loading && notes?.length > 0 && (
        notes?.map((item, index) => (
         <div className='flex flex-col justify-center items-center -mt-10  transition-all duration-300ms'>
-        <div key={index} className='relative flex flex-col  items-center bg-tempSecondary justify-between overflow-hidden rounded-lg  gap-x-2 p-2 transition-all duration-200  '>
+        <div key={index} className='relative max-w-[410px] flex flex-col items-center bg-tempSecondary justify-between overflow-hidden rounded-lg  gap-x-2 p-2 transition-all duration-200 '>
         <BorderBeam size={450} duration={9} delay={5} />
         <img
           className='rounded-md transition-all duration-300 '

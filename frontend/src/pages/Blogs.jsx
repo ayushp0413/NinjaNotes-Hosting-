@@ -61,7 +61,7 @@ const Blogs = () => {
     <>
       <div className="w-11/12 max-w-maxContent mx-auto mt-24 p-4">
 
-        <h1 className="heading text-tempDark text-center mb-10">Blogs on {<HighlightText text={`${query}`}/>}</h1>
+        <h1 className="heading text-tempDark text-center mb-10">Blogs on {<HighlightText text={`${query || "___"}`}/>}</h1>
         <div>
           <label className="block mb-2 text-xl font-bold" htmlFor="topic">
             Search for Topic or Category :

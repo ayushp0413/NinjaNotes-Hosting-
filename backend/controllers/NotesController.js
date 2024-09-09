@@ -115,7 +115,7 @@ try
 
   return res.status(200).json({
     success:true,
-    message: "Dummy Notes Added",
+    message: "Notes Added",
 })
 }
 catch(err)
