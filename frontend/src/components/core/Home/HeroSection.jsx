@@ -15,7 +15,7 @@ const HeroSection = () => {
 
   return (
     <div className=''>   
-        <div className='bg-white w-full mt-[-11.6rem]  lg:max-h-[740px] lg:h-[740px] lg:pb-0'>
+        <div className='bg-white w-full mt-[-10rem]  lg:max-h-[740px] lg:h-[740px] lg:pb-0'>
         <Particles
           className='absolute left-0 top-0 w-full h-[1010px] sm:h-[1000px] md:h-[980px] lg:h-[740px] xl:h-[740px]'
           quantity={250}

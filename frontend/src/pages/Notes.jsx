@@ -721,7 +721,7 @@ const Notes = () => {
         </div>
       </div>
 
-      {/* ------------------------- NEW CHANGES ------------------------- */}
+      {/* ------------------------- NEW CHANGES SPECIAL NOTES ------------------------- */}
 
       <div className='w-11/12 max-w-maxContent mx-auto p-8'>
         <h3 className='heading text-center'>

@@ -41,34 +41,12 @@ const ReviewCard = ({ image, name, rating, review }) => {
   )
 }
 
-const Tesimonial = () => {
+const Tesimonial = ({firstRow, secondRow}) => {
   
-  const [firstRow,setFirstRow] = useState([]);
-  const [secondRow,setSecondRow] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const  getTestimonials = async()=>{
-    try
-    {
-      setLoading(true);
-      const response = await getAllTestimonials();
-      console.log("All Testimonials : ", response);
-      setFirstRow(response.slice(0, response?.length / 2));
-      setSecondRow(response.slice(response?.length / 2));
-      setLoading(false);
-
-    }catch(err)
-    {
-      console.log("Error in fetching testimonials..");
-      toast.error(err);
-    }
-  }
-
-  useEffect(() => {
-    getTestimonials();
-  },[])
+  if (!firstRow || !secondRow) return <div className='loader mt-20 absolute top-[13rem] left-[45rem]'></div>;
 
   return (
+    <>
       <div className='relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden '>
       <Marquee pauseOnHover className='[--duration:20s]'>
         {firstRow?.map(review => (
@@ -83,6 +61,7 @@ const Tesimonial = () => {
       <div className='pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background'></div>
       <div className='pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background'></div>
     </div>
+    </>
   )
 }
 

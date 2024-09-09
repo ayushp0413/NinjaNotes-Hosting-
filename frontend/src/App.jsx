@@ -25,6 +25,7 @@ import MyPapers from './components/core/Dashboard/MyPapers';
 import BlogsDetails from './pages/BlogsDetails';
 import BannerHeader from './components/common/BannerHeader';
 import { Banner } from 'flowbite-react';
+import PapersDetails from './pages/PapersDetails';
 
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
         <Route path="/papers" element={<Papers/>} />
         <Route path="/joinus" element={<JoinUsForm/>} />
         <Route path="/notes/:course/:branch/:sem/:subject/:unit" element={<NotesDetails/>} />
+        <Route path="/papers/:course/:examType/:branch/:sem/:subject" element={<PapersDetails/>} />
         
         {/* This is only for that two dropdown buttons */}
         <Route path="/dashboard/my-profile" element={

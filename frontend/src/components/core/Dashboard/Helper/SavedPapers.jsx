@@ -11,6 +11,7 @@ const SavedPapers = ({partial}) => {
     if(cart && cart?.length>0)
     {
        savedPapers = cart.filter((item) => item?.type === TYPE_OF_CONTENT.PAPERS);
+       console.log("Papars array : ", savedPapers);
        if(partial){
          savedPapers = savedPapers.splice(0,3);
         }
@@ -21,9 +22,8 @@ const SavedPapers = ({partial}) => {
   return (
     <>   
        {
-         savedPapers?.length<=0 ? (<div>You not saved papers yet! </div>) : 
+         savedPapers?.length<=0 ? (<div>You haven't saved papers yet! </div>) : 
          (<div className='w-full relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-2 mt-3 '>
-
           {
               savedPapers?.map((paper) => (
                 <div key={paper._id} className=''>

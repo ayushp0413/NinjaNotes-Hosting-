@@ -3,8 +3,18 @@ import image from '../assets/images/papersImage.svg'
 import { Tree } from '@geist-ui/core'
 import Tesimonial from '../components/core/Home/Tesimonial'
 import Footer from '../components/common/Footer'
+import { useNavigate } from 'react-router'
 
 const Notes = () => {
+
+  const navigate = useNavigate();
+  const handler = path => {
+    let url = path.split(' ').join('-')
+    console.log("URL TO SEND : ", url);
+    navigate(url);
+  }
+
+
   return (
    <>
      <div
@@ -23,7 +33,7 @@ const Notes = () => {
           className='lg:w-[50%] flex flex-col items-center justify-center p-7 lg:items-start '
         >
           <div className='mx-auto border-2 border-tempPrimary p-4 rounded-lg '>
-            <Tree>
+            <Tree onClick={handler}>
               <Tree.Folder name='Engineering'>
                 <Tree.Folder name='End Sem'>
                   {/* ----------------- AIDS --------------- */}

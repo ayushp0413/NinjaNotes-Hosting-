@@ -29,6 +29,12 @@ export const notesEndpoints = {
     GET_ALL_SPECIAL_NOTES_API : BASE_URL + "/specialNotes/getSpecialNotes"
 }
 
+// Papers APIs
+export const papersEndpoints = {
+    GET_PAPERS : BASE_URL + "/papers/getPapers",
+}
+
+
 // Blogs APIS
 export const blogsEndpoints = {
     GET_ALL_BLOGS : BASE_URL + "/blogs/getAllBlogs",

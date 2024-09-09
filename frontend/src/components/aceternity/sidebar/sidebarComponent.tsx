@@ -25,13 +25,13 @@ export default function SidebarDemo({img, name}) {
         <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     }, 
-    // {
-    //   label: "Edit Profile",
-    //   href: "/dashboard/settings",
-    //   icon: (
-    //     <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-    //   ),
-    // },
+    {
+      label: "Edit Profile",
+      href: "/dashboard/settings",
+      icon: (
+        <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
     {
       label: "Notes",
       href: "/dashboard/notes",
@@ -72,7 +72,7 @@ export default function SidebarDemo({img, name}) {
                   <SidebarLink key={idx} link={link} />) 
               )}
             </div>
-            <div className=" mt-[17rem] md:mt-[19.2rem]">
+            <div className=" mt-[19rem] md:mt-[21rem]">
             <SidebarLink
               link={{
                 label: `${name}`,

@@ -37,7 +37,7 @@ export const getAllTestimonials = async() => {
 
         if (!response.data.success) {
             throw new Error(response.data.message)
-          }
+        }
         result = response?.data?.data;
 
     }catch(err)
