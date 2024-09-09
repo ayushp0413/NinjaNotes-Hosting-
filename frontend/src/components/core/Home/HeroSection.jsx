@@ -37,12 +37,12 @@ const HeroSection = () => {
               enhance your learning experience today.
             </p>
             <div className='flex gap-x-5 justify-center lg:justify-start'>
-              <Link to=''>
+              <Link to='/'>
                 <button className='btn hover:bg-tempPrimary bg-tempSecondary border-2 border-tempPrimary transition-all duration-300'>
                   Learn More
                 </button>
               </Link>
-              <Link to=''>
+              <Link to='/notes'>
                 <button className='btn border-2 border-black hover:bg-black hover:text-white transition-all duration-300'>
                   Get Notes
                 </button>

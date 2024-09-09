@@ -1,8 +1,9 @@
 import React from 'react'
 import { FiArrowUpRight } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 
-const ServiceCard = ({icon: Icon, heading, description}) => {
+const ServiceCard = ({icon: Icon, heading, description, link}) => {
 
   return (
     <>
@@ -13,14 +14,14 @@ const ServiceCard = ({icon: Icon, heading, description}) => {
                     <h3 className='font-groastek text-[32px] text-tempDark'>{heading}</h3>
                     <p className='font-groastek font-light text-center leading-6 -mt-3'>{description}</p>
                 </div>
-            
+                <Link to={link}>
                 <button className='flex flex-row justify-center items-center  bg-tempSecondary border border-tempPrimary hover:bg-tempPrimary  transition-all duration-300 px-4 rounded-full gap-x-4 '>
                 <p className='para font-md my-3'>Learn More</p>
                 <div className='bg-black h-10 w-10 rounded-full '>
                 <FiArrowUpRight className='text-white h-10 w-10 hover:text-tempPrimary' />
                 </div>
-                
                 </button>
+                </Link>
             </div>
         </div>
          

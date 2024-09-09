@@ -59,7 +59,9 @@ const Home = () => {
       {/*---------------------- SERVICES SECTION ----------------------*/}
       <div className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border p-[2.3rem] rounded-md bg-[#f2f2f2] mt-8 mb-8 z-10 text-tempDark'>
         
-            <span className='heading bg-tempPrimary p-[6px] px-3 rounded-md w-fit mx-auto text-tempDark '>Our Services</span>
+      <div className=' mx-auto flex items-center justify-center'>
+        <span className='heading bg-tempPrimary leading-9 md:leading-[60px] text-center p-[6px] px-3 rounded-md w-fit mx-auto text-tempDark'>Our Services</span>
+        </div>
           
         <h2 className='heading mx-auto md:text-[3.1rem] text-center text-tempDark'>
           Discover the Power of Knowledge with Us
@@ -81,6 +83,7 @@ const Home = () => {
               heading={card.heading}
               description={card.description}
               btnText={card.btnText}
+              link = {card.link}
             />
           ))}
         </div>
