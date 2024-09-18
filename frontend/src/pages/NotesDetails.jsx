@@ -79,7 +79,7 @@ const NotesDetails = () => {
         <div className='flex flex-col p-2 text-tempDark'>
           <div className='flex flex-col items-start'>
             <h3 className='text-2xl md:text-3xl font-gorastek text-tempDark '>{item?.subject}</h3>
-            <p className='font-semibold -mt-3 text-xl'>{item?.unit} Notes</p>          
+            <p className='font-semibold -mt-3 text-xl'>Full Package</p>          
             <div className=' w-full grid grid-cols-2 place-items-start -mt-4'>
               <div className='flex  justify-center items-center gap-2'><PiStudentFill size={20} /> <p>{item?.course}</p></div>
               <div className='flex  justify-center items-center gap-2'><MdLayers size={18} /> <p>{item?.branch}</p></div>
@@ -91,9 +91,8 @@ const NotesDetails = () => {
 
           <div className='flex gap-3 justify-center items-center'>
             <div className= ' text-tempDark bg-tempPrimary  p-3 rounded-md text-center'>
-            <a href={item?.content} target='blank' onClick={()=>setActive(true)} className='font-bold text-lg text-tempDark'>Get your notes</a>
+            <a href={item?.content[0]?.link} target='blank' onClick={()=>setActive(true)} className='font-bold text-lg text-tempDark'>Get your notes</a>
             </div>
-
 
             <div onClick={saveNotes} className='  text-tempDark bg-tempPrimary  p-3 rounded-md text-center'>
                 <button className='font-bold text-lg text-tempDark'>Save Notes to Profile</button>

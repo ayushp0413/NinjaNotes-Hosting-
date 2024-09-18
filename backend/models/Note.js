@@ -24,14 +24,12 @@ const noteSchema = new mongoose.Schema(
             type:String,
             required:true,
         },
-        unit:{
-            type:String,
-            required:true,
+        content: [{
+        link: {
+            type: String,
+            required: true,
         },
-        content:{
-            type:String,
-            required:true,
-        }
+        }],
     }
 );
 
