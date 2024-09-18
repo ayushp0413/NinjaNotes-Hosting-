@@ -14,7 +14,7 @@ const Notes = () => {
   const [specialNotes, setSpecialNotes] = useState([])
 
   const handler = path => {
-    let url = path.split(' ').join('-')
+    let url = path.split(' ').join('-');
     navigate(url)
   }
 
@@ -66,44 +66,19 @@ const Notes = () => {
                     <Tree.Folder name='CSE'>
                       <Tree.Folder name='1st Sem'>
                         <Tree.Folder name='BT-101 Engineering Chemistry'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
+                          <Tree.File name='Get Full Notes'></Tree.File>
                         </Tree.Folder>
                         <Tree.Folder name='BT-102 Mathematics-I'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
+                          <Tree.File name='Get Full Notes'></Tree.File>
                         </Tree.Folder>
                         <Tree.Folder name='BT-103 English for Communication'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
+                          <Tree.File name='Get Full Notes'></Tree.File>
                         </Tree.Folder>
                         <Tree.Folder name='BT-104 BEE'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
+                          <Tree.File name='Get Full Notes'></Tree.File>
                         </Tree.Folder>
                         <Tree.Folder name='BT-105 Engineering Graphics'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
+                          <Tree.File name='Get Full Notes'></Tree.File>
                         </Tree.Folder>
                       </Tree.Folder>
 
