@@ -14,6 +14,7 @@ export const profileEndpoints = {
     GET_USER_DETAILS_API : BASE_URL + "/profile/getUserDetails",
     UPDATE_PROFILE_API : BASE_URL + "/profile/updateProfile",
     UPDATE_PROFILE_PICTURE_API : BASE_URL + "/profile/updateProfilePicture",
+    UPDATE_PASSWORD_API: BASE_URL + "/profile/updatePassword",
     DELETE_PROFILE_API : BASE_URL + "/profile/deleteProfile"
 }
 

@@ -13,6 +13,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const [show, setShow] = useState(6);
 
   const [query, setQuery] = useState('');
   const [debouncingQuery, setDebouncingQuery] = useState('');
@@ -24,7 +25,6 @@ const Blogs = () => {
 
   const handleReadMore = (blog) => {
     let url = blog?.title?.replaceAll(" ","-");
-    console.log("URL URL : ", url);
     localStorage.setItem('blog', JSON.stringify(blog));
     navigate(`/blogs/${url}`);
   }
@@ -42,6 +42,10 @@ const Blogs = () => {
       setLoading(false);
     }
   };
+
+  const loadMore = () =>{
+    setShow(show+3);
+  }
 
   useEffect(() => {
     fetchBlogs(query);
@@ -92,7 +96,7 @@ const Blogs = () => {
       
       blogs.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog) => (
+          {blogs?.slice(0,show)?.map((blog) => (
             
             <div key={blog._id} className="p-4 bg-white border-2 border-tempPrimary rounded shadow-md">
               <div className='flex justify-between items-center'>
@@ -120,12 +124,17 @@ const Blogs = () => {
             
             </div>
           ))}
+          
         </div>
       ) : 
       (
         <p className='w-full text-center'>No blogs found for {<span className=' text-tempDark font-bold'>{query}!</span>}</p>
       )}
-      <p className=' absolute left-[33.4rem] bottom-[-10]'>Writing your own blog will be coming soon....</p>
+      {
+        show < blogs?.length && (
+        <button onClick={() => loadMore()} className='p-2 bg-tempPrimary mx-auto flex mt-10 '>Read More</button>)
+      }
+      <p className=' p-2 bg-tempPrimary mx-auto flex justify-center mt-10 text-center'>Writing your own blog will be coming soon....</p>
       </div>
     </>
   );

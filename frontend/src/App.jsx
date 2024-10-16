@@ -75,7 +75,7 @@ const App = () => {
             <Route path='/papers' element={<Papers />} />
             <Route path='/joinus' element={<JoinUsForm />} />
             <Route
-              path='/notes/:course/:branch/:sem/:subject/:unit'
+              path='/notes/:course/:branch/:sem/:subject'
               element={<NotesDetails />}
             />
             <Route

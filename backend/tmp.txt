@@ -1,0 +1,4 @@
+cors
+mail templates 
+forget password controller  url 
+frontend apis BASE URl

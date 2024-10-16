@@ -4,7 +4,7 @@ import { IoClose } from "react-icons/io5";
 
 const Banner = ({setActive}) => {
   return (
-    <div className="news-ticker-container">
+    <div className="news-ticker-container -z-10">
       <div className="news-ticker">
         <span className="news-text">
             Currently, Ninja Notes is serving first-year students and is in the process of expanding our services to include all semesters. Please stay tuned!! 

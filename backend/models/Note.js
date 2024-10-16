@@ -25,6 +25,10 @@ const noteSchema = new mongoose.Schema(
             required:true,
         },
         content: [{
+        unit:{
+            type: Number,
+            required: true,
+        },  
         link: {
             type: String,
             required: true,

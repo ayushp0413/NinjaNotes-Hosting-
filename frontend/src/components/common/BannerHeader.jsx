@@ -4,9 +4,9 @@ import { MdAnnouncement } from "react-icons/md";
 
 export default function BannerHeader() {
   return (
-    <Banner className="w-full -mb-14">
+    <Banner className="w-full -mb-14 -z-0">
       <div className="flex justify-center items-center mt-7 border-b border-gray-200 bg-tempPrimary dark:border-gray-600 dark:bg-gray-700">
-        <div className="mx-auto flex">
+        <div className="mx-auto flex z-0">
           <p className="flex items-center text-sm font-normal text-tempDark dark:text-gray-400">
             <MdAnnouncement className="mr-4 h-4 w-4" />
             <span>

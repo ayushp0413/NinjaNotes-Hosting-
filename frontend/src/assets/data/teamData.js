@@ -13,9 +13,6 @@ export const teamData = [
         link2:"github",
         link3:"insta",
         link4:"whatsapp",
-
-
-
     },
     {
         id:1,
@@ -23,9 +20,9 @@ export const teamData = [
         name: "Ayush Patidar",
         about: "Full Stack Developer",
         description: "Designed and developed robust server-side components for smooth and secure data handling, also contributed to the main idea of the website and enhanced performance  for users",
-        link1:"linkedin",
-        link2:"github",
-        link3:"insta",
-        link4:"whatsapp",
+        link1:"https://www.linkedin.com/in/ayushpatidar04",
+        link2:"https://github.com/ayushp0413",
+        link3:"https://www.instagram.com/__.ayush.__ap/?hl=en",
+        link4:"https://www.instagram.com/__.ayush.__ap/?hl=en",
     },
 ]

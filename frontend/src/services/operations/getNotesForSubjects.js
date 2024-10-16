@@ -4,13 +4,13 @@ import { apiConnector } from "../apiConnector";
 
 const { GET_ALL_NOTES, GET_ALL_SPECIAL_NOTES_API } =  notesEndpoints 
 
-export const getNotesForSubjects = async(course, branch, sem , subject, unit) => {
+export const getNotesForSubjects = async(course, branch, sem , subject) => {
     
     const toastId = toast.loading("Loading...");
     let result = [];
     try
     {
-        const response = await apiConnector("GET", `${GET_ALL_NOTES}/${course}/${branch}/${sem}/${subject}/${unit}`, null);
+        const response = await apiConnector("GET", `${GET_ALL_NOTES}/${course}/${branch}/${sem}/${subject}`, null);
         console.log("RESPONSE of GET NOTES API : ", response?.data?.data);
 
         if (!response.data.success) {

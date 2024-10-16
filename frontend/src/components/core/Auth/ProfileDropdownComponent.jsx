@@ -30,7 +30,7 @@ const ProfileDropdownComponent = () => {
         
         <div onClick={() => {setActive(true)}} className='flex justify-center items-center'  >
           <div className=' rounded-full border-4 border-tempPrimary cursor-pointer'>
-            <img src={user?.image} width={40} className=' rounded-full'/>   
+            <img src={user?.image} width={40} className=' aspect-square object-cover rounded-full'/>   
           </div>        
           <div className=' cursor-pointer'>
             <MdOutlineArrowDropDown size={24}/>
@@ -44,9 +44,9 @@ const ProfileDropdownComponent = () => {
                ref={ref}
               >
                 <Link to="/dashboard/myProfile">
-                  <div className='flex gap-1 justify-center px-4 py-1 items-center hover:bg-tempSecondary transition duration-200 ease-in text-tempDark font-semibold' onClick={() => {setActive(false)}}>
+                  <div className='flex gap-1 justify-center px-4 py-1 items-center border-b-2 border-b-tempSecondary hover:bg-tempSecondary transition duration-200 ease-in text-tempDark font-semibold' onClick={() => {setActive(false)}}>
                     <VscDashboard size={19}/>
-                    <button>Dashboard</button>
+                    <button >Dashboard</button>
                   </div>
                 </Link>
                 

@@ -6,13 +6,13 @@ exports.auth = async(req,res,next)=>{
     {
         console.log("Request at auth cookies : ", req?.cookies);
         console.log("Request at auth body : ", req?.body);
-        console.log("Request at auth header : ", req?.header("Authorization").replace("Bearer ",""));
+        // console.log("Request at auth header : ", req?.header("Authorization").replace("Bearer ",""));
         // fecth token from req and authorize it
         const token = req?.cookies?.jwt 
                       || req?.body?.token 
                       || req?.header("Authorization").replace("Bearer ","");
 
-
+          
         if(!token)
         {
             return res.status(401).json({
@@ -24,7 +24,7 @@ exports.auth = async(req,res,next)=>{
         // verify this token 
         try {
             console.log("Token being verified:", token);
-            const payload = jwt.verify(token, process.env.JWT_SECRET);
+            const payload = jwt?.verify(token, process.env.JWT_SECRET);
             console.log("Token verified successfully:", payload);
             req.user = payload;
         } catch (err) {

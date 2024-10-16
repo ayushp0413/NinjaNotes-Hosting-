@@ -16,10 +16,10 @@ try
       message: "All fields required",
   })}
 
-  if (!Array.isArray(content) || content.some(c => !c.link)) {
+  if (!Array.isArray(content) || content.some(c => !c.link || !c.unit)) {
     return res.status(400).json({
         success: false,
-        message: "Content must be an array with objects containing 'link'",
+        message: "Content must be an array with objects containing 'link' and 'unit'",
     });
 }
 

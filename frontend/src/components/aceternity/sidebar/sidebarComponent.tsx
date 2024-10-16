@@ -59,7 +59,7 @@ export default function SidebarDemo({img, name}) {
   return (
     <div
       className={cn(
-        "fixed rounded-md flex flex-col md:flex-row bg-tempSecondary border-tempPrimary dark:bg-neutral-800 w-[27opx] flex-1  mx-auto border dark:border-neutral-700 overflow-hidden",
+        "fixed rounded-md flex flex-col md:flex-row bg-tempSecondary border-tempPrimary dark:bg-neutral-800 flex-1  mx-auto border dark:border-neutral-700 overflow-hidden",
         "h-full z-20 " // for your use case, use `h-screen` instead of `h-[60vh]`
       )}
     >
@@ -72,7 +72,7 @@ export default function SidebarDemo({img, name}) {
                   <SidebarLink key={idx} link={link} />) 
               )}
             </div>
-            <div className=" mt-[19rem] md:mt-[21rem]">
+            <div className=" mt-[19rem] md:mt-[19rem]">
             <SidebarLink
               link={{
                 label: `${name}`,

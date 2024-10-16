@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/addNotes", addNotes);
 router.delete("/deleteNotes",deleteNotes);
-router.get("/getNotes/:course/:branch/:sem/:subject/:package", getNotes);
+router.get("/getNotes/:course/:branch/:sem/:subject", getNotes);
 router.get("/getNotes/:course", getNotesByCourse);
 
 

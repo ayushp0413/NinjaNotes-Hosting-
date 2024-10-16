@@ -34,6 +34,7 @@ const OurTeam = () => {
             link1={person.link1}
             link2={person.link2}
             link3={person.link3}
+            link4={person.link4}
           />
         ))}
       </div>
@@ -43,7 +44,7 @@ const OurTeam = () => {
 
 export default OurTeam
 
-const TeamCard = ({ img, name, about, description, link1, link2, link3 }) => {
+const TeamCard = ({ img, name, about, description, link1, link2, link3, link4 }) => {
   return (
     <>
       <div className='relative flex flex-row w-[390px] h-[250px] md:w-[450px] items-center justify-between overflow-hidden rounded-lg border bg-tempSecondary gap-x-2 mb-8 p-2 cursor-pointer  transition-all duration-200  '>
@@ -70,13 +71,13 @@ const TeamCard = ({ img, name, about, description, link1, link2, link3 }) => {
             <Link to={link1}>
               <FaLinkedin className='h-5 w-5 text-tempDark hover:text-tempPrimary'/>
             </Link>
-            <Link to={link1}>
+            <Link to={link2}>
               <FaGithub className='h-5 w-5 text-tempDark hover:text-tempPrimary'/>
             </Link>
-            <Link to={link2}>
+            <Link to={link3}>
               <FaInstagram className='h-5 w-5 text-tempDark hover:text-tempPrimary'/>
             </Link>
-            <Link to={link3}>
+            <Link to={link4}>
               <FaWhatsapp className='h-5 w-5 text-tempDark hover:text-tempPrimary'/>
             </Link>
           </div>
