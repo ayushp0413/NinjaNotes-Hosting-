@@ -42,8 +42,8 @@ export const getAllTestimonials = async() => {
 
     }catch(err)
     {
-        console.log("GET TESTIMONIALS API ERROR............", err)
         toast.error(err);
+        console.log("GET TESTIMONIALS API ERROR............", err)
     }
     return result;
 }

@@ -1,4 +1,6 @@
+const { joinusEmail } = require("../mailTemplates/joinusEmail");
 const JoinUs = require("../models/JoinUs");
+const { mailSender } = require("../utils/mailSender");
 
 exports.createJoinus = async(req, res) => {
     try
@@ -21,8 +23,8 @@ exports.createJoinus = async(req, res) => {
         }
 
         // send a mail to user 
-
-
+        const body = joinusEmail(email);
+        const response = await mailSender(email, "Ninja Notes - Join our Team", body);
         
         return res.status(200).json({
             success:true,

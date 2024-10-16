@@ -7,11 +7,13 @@ import ParticlesBackground from  "../../Particles/ParticlesBackground"
 import ServiceCard from './ServiceCard'
 import HighlightText from '../../common/HighlightText'
 import CountUp from "react-countup"
+import Flipwords from "../../aceternity/Flipwords/FlipwordComponent"
 
 const HeroSection = () => {
 
   // const color = '#64AE06';
   const color = '#000'
+  const words = ["Potential", "Skills", "Exams", "Interview","Journey"];
 
   return (
     <div className=''>   
@@ -29,7 +31,9 @@ const HeroSection = () => {
         <div className='relative mx-auto w-11/12 max-w-maxContent mt-[11.2rem] pt-[7.7rem] text-tempDark flex flex-col justify-between gap-y-6 items-center lg:flex-row '>
           <div data-aos="fade-right" data-aos-duration='1200' className='lg:w-[50%] max-w-maxContent flex flex-col items-center lg:items-start gap-y-5'>
             <h2  className='text-tempDark font-semibold text-5xl md:text-6xl text-center lg:text-left w-full'>
-              Unlock Your <HighlightText text={" Academic Potential "} className={"text-6xl"}/>  with Us
+              Unlock Your <Flipwords words={words} /> <br/>
+              {/* <HighlightText text={" Academic Potential "} className={"text-6xl"}/>   */}
+              with us
             </h2>
             <p  className='para text-center lg:text-left text-tempDark'>
               Welcome to our notes website, where you can access a wide range of
@@ -37,11 +41,11 @@ const HeroSection = () => {
               enhance your learning experience today.
             </p>
             <div className='flex gap-x-5 justify-center lg:justify-start'>
-              <Link to='/'>
-                <button className='btn hover:bg-tempPrimary bg-tempSecondary border-2 border-tempPrimary transition-all duration-300'>
+              {/* <Link to=''> */}
+                <a href='#services' className='btn hover:bg-tempPrimary bg-tempSecondary border-2 border-tempPrimary transition-all duration-300'>
                   Learn More
-                </button>
-              </Link>
+                </a>
+              {/* </Link> */}
               <Link to='/notes'>
                 <button className='btn border-2 border-black hover:bg-black hover:text-white transition-all duration-300'>
                   Get Notes

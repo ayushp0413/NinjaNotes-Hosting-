@@ -16,6 +16,7 @@ import { logout } from '../../../services/operations/authAPI'
 import SavedNotes from './Helper/SavedNotes'
 import SavedPapers from './Helper/SavedPapers'
 import PublishedBlogs from './Helper/PublishedBlogs'
+import { Meteors } from '../../magicui/Meteor'
 
 function MyProfile () {
 
@@ -39,6 +40,10 @@ function MyProfile () {
     // Form the trimmed date string in "dd-mm-yyyy" format
     trimmedDateString = `${day}-${month}-${year}`;
   }
+
+  useEffect(() => {
+    console.log("USER DETAILS: ", user);
+  })
 
   return (
     <>
@@ -144,7 +149,7 @@ function MyProfile () {
         <div className='p-4 justify-center items-center rounded-md border bg-[#f3f3f3] mt-10'>
           <div className='flex justify-between '>
                 <div className='flex justify-center items-center'>
-                  <span className=' bg-tempPrimary text-2xl lg:text-4xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
+                  <span className=' bg-tempPrimary text-2xl lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
                     Saved Notes
                   </span>
                 </div>
@@ -162,7 +167,7 @@ function MyProfile () {
         <div className='p-4 justify-center items-center rounded-md border bg-[#f3f3f3] mt-10'>
           <div className='flex justify-between '>
                 <div className='flex justify-center items-center'>
-                  <span className=' bg-tempPrimary text-2xl lg:text-4xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
+                  <span className=' bg-tempPrimary text-2xl lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
                     Saved Papers
                   </span>
                 </div>
@@ -180,7 +185,7 @@ function MyProfile () {
          <div className='p-4 justify-center items-center rounded-md border bg-[#f3f3f3] mt-10 mb-6'>
           <div className='flex justify-between '>
                 <div className='flex justify-center items-center'>
-                  <span className=' bg-tempPrimary text-2xl lg:text-4xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
+                  <span className=' bg-tempPrimary text-2xl lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
                     Published Blogs
                   </span>
                 </div>

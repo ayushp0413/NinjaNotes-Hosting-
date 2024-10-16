@@ -11,6 +11,7 @@ import { removeFromCart } from "../../../slices/cartSlice";
 import { useDispatch } from "react-redux";
 import HighlightText from "../../common/HighlightText";
 import { TYPE_OF_CONTENT } from "../../../utils/constants";
+import toast from "react-hot-toast";
 
 export default function CardSpotlightDemo({data}) {
 
@@ -23,31 +24,44 @@ export default function CardSpotlightDemo({data}) {
       {/* <img src={notesImg2} /> */}
       <div className="text-neutral-200 mt-4 relative z-10">
         <span className="font-bold text-[1.7rem]">{data?.subject}</span>
-        <p className="text-[1.2rem] font-semibold">{data?.unit}</p>
         
         {/* Info grid */}
         {
           data?.type === TYPE_OF_CONTENT.NOTES ? (
+            <>
+            {
+              data?.content?.unit < 6 ? (
+                <p className="text-[1.2rem] font-semibold">Unit {data?.content?.unit}</p>
+              ) : 
+              (
+                <p className="text-[1.2rem] font-semibold">Unit 1 to 5</p>
+              ) 
+            }
+           
             <div className='w-full grid grid-cols-2 place-items-start text-sm'>
-              <div className='flex  justify-center items-center gap-2'><PiStudentFill size={20} /> <p>{data?.course}</p></div>
+              {/* <div className='flex  justify-center items-center gap-2'><PiStudentFill size={20} /> <p>{data?.course}</p></div> */}
               <div className='flex  justify-center items-center gap-2'><MdLayers size={18} /> <p>{data?.branch}</p></div>
               <div className='flex  justify-center items-center gap-2'><MdAccessTime size={19} /> <p>{data?.sem}</p></div>
-              <div className='flex  justify-center items-center gap-2'><LiaUserNinjaSolid size={22} /> <p>Ninja Notes</p></div>
+              {/* <div className='flex  justify-center items-center gap-2'><LiaUserNinjaSolid size={22} /> <p>Ninja Notes</p></div> */}
             </div>
+            </>
           ):
           data?.type === TYPE_OF_CONTENT.PAPERS ? (
+            <>
+            <p className="text-[1.2rem] font-semibold">Year - {data?.content?.year}</p>
             <div className='w-full grid grid-cols-2 place-items-start text-sm'>
-              <div className='flex  justify-center items-center gap-2'><MdCalendarToday size={17}/> <p>{data?.content.year}</p></div>
+              {/* <div className='flex  justify-center items-center gap-2'><MdCalendarToday size={17}/> <p>{data?.content.year}</p></div> */}
               <div className='flex  justify-center items-center gap-2'><PiStudentFill size={20} /> <p>{data?.examType}</p></div>
               <div className='flex  justify-center items-center gap-2'><MdLayers size={18} /> <p>{data?.branch}</p></div>
               <div className='flex  justify-center items-center gap-2'><MdAccessTime size={19} /> <p>{data?.sem}</p></div>
             </div>
+            </>
           ) :(
             <div className='w-full grid grid-cols-2 place-items-start text-sm'>
-              <div className='flex  justify-center items-center gap-2'><PiStudentFill size={20} /> <p>{data?.course}</p></div>
+              {/* <div className='flex  justify-center items-center gap-2'><PiStudentFill size={20} /> <p>{data?.course}</p></div> */}
               <div className='flex  justify-center items-center gap-2'><MdLayers size={18} /> <p>{data?.branch}</p></div>
               <div className='flex  justify-center items-center gap-2'><MdAccessTime size={19} /> <p>{data?.sem}</p></div>
-              <div className='flex  justify-center items-center gap-2'><LiaUserNinjaSolid size={22} /> <p>Ninja Blogs</p></div>
+              {/* <div className='flex  justify-center items-center gap-2'><LiaUserNinjaSolid size={22} /> <p>Ninja Blogs</p></div> */}
             </div>
           )
         }
@@ -55,13 +69,13 @@ export default function CardSpotlightDemo({data}) {
       <p className="text-neutral-300 mt-4 relative z-10 text-sm">
         Ensuring your content is properly saved,
         {
-          data?.type === TYPE_OF_CONTENT.NOTES ? (<a href={data?.content} target="blank" className='font-semibold'> click </a>) : 
+          data?.type === TYPE_OF_CONTENT.NOTES ? (<a href={data?.content?.link} target="blank" className='font-semibold'> click </a>) : 
           data.type === TYPE_OF_CONTENT.PAPERS ? (<a href={data?.content?.link} target="blank" className='font-semibold'> click </a>) : 
           (<p>blog</p>)
            
         }
         to access freely.
-        <span> or </span><span onClick={() => dispatch(removeFromCart(data?._id))} className="z-10 text-red-600 cursor-pointer font-semibold">Remove</span>
+        <span> or </span><span onClick={() => {dispatch(removeFromCart(data?._id))}} className="z-10 text-red-600 cursor-pointer font-semibold">Remove</span>
       </p>
     </CardSpotlight>
 

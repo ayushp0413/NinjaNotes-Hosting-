@@ -15,6 +15,7 @@ const Notes = () => {
 
   const handler = path => {
     let url = path.split(' ').join('-');
+    console.log("Url :", url);
     navigate(url)
   }
 
@@ -65,64 +66,19 @@ const Notes = () => {
                     {/* Branch CSE */}
                     <Tree.Folder name='CSE'>
                       <Tree.Folder name='1st Sem'>
-                        <Tree.Folder name='BT-101 Engineering Chemistry'>
-                          <Tree.File name='Get Full Notes'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-102 Mathematics-I'>
-                          <Tree.File name='Get Full Notes'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-103 English for Communication'>
-                          <Tree.File name='Get Full Notes'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-104 BEE'>
-                          <Tree.File name='Get Full Notes'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-105 Engineering Graphics'>
-                          <Tree.File name='Get Full Notes'></Tree.File>
-                        </Tree.Folder>
+                          <Tree.File name='BT-101 Engineering Chemistry'></Tree.File>
+                          <Tree.File name='BT-102 Mathematics-I'></Tree.File>
+                          <Tree.File name='BT-103 English for Communication'></Tree.File>
+                          <Tree.File name='BT-104 Basic Electrical Engineering'></Tree.File>
+                          <Tree.File name='BT-105 Engineering Graphics'></Tree.File>
                       </Tree.Folder>
 
                       <Tree.Folder name='2nd Sem'>
-                        <Tree.Folder name='BT-201 Engineering Physics'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-202 Mathematics-II'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-203 Basic Mechanical Engineering'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-204 Basic Civil Engineering & Mechanics'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
-                        </Tree.Folder>
-                        <Tree.Folder name='BT-205 Basic Computer Engineering'>
-                          <Tree.File name='Unit 1'></Tree.File>
-                          <Tree.File name='Unit 2'></Tree.File>
-                          <Tree.File name='Unit 3'></Tree.File>
-                          <Tree.File name='Unit 4'></Tree.File>
-                          <Tree.File name='Unit 5'></Tree.File>
-                          <Tree.File name='Unit 1-5 Package'></Tree.File>
-                        </Tree.Folder>
+                          <Tree.File name='BT-201 Engineering Physics'></Tree.File>
+                          <Tree.File name='BT-202 Mathematics-II'></Tree.File>
+                          <Tree.File name='BT-203 Basic Mechanical Engineering'></Tree.File>
+                          <Tree.File name='BT-204 Basic Civil Engineering & Mechanics'></Tree.File>
+                          <Tree.File name='BT-205 Basic Computer Engineering'></Tree.File>
                       </Tree.Folder>
                     </Tree.Folder>
 

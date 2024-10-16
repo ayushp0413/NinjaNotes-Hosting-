@@ -7,7 +7,7 @@ const Dashboard = () => {
 
   const {user} = useSelector((state) => state.profile);
   return (
-    <div className='text-black text-3xl mt-24 '>
+    <div className='text-black text-3xl mt-20 '>
         <SidebarDemo img={user?.image} name={user?.name} />
         <div>
           <Outlet />
