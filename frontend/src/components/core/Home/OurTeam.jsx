@@ -23,7 +23,7 @@ const OurTeam = () => {
       </p>
 
       {/* Team Cards */}
-      <div data-aos="fade-up" data-aos-duration='1200' className=' grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-[1.8rem] gap-y-[1.8rem]  mt-10'>
+      <div data-aos="fade-up" data-aos-duration='1200' data-aos-once='true' className=' grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-[1.8rem] gap-y-[1.8rem]  mt-10'>
         {teamData.map(person => (
           <TeamCard
             key={person.id}
@@ -47,11 +47,11 @@ export default OurTeam
 const TeamCard = ({ img, name, about, description, link1, link2, link3, link4 }) => {
   return (
     <>
-      <div className='relative flex flex-row w-[390px] h-[250px] md:w-[450px] items-center justify-between overflow-hidden rounded-lg border bg-tempSecondary gap-x-2 mb-8 p-2 cursor-pointer  transition-all duration-200  '>
+      <div className='relative flex flex-row w-[390px] h-[250px] md:w-[450px] items-center justify-between overflow-hidden rounded-lg group border bg-tempSecondary gap-x-2 mb-8 p-2 cursor-pointer  transition-all duration-200  '>
         <BorderBeam size={350} duration={9} delay={5} />
 
         <img
-          className='rounded-md opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-300 '
+          className='rounded-md opacity-60 group-hover:opacity-100 hover:scale-110 transition-all duration-300 '
           src={img}
           width={150}
           alt=''
