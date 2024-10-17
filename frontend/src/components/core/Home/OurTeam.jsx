@@ -47,7 +47,7 @@ export default OurTeam
 const TeamCard = ({ img, name, about, description, link1, link2, link3, link4 }) => {
   return (
     <>
-      <div className='relative flex flex-row w-[390px] h-[250px] md:w-[450px] items-center justify-between overflow-hidden rounded-lg group border bg-tempSecondary gap-x-2 mb-8 p-2 cursor-pointer  transition-all duration-200  '>
+      <div className='relative flex flex-row w-[330px] h-[250px] md:w-[450px] items-center justify-between overflow-hidden rounded-lg group border bg-tempSecondary gap-x-2 mb-8 p-2 cursor-pointer  transition-all duration-200  '>
         <BorderBeam size={350} duration={9} delay={5} />
 
         <img
@@ -58,13 +58,13 @@ const TeamCard = ({ img, name, about, description, link1, link2, link3, link4 })
         />
         <div className='flex flex-col justify-end p-3 gap-4 text-tempDark'>
           <div className=''>
-            <h3 className='text-2xl md:text-3xl font-gorastek text-tempDark '>{name}</h3>
+            <h3 className='text-lg md:text-3xl font-gorastek text-tempDark '>{name}</h3>
 
             
 
-            <p className='mb-[-5px] mt-[-12px] font-medium text-sm '>{about}</p>
+            <p className='mb-[-5px] mt-[-12px] font-medium text-xs md:text-sm '>{about}</p>
 
-            <p className='text-xs md:text-sm  leading-4 font-groastek'>{description}</p>
+            <p className='text-xs md:text-sm  leading-3 font-groastek'>{description}</p>
           </div>
 
           <div className='flex flex-row gap-x-4 mt-[-10px]'>

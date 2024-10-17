@@ -9,9 +9,9 @@ export const teamData = [
         name: "Kunal Bhavare",
         about: "Frontend Developer & UI/UX",
         description: "Came up with the website's main Idea, also worked on frontend part by crafting a user-friendly and attractive interface and built various components, making it great experience for users.",
-        link1:"linkedin",
-        link2:"github",
-        link3:"insta",
+        link1:"https://www.linkedin.com/in/kunal-bhavare-467863228/",
+        link2:"https://github.com/kbhavre",
+        link3:"https://www.instagram.com/kbhaavre/",
         link4:"whatsapp",
     },
     {

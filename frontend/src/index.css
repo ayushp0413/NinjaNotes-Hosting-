@@ -6,7 +6,7 @@
 
 @layer components{
   .heading{
-    @apply  font-semibold leading-[60px] text-5xl md:text-6xl
+    @apply  font-semibold leading-8 md:leading-[60px] text-3xl md:text-6xl
   }
 
   .navLink{
@@ -14,7 +14,7 @@
   }
 
   .para{
-    @apply text-black text-xl leading-7 font-groastek
+    @apply text-black text-[16px] md:text-xl leading-6 font-groastek
   }
 
   .btn{
