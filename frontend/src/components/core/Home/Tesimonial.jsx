@@ -8,7 +8,7 @@ import { getAllTestimonials } from '../../../services/operations/testimonialsAPI
 // data will come from backend
 
 
-const ReviewCard = ({ image, name, rating, review }) => {
+const ReviewCard = ({ image, name, rating=0, review }) => {
   return (
     <figure
       className={cn(
@@ -25,15 +25,16 @@ const ReviewCard = ({ image, name, rating, review }) => {
           <figcaption className='text-sm font-medium text-dargGreen'>
             {name}
           </figcaption>
-          <p className='text-xs font-medium text-dargGreen'>
+          <span className='text-xs font-medium text-emerald-500'>
           <ReactStars
                 count={5}
                 value={rating}
                 size={24}
-                activeColor='#ffd700'
+                activeColor='#10b981'
                 edit={false}
+                isHalf={true}
               />
-          </p>
+          </span>
         </div>
       </div>
 

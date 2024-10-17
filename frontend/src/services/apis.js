@@ -44,6 +44,6 @@ export const blogsEndpoints = {
 
 // Rating and Reviews 
 export const testimonials = {
-    CREATE_RATING : BASE_URL + "/testimonials/createRatingAndReviews",
-    GET_ALL_RATINGS : BASE_URL + "/testimonials/getAllRatings"
+    CREATE_RATING: `${BASE_URL}/testimonials/createRatingAndReviews`,
+    GET_ALL_RATINGS: `${BASE_URL}/testimonials/getAllRatings`
 }
