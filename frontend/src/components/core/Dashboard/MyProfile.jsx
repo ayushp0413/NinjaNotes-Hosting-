@@ -52,8 +52,8 @@ function MyProfile () {
         {/* Profile Details */}
         <div className='w-full p-6 flex flex-col lg:flex-row items-center rounded-md gap-10 bg-[#f3f3f3]'>
           {/* Profile Image */}
-          <div className='border-2 border-black  rounded-full'>
-            <img src={user?.image} width={300} className='rounded-full aspect-square object-cover'/>
+          <div className='border-2 border-black  rounded-full w-[120px] md:w-[200px] lg:w-[300px] '>
+            <img src={user?.image}  className='rounded-full aspect-square object-cover'/>
           </div>
 
           <div className='flex flex-col  w-full'>
@@ -142,14 +142,15 @@ function MyProfile () {
 
               </div>
             </div>
+
           </div>
         </div>
         
         {/* SAVED  NOTES  */}
         <div className='p-4 justify-center items-center rounded-md border bg-[#f3f3f3] mt-10'>
-          <div className='flex justify-between '>
+          <div className='flex flex-row justify-between items-center '>
                 <div className='flex justify-center items-center'>
-                  <span className=' bg-tempPrimary text-2xl lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
+                  <span className=' bg-tempPrimary text-[0.8rem] lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
                     Saved Notes
                   </span>
                 </div>
@@ -166,8 +167,8 @@ function MyProfile () {
         {/* SAVED PAPERS */}
         <div className='p-4 justify-center items-center rounded-md border bg-[#f3f3f3] mt-10'>
           <div className='flex justify-between '>
-                <div className='flex justify-center items-center'>
-                  <span className=' bg-tempPrimary text-2xl lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
+                <div className='flex justify-center items-center w-fit'>
+                  <span className=' bg-tempPrimary text-[0.8rem] lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
                     Saved Papers
                   </span>
                 </div>
@@ -185,7 +186,7 @@ function MyProfile () {
          <div className='p-4 justify-center items-center rounded-md border bg-[#f3f3f3] mt-10 mb-6'>
           <div className='flex justify-between '>
                 <div className='flex justify-center items-center'>
-                  <span className=' bg-tempPrimary text-2xl lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
+                  <span className=' bg-tempPrimary text-[0.8rem] lg:text-2xl font-semibold py-1 px-2  rounded-md w-fit mx-auto text-tempDark '>
                     Published Blogs
                   </span>
                 </div>
