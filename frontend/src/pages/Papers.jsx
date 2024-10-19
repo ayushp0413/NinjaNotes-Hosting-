@@ -32,7 +32,7 @@ const Notes = () => {
           data-aos-duration='1200'
           className='lg:w-[50%] flex flex-col items-center justify-center p-7 lg:items-start '
         >
-          <div className='mx-auto border-2 border-tempPrimary p-4 rounded-lg '>
+          <div className='mx-auto w-3/5 md:w-full text-sm border-2 border-tempPrimary p-4 rounded-lg '>
             <Tree onClick={handler}>
               <Tree.Folder name='Engineering'>
                 <Tree.Folder name='End Sem'>
