@@ -34,10 +34,10 @@ const BlogDetails = () => {
   if (!blog) return <div className='loader mt-20 absolute top-[13rem] left-[45rem]'></div>;
 
   return (
-    <div className='w-full mt-16 '>
-      <div className='relative w-full bg-tempSecondary h-[50vh] flex flex-col  justify-center items-center'>
-          <div className='flex w-11/12 flex-col justify-center items-center text-tempDark'>
-            <h1>{blog?.title}</h1>
+    <div className='w-full lg:mt-16 '>
+      <div className='relative w-full bg-tempSecondary py-[5rem] flex flex-col  justify-center items-center'>
+          <div className='flex w-11/12  flex-col justify-center items-center text-tempDark'>
+            <h1 className='text-center'>{blog?.title}</h1>
             <p className='text-center max-w-[70vw] text-tempDark'>{blog?.excerpt}</p>
           </div>
           <div className='mt-3'>

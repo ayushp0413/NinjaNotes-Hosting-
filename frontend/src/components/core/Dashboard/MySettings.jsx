@@ -113,17 +113,17 @@ const MySettings = () => {
       <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-y-4 justify-center items-start'>
        
         {/* ------------------------ Upload Photo ------------------------*/}
-        <div className='w-full max-w-[320px] md:max-w-[570px] mx-auto flex flex-col gap-y-2 mb-6 md:mb-0'>
+        <div className='z-0 w-full max-w-[320px] md:max-w-[570px] mx-auto flex flex-col gap-y-2 mb-6 md:mb-0'>
           <div className=' border border-dashed bg-white dark:bg-black border-tempPrimary dark:border-neutral-800 rounded-md   inline-block'>
             <FileUpload onChange={handleFileChange} />
           </div>
           <div className='flex justify-center gap-4 mt-5'>
             <button
               onClick={() => handleFileCancel} 
-              className='btn px-5 md:px-20 md:py-4 border-2 border-black hover:bg-red-600 hover:text-black transition-all duration-300 '>
+              className='btn px-3 md:px-20 md:py-4 border-2 border-black hover:bg-red-600 hover:text-black transition-all duration-300 '>
                 Cancel
             </button>
-            <button className='btn px-5 md:px-20 md:py-4 border-2 border-black hover:bg-black hover:text-white transition-all duration-300 '
+            <button className='btn px-3 md:px-20 md:py-4 border-2 border-black hover:bg-black hover:text-white transition-all duration-300 '
               onClick={handleProfileUpload}
               disabled={!selectedFile}>
               Upload Photo
@@ -132,7 +132,7 @@ const MySettings = () => {
         </div>
 
         {/* =============== SIGNUP FORM =============== */}
-        <div className='w-full max-w-[330px] md:max-w-[570px] mx-auto  rounded-lg shadow-md border-2 border-tempPrimary  p-6 px-2 md:px-10'>
+        <div className='w-full sm:max-w-[540px] md:max-w-[570px] mx-auto  rounded-lg shadow-md border-2 border-tempPrimary  p-6 px-2 md:px-10'>
           <h3 className='text-headingColor text-[22px] leading-9 font-bold mb-10 '>
              Update
             <HighlightText text={' Profile Details'} className={'text-3xl'} />
@@ -271,7 +271,7 @@ const MySettings = () => {
                 className='w-full pr-4 pt-3  border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-5 text-headingColor placeholder:text-textColor cursor-pointer'
               />
             </div>
-            <div className='w-full max-w-full flex justify-end gap-4'>
+            <div className='w-full max-w-full flex justify-center md:justify-end gap-4'>
               <div 
                 onClick={cancelUpdateDetails}
                 className='btn  border-2 border-black hover:bg-tempPrimary hover:text-black transition-all duration-300 '>

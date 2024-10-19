@@ -57,9 +57,9 @@ const Notes = () => {
             data-aos-duration='1200'
             className='lg:w-[50%] flex flex-col items-center justify-center p-7 lg:items-start '
           >
-            <div className='flex flex-col gap-4 '>
+            <div className='flex flex-col gap-4  mx-auto '>
               {/* Engineering */}
-              <div className='mx-auto border-2 border-tempPrimary p-4 rounded-lg '>
+              <div className='relative mx-auto border-2 max-w-[70%] md:max-w-full border-tempPrimary p-4 rounded-lg '>
                 <Tree onClick={handler}>
                   <Tree.Folder name='Engineering'>
 
@@ -619,7 +619,7 @@ const Notes = () => {
               </div>
 
               {/* Pharmacy */}
-              <div className='mx-auto border-2 min-w-[475.025px] border-tempPrimary p-4 rounded-lg '>
+              <div className='relative mx-auto border-2 md:min-w-[475.025px] max-w-[70%] border-tempPrimary p-4 rounded-lg '>
                 <Tree>
                   <Tree.Folder name='B-Pharmacy'>
                     <Tree.Folder name='1st Sem'>
