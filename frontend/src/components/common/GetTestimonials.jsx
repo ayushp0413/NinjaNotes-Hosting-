@@ -43,8 +43,6 @@ const GetTestimonials = () => {
 
   return (
     <div>
-       return (
-    <div>
         {
           loading ? (<div className='text-xl text-tempDark'>Loading.....</div>) : 
           (
@@ -59,8 +57,6 @@ const GetTestimonials = () => {
             </div>
           )
         }    
-    </div>
-  )
     </div>
   )
 }
