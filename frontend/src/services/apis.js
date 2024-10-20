@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api/v1"
+const BASE_URL = "http://localhost:5500/api/v1"
 
 // AUTH 
 export const authEndpoints = {
@@ -41,6 +41,12 @@ export const blogsEndpoints = {
     GET_ALL_BLOGS : BASE_URL + "/blogs/getAllBlogs",
 }
 
+
+// Rating and Reviews 
+// export const testimonials = {
+//     CREATE_RATING: `${BASE_URL}/testimonials/createRatingAndReviews`,
+//     GET_ALL_RATINGS: `${BASE_URL}/testimonials/getAllRatings`
+// }
 
 // Rating and Reviews 
 export const testimonials = {

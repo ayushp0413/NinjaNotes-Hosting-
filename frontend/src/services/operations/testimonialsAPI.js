@@ -23,7 +23,7 @@ export const createTestimonial = async(formData) => {
     {
         console.log("CREATE TESTIMONIALS API ERROR............", err)
         toast.error(err);
-        throw err;
+        // throw err;
     }
     toast.remove(toastId);
 }
