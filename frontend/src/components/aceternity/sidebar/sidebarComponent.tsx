@@ -80,7 +80,7 @@ export default function SidebarDemo({img, name}) {
                 icon: (
                   <img
                     src={img}
-                    className="h-7 w-7 flex-shrink-0 rounded-full"
+                    className="h-7 w-7 flex-shrink-0 rounded-full object-cover"
                     width={50}
                     height={50}
                     alt="Avatar"
