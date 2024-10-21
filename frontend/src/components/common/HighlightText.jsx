@@ -2,10 +2,8 @@ import React from 'react'
 import "../../index.css"
 
 const HighlightText = ({text, className}) => {
-
-  console.log("Classname : ", className);
   return (
-        <span className={`highlightText ${className}  `}>{ text}</span>
+        <span className={`highlightText ${className} max-w-[100px] `}>{ text}</span>
   )
 }
 
