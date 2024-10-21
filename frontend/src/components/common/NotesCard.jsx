@@ -22,15 +22,15 @@ const NotesCard = ({notes}) => {
             <p>{notes?.course || "Special"}</p>
           </div>
 
-          <div className='flex justify-center items-center gap-2 '>
+          <div className='flex justify-center pl-4  items-center gap-2 '>
             <GoGoal />
-            <p>{notes?.company || "Placement Essentials"}</p>
+            <p className='leading-4 md:leading-7'>{notes?.company || "Placement Essentials"}</p>
           </div>
         </div>
 
-        <div className='flex flex-row justify-between items-center'>
+        <div className='flex flex-row justify-between items-center mx-auto'>
           <a href={notes?.content} target='blank' className=''>
-            <button className='bg-tempSecondary hover:bg-tempPrimary transition duration-300 border-2 border-tempPrimary rounded-md btn mb-3 '>Get Notes</button>
+            <button className='bg-tempSecondary hover:bg-tempPrimary transition duration-300 border-2 border-tempPrimary rounded-md btn mb-3'>Get Notes</button>
           </a>
         </div>
 

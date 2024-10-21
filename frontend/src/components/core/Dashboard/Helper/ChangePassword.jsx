@@ -60,7 +60,7 @@ const ChangePassword = () => {
     },[reset, isSubmitSuccessful]);
     
   return (
-    <div className='m-4'>
+    <div className='m-2'>
         <form onSubmit={handleSubmit(changePasswordHandler)} className='border-2 border-tempPrimary rounded-lg px-10 py-4 pb-7'>
             <h2 className='text-[1.5rem] text-tempDark'>Password</h2>
             <div className='flex flex-col md:flex-row md:gap-20'>

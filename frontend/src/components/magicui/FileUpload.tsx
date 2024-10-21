@@ -80,7 +80,7 @@ export const FileUpload = ({
           <GridPattern />
         </div>
         <div className="flex flex-col items-center justify-start">
-          <p className="relative z-20 font-sans font-bold text-tempDark dark:text-neutral-300 text-3xl">
+          <p className="relative z-20 font-sans font-bold text-tempDark dark:text-neutral-300 text-2xl md:text-3xl">
             Upload Profile
           </p>
           <p className="relative z-20 font-sans font-normal text-neutral-400 dark:text-neutral-400 text-base">

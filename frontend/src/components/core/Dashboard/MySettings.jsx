@@ -110,10 +110,10 @@ const MySettings = () => {
     <>
     <div className='relative ml-[4rem] md:ml-[20rem] mr-2 mb-4 flex flex-col '>
       
-      <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-y-4 justify-center items-start'>
+      <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-6 justify-center items-start m-2 '>
        
         {/* ------------------------ Upload Photo ------------------------*/}
-        <div className='z-0 w-full max-w-[320px] md:max-w-[570px] mx-auto flex flex-col gap-y-2 mb-6 md:mb-0'>
+        <div className='z-0 w-full max-w-[320px] md:max-w-[550px] flex flex-col gap-y-2 md:mb-0'>
           <div className=' border border-dashed bg-white dark:bg-black border-tempPrimary dark:border-neutral-800 rounded-md   inline-block'>
             <FileUpload onChange={handleFileChange} />
           </div>
@@ -132,7 +132,7 @@ const MySettings = () => {
         </div>
 
         {/* =============== SIGNUP FORM =============== */}
-        <div className='w-full sm:max-w-[540px] md:max-w-[570px] mx-auto  rounded-lg shadow-md border-2 border-tempPrimary  p-6 px-2 md:px-10'>
+        <div className='w-full sm:max-w-[500px] md:max-w-[550px] rounded-lg shadow-md border-2 border-tempPrimary  p-6 px-2 md:px-10'>
           <h3 className='text-headingColor text-[22px] leading-9 font-bold mb-10 '>
              Update
             <HighlightText text={' Profile Details'} className={'text-3xl'} />
@@ -295,11 +295,11 @@ const MySettings = () => {
       {/* ------------------------ Delete Section ------------------------*/}
         <div className='flex flex-col lg:flex-row'>
           
-          <div className='relative p-5 w-fit m-4 flex flex-row border-2 border-tempPrimary bg-tempSecondary rounded-md '>
+          <div className='relative p-5 w-fit m-2 flex flex-row border-2 border-tempPrimary bg-tempSecondary rounded-md '>
             {/* <div><RiLogoutBoxFill className='h-60 w-60 hidden md:block' /></div> */}
             <div className='flex flex-col justify-center mx-4'>
               <div className=' max-w-[640px] text-tempDark'>
-                <h1 className='leading-5 text-4xl text-tempDarks'>Profile Logout</h1>
+                <h1 className='leading-5  text-2xl md:text-4xl text-tempDarks'>Profile Logout</h1>
                 <p className='leading-6 text-[1.2rem] '>Would you like to Logout?</p>
                 <p className='text-[1rem] font-thin leading-4'>Are you sure to Log out your profile, there are more to explore on Ninja Notes.</p>
               </div>
@@ -312,18 +312,18 @@ const MySettings = () => {
                         btn1Handler: () => {dispatch(logout(navigate))},
                         btn2Handler: () => {setModalData(null)},
                 })} 
-              className='btn px-10 md:px-24 w-fit flex justify-center items-center  gap-4 border-2 border-black bg-tempPrimary hover:bg-tempSecondary hover:text-black transition-all duration-300 '>
-                  Logout Profile<RiLogoutBoxRFill  className='block md:hidden'/>
+              className='btn px-10 md:px-24 leading-4 md:leading-7 w-fit flex justify-center items-center  gap-4 border-2 border-black bg-tempPrimary hover:bg-tempSecondary hover:text-black transition-all duration-300 '>
+                  Logout Profile<RiLogoutBoxRFill  className='h-10 w-10' />
               </button>
             </div>
           </div>
 
-          <div className='m-4 p-4 w-fit flex border-2 border-black  bg-red-500 rounded-md '>
+          <div className='m-2 p-4 w-fit flex border-2 border-black  bg-red-500 rounded-md '>
             {/* <MdDelete className='h-60 w-60 hidden md:block' /> */}
             <div className='flex flex-col justify-center mx-4'>
               <div className=' max-w-[520px]'>
-                <h1 className=' leading-5 text-4xl'>Delete Account</h1>
-                <p className='leading-6 '>Would you like to delete account?</p>
+                <h1 className=' leading-5 text-2xl md:text-4xl'>Delete Account</h1>
+                <p className='leading-6 text-[1.2rem] '>Would you like to delete account?</p>
                 <p className='-mt-2 text-lg leading-4 font-thin'>This account may contain your saved notes, papers and written blogs. Deleting your account is permanent and will remove all the contain associated with it, and this can't be revert back.</p>
               </div>
               <button
@@ -335,8 +335,8 @@ const MySettings = () => {
                         btn1Handler: () => {deleteProfile(token,dispatch,navigate)},
                         btn2Handler: () => {setModalData(null)},
                 })} 
-              className='btn px-10 md:px-24 w-fit flex justify-center items-center  gap-4 border-2 border-black bg-red-400 hover:bg-red-600 hover:text-black transition-all duration-300 '>
-                  Delete Account <MdDelete className='block md:hidden'/>
+              className='btn px-10 md:px-24 leading-3 md:leading-7 w-fit flex justify-center items-center  gap-4 border-2 border-black bg-red-400 hover:bg-red-600 hover:text-black transition-all duration-300 '>
+                  Delete Account <MdDelete className='h-10 w-10'/>
               </button>
             </div>
           </div>
@@ -351,3 +351,5 @@ const MySettings = () => {
 }
 
 export default MySettings
+
+

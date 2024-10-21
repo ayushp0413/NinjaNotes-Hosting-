@@ -22,8 +22,8 @@ export default function CardSpotlightDemo({data}) {
     <CardSpotlight className="flex flex-col justify-start items-start">
       <p className="text-[1.3rem] font-bold relative z-10 -mt-4"><HighlightText text={`${data?.type}`}/></p>
       {/* <img src={notesImg2} /> */}
-      <div className="text-neutral-200 mt-4 relative z-10">
-        <span className="font-bold text-[1.7rem]">{data?.subject}</span>
+      <div className="text-neutral-200 relative z-10">
+        <span className="font-bold text-2xl md:text-3xl  ">{data?.subject}</span>
         
         {/* Info grid */}
         {

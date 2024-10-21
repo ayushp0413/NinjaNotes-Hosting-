@@ -23,17 +23,17 @@ const Home = () => {
       <HeroSection />
 
       {/*---------------------- VELOCITY SCROLL ----------------------*/}
-      <div className='bg-[#f3f3f3] py-[2rem] -mt-10 shadow-sm z-10'>
+      <div className='bg-[#f3f3f3] py-[2rem] -mt-6 shadow-sm z-10'>
         <VelocityScroll
           text='Computer Networks | Machine Learning | TOC | Compiler Design | Operating System | Project Management | DSA |'
           default_velocity={1}
-          className='font-display text-center text-5xl font-bold tracking-[-0.06em] drop-shadow-sm text-tempDark opacity-70 md:text-6xl md:leading-[5rem]'
+          className='font-display text-center text-3xl md:text-5xl font-bold tracking-[-0.06em] drop-shadow-sm text-tempDark opacity-70 md:leading-[5rem]'
         />
       </div>
 
       {/*---------------------- SERVICES SECTION ----------------------*/}
       <div id='services'></div>
-      <div  className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border p-[2.3rem] rounded-md bg-[#f2f2f2] mt-4 mb-8 z-10 text-tempDark'>
+      <div  className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border p-[2.3rem] rounded-md bg-[#f2f2f2]  z-10 text-tempDark'>
         
       <div className=' mx-auto flex items-center justify-center'>
         <span className='heading bg-tempPrimary leading-9 md:leading-[60px] text-center p-[6px] px-3 rounded-md w-fit mx-auto text-tempDark'>Our Services</span>
@@ -68,7 +68,7 @@ const Home = () => {
       </div>
 
       {/* ---------------------   Service Div ------------------- */}
-      <div className='w-11/12 max-w-maxContent text-black flex flex-col-reverse items-center justify-center gap-y-4 mx-auto lg:flex-row lg:items-center lg:justify-between  mb-14 px-6 md:px-0 z-10'>
+      <div className='w-11/12 max-w-maxContent text-black flex flex-col-reverse items-center justify-center gap-y-4 mx-auto lg:flex-row lg:items-center lg:justify-between px-6 md:px-0 z-10'>
           <img
             data-aos="fade-right" data-aos-duration='1200'
             className='h-[400px] w-[600px] rounded-[30px]'
