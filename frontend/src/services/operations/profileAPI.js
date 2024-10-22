@@ -112,7 +112,7 @@ export const updateProfilePicture = async(formData, token, dispatch, navigate) =
 
     }catch(err)
     {
-        toast.error(err?.response?.data?.data);
+        // toast.error(err?.response?.data?.data);
         console.log("UPDATE PROFILE PICTURE API ERROR............", err)
     }
     toast.remove(toastId);
@@ -148,7 +148,7 @@ export function changePassword(token,email, oldPassword, newPassword, navigate) 
        localStorage.removeItem("user")
        
      } catch (error) {
-         toast.error(error?.response?.data?.message);
+         //toast.error(error?.response?.data?.message);
         console.log("Changed Password ERROR............", error?.response?.data?.message)
      }
      toast.dismiss(toastId);

@@ -22,7 +22,6 @@ export const createTestimonial = async(formData) => {
     }catch(err)
     {
         console.log("CREATE TESTIMONIALS API ERROR............", err)
-        toast.error(err);
         // throw err;
     }
     toast.remove(toastId);

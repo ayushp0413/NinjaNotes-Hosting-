@@ -12,7 +12,7 @@ exports.createRatingAndReviews = async (req, res) => {
         if(!name || !rating || !review) {
             return res.status(400).json({
                 success: false,
-                message:"Please give all details for Reviews",
+                message:"Please give Rating Stars",
             })
         };
         
