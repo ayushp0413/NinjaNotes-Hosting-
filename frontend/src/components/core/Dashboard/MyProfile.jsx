@@ -26,6 +26,12 @@ function MyProfile () {
   const [modalData, setModalData] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+ 
+  let about = user?.profile?.about;
+  if(about?.length > 500) 
+  {
+    about = about.substring(0,500);
+  }
 
   let trimmedDateString = null;
   if(user?.profile?.dateOfBirth) 
@@ -52,7 +58,7 @@ function MyProfile () {
         {/* Profile Details */}
         <div className='w-full p-6 flex flex-col lg:flex-row items-center rounded-md gap-10 bg-[#f3f3f3]'>
           {/* Profile Image */}
-          <div className='border-2 border-black  rounded-full w-[120px] md:w-[200px] lg:w-[300px] '>
+          <div className='border-2 flex justify-center items-center border-black  rounded-full w-[120px] md:w-[200px] lg:w-[300px] aspect-square object-cover '>
             <img src={user?.image}  className='rounded-full aspect-square object-cover'/>
           </div>
 
@@ -90,7 +96,7 @@ function MyProfile () {
             {/* Details Section */}
             <div className='flex flex-col w-full p-2 rounded-md  mx-auto '>
               <h1 className='text-2xl'>About Me</h1>
-              <p className='para text-lg  my-0 leading-5'>{user?.profile?.about || "Add bio..."} </p>
+              <p className='para text-lg  my-0 leading-5'>{about || "Add bio..."} </p>
 
               <div className='grid grid-cols-1 items-center lg:grid-cols-2 mt-6 '>
                

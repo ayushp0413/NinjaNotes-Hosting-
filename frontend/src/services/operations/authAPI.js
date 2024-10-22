@@ -25,7 +25,7 @@ export const singUp = async(formData, navigate) => {
     }catch(error)
     {
         console.log("SIGNUP API ERROR............", error)
-        toast.error(error?.response?.data?.message);
+        // toast.error(error?.response?.data?.message);
     }
     toast.remove(toastId);
 }
@@ -60,7 +60,6 @@ export const login = async(formData, navigate, dispatch) => {
     }catch(error)
     {
         console.log("LOGIN API ERROR............", error)
-        toast.error(error?.response?.data?.message);
     }
     toast.remove(toastId);
 }

@@ -95,7 +95,7 @@ const Testimonial = ({ setActive }) => {
                   rows={4}
                   className='rounded-md min-h-[50px] w-full placeholder:text-sm placeholder:py-1 outline-none border-b border-tempPrimary px-3'
                 />
-                {errors.review && <span>Please add your name</span>}
+                {errors.review && <span>Please add your reviews</span>}
               </div>
 
               <div>
