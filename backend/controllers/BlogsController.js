@@ -44,8 +44,9 @@ exports.getAllBlogs = async(req, res) => {
     try{
        
         const query = req?.query?.query;
+        console.log("object query: ", query);
 
-        let blogs;    
+        let blogs = [];    
         if(query)
         {
             blogs = await Blogs.find({

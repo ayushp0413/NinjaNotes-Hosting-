@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
 import { toast } from "react-hot-toast";
 import { TYPE_OF_CONTENT } from "../utils/constants";
 
@@ -21,7 +20,7 @@ const cartSlice = createSlice({
 
         addToCart : (state , action) => {
             const item = action.payload;   // give object        
-            if(item.type === TYPE_OF_CONTENT.NOTES) 
+            if(item.type === TYPE_OF_CONTENT.NOTES )  
             {
                 const index = state.cart.findIndex((it) => it._id === item._id); // check duplicate
                 if(index >= 0)

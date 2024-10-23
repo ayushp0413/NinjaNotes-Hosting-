@@ -12,7 +12,6 @@ const SavedPapers = ({partial}) => {
     if(cart && cart?.length>0)
     {
        savedPapers = cart.filter((item) => item?.type === TYPE_OF_CONTENT.PAPERS);
-       console.log("Papars array : ", savedPapers);
        if(partial){
          savedPapers = savedPapers.splice(0,3);
         }

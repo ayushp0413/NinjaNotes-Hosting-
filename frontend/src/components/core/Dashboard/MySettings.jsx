@@ -108,31 +108,34 @@ const MySettings = () => {
 
   return (
     <>
-    <div className='relative ml-[4rem] md:ml-[20rem] mr-2 mb-4 flex flex-col '>
+    <div className='relative w-full flex flex-col gap-4'>
+      <HighlightText text={"Edit Profile"} className={"text-center md:text-left border-b border-tempPrimary w-full md:w-fit p-2 rounded-md -mb-1 font-bold"} />
       
-      <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-6 justify-center items-start m-2 '>
+      <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-6 place-content-center md:place-content-start '>
        
         {/* ------------------------ Upload Photo ------------------------*/}
-        <div className='z-0 w-full max-w-[320px] md:max-w-[550px] flex flex-col gap-y-2 md:mb-0'>
-          <div className=' border border-dashed bg-white dark:bg-black border-tempPrimary dark:border-neutral-800 rounded-md   inline-block'>
+        <div className='z-0 w-full border flex flex-col gap-y-2  rounded-md p-4 border-tempPrimary' >
+          <div className='rounded-md inline-block'>
             <FileUpload onChange={handleFileChange} />
           </div>
-          <div className='flex justify-center gap-4 mt-5'>
-            <button
+
+          <div className='w-full flex flex-row justify-center md:justify-end flex-wrap gap-4 mt-5'>
+          <button
               onClick={() => handleFileCancel} 
-              className='btn px-3 md:px-20 md:py-4 border-2 border-black hover:bg-red-600 hover:text-black transition-all duration-300 '>
+              className='btn w-fit border-2 border-black hover:bg-black hover:text-white transition-all duration-300 '>
                 Cancel
             </button>
-            <button className='btn px-3 md:px-20 md:py-4 border-2 border-black hover:bg-black hover:text-white transition-all duration-300 '
+            <button className='btn w-fit border-2 border-black hover:bg-tempPrimary hover:text-black transition-all duration-300 '
               onClick={handleProfileUpload}
               disabled={!selectedFile}>
               Upload Photo
             </button>
+            
           </div>
         </div>
 
         {/* =============== SIGNUP FORM =============== */}
-        <div className='w-full sm:max-w-[500px] md:max-w-[550px] rounded-lg shadow-md border-2 border-tempPrimary  p-6 px-2 md:px-10'>
+        <div className='w-full rounded-lg  border border-tempPrimary p-6'>
           <h3 className='text-headingColor text-[22px] leading-9 font-bold mb-10 '>
              Update
             <HighlightText text={' Profile Details'} className={'text-3xl'} />
@@ -274,70 +277,74 @@ const MySettings = () => {
             <div className='w-full max-w-full flex justify-center md:justify-end gap-4'>
               <div 
                 onClick={cancelUpdateDetails}
-                className='btn  border-2 border-black hover:bg-tempPrimary hover:text-black transition-all duration-300 '>
+                className='btn  border-2 border-black hover:bg-black hover:text-white transition-all duration-300 '>
                 Cancel
               </div>
               <button
                type='submit'
-               className='btn  border-2 border-black hover:bg-black hover:text-white transition-all duration-300 '>
+               className='btn  border-2 border-black hover:bg-tempPrimary hover:text-black transition-all duration-300 '>
                 Save
               </button>
             </div>
           </form>
         </div>
+
       </div>
 
-
-      {/* CHANGE PASSWORD */}
       <ChangePassword/>
 
-
       {/* ------------------------ Delete Section ------------------------*/}
-        <div className='flex flex-col lg:flex-row'>
+        <div className='relative w-full flex flex-col lg:flex-row gap-5 p-5 rounded-md bg-[#f3f3f3]'>
           
-          <div className='relative p-5 w-fit m-2 flex flex-row border-2 border-tempPrimary bg-tempSecondary rounded-md '>
-            {/* <div><RiLogoutBoxFill className='h-60 w-60 hidden md:block' /></div> */}
-            <div className='flex flex-col justify-center mx-4'>
-              <div className=' max-w-[640px] text-tempDark'>
-                <h1 className='leading-5  text-2xl md:text-4xl text-tempDarks'>Profile Logout</h1>
-                <p className='leading-6 text-[1.2rem] '>Would you like to Logout?</p>
-                <p className='text-[1rem] font-thin leading-4'>Are you sure to Log out your profile, there are more to explore on Ninja Notes.</p>
+          <div className='w-full flex flex-col justify-evenly p-4 border-2 border-tempPrimary bg-tempSecondary rounded-md '>
+            <div className='w-full flex flex-col items-start justify-center'>
+              <h3 className=' text-tempDark text-[2rem]'>Profile Logout</h3>
+              <div className='flex flex-col justify-start text-[1.2rem] space-y-0'>
+                <p className='mb-0'>Would you like to Logout?</p>
+                <p className='font-thin hidden md:block'>Are you sure to Log out your profile, there are more to explore on Ninja Notes.</p>
               </div>
-              <button
-              onClick={() => setModalData({
-                        text1:"Logging Out ?",
-                        text2:"Are you sure to Log out your profile, there are more to explore on Ninja Notes.",
-                        btn1Text:"Logout",
-                        btn2Text:"Cancel",
-                        btn1Handler: () => {dispatch(logout(navigate))},
-                        btn2Handler: () => {setModalData(null)},
-                })} 
-              className='btn px-10 md:px-24 leading-4 md:leading-7 w-fit flex justify-center items-center  gap-4 border-2 border-black bg-tempPrimary hover:bg-tempSecondary hover:text-black transition-all duration-300 '>
-                  Logout Profile<RiLogoutBoxRFill  className='h-10 w-10' />
-              </button>
+              
+              <div className='text-sm md:text-2xl'>
+                <button
+                  onClick={() => setModalData({
+                            text1:"Logging Out ?",
+                            text2:"Are you sure to Log out your profile, there are more to explore on Ninja Notes.",
+                            btn1Text:"Logout",
+                            btn2Text:"Cancel",
+                            btn1Handler: () => {dispatch(logout(navigate))},
+                            btn2Handler: () => {setModalData(null)},
+                    })} 
+                    className='relative flex flex-row justify-start p-3 mt-4 border-2 rounded-lg border-black bg-tempPrimary hover:bg-tempSecondary hover:text-black transition-all duration-300 '>
+                    Logout Profile
+                </button>
+              </div>
+
             </div>
           </div>
 
-          <div className='m-2 p-4 w-fit flex border-2 border-black  bg-red-500 rounded-md '>
-            {/* <MdDelete className='h-60 w-60 hidden md:block' /> */}
-            <div className='flex flex-col justify-center mx-4'>
-              <div className=' max-w-[520px]'>
-                <h1 className=' leading-5 text-2xl md:text-4xl'>Delete Account</h1>
-                <p className='leading-6 text-[1.2rem] '>Would you like to delete account?</p>
-                <p className='-mt-2 text-lg leading-4 font-thin'>This account may contain your saved notes, papers and written blogs. Deleting your account is permanent and will remove all the contain associated with it, and this can't be revert back.</p>
+          <div className='w-full flex flex-col justify-evenly p-4 border-2 border-tempDark bg-red-300 rounded-md '>
+            <div className='w-full flex flex-col items-start justify-center'>
+              <h3 className=' text-tempDark text-[2rem]'>Delete Account</h3>
+              <div className='flex flex-col justify-start text-[1.2rem] space-y-0'>
+                <p className='mb-0'>Would you like to Delete your account?</p>
+                <p className='font-thin hidden md:block'>This account may contain your saved notes, papers and written blogs. Deleting your account is permanent and will remove all the contain associated with it, and this can't be revert back.</p>
               </div>
-              <button
-              onClick={() => setModalData({
-                        text1:"Delete Account?",
-                        text2:"Are you sure to delete your account, your saved data will be lost.",
-                        btn1Text:"Delete",
-                        btn2Text:"Cancel",
-                        btn1Handler: () => {deleteProfile(token,dispatch,navigate)},
-                        btn2Handler: () => {setModalData(null)},
-                })} 
-              className='btn px-10 md:px-24 leading-3 md:leading-7 w-fit flex justify-center items-center  gap-4 border-2 border-black bg-red-400 hover:bg-red-600 hover:text-black transition-all duration-300 '>
-                  Delete Account <MdDelete className='h-10 w-10'/>
-              </button>
+
+          <div className='text-sm md:text-2xl'>
+            <button
+                    onClick={() => setModalData({
+                          text1:"Delete Account?",
+                          text2:"Are you sure to delete your account, your saved data will be lost.",
+                          btn1Text:"Delete",
+                          btn2Text:"Cancel",
+                          btn1Handler: () => {deleteProfile(token,dispatch,navigate)},
+                          btn2Handler: () => {setModalData(null)},
+                  })} 
+                    className='flex flex-row justify-start p-3 mt-4 border-2 rounded-lg border-black bg-red-500 hover:bg-red-300 hover:text-black transition-all duration-300 '>
+                    Logout Profile
+                </button>
+          </div>
+
             </div>
           </div>
 

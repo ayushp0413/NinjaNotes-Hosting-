@@ -25,16 +25,13 @@ const NotesDetails = () => {
     try
     {
       setLoading(true);
-      console.log("Api Calling....");
       const result = await getNotesForSubjects(course, branch, sem , subject);
       if(result.length === 0){
-        toast.error("No data, We will upload soon");
+        toast.error("We will upload resources soon...");
       }
       if(!result){
         toast.error("Unable to fetch notes");
       }
-
-      console.log("RESULT NOTES : ", result);
       setNotes(result);
       setLoading(false);
 
