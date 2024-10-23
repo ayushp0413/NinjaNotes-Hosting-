@@ -60,31 +60,32 @@ const ChangePassword = () => {
     },[reset, isSubmitSuccessful]);
     
   return (
-    <div className='m-2'>
-        <form onSubmit={handleSubmit(changePasswordHandler)} className='border-2 border-tempPrimary rounded-lg px-10 py-4 pb-7'>
-            <h2 className='text-[1.5rem] text-tempDark'>Password</h2>
-            <div className='flex flex-col md:flex-row md:gap-20'>
-                <div className='mb-5'>
+    <div className='relative w-full flex flex-col lg:flex-row gap-5 p-6 py-10 items-center rounded-md bg-[#f3f3f3]'>
+        
+        <form onSubmit={handleSubmit(changePasswordHandler)} className='w-full'>
+            <h2 className='text-[1.5rem] text-tempDark mb-5'>Change Password</h2>
+            <div className='flex flex-col md:flex-row justify-between gap-x-10'>
+                <div className='mb-5 w-full'>
                 <input
-                type='password'
-                id='oldpassword'
-                placeholder='Enter current password'
-                name='oldpassword'
-                className='w-full pr-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
-                {...register("oldpassword",{required:true})}
+                    type='password'
+                    id='oldpassword'
+                    placeholder='Enter current password'
+                    name='oldpassword'
+                    className='w-full rounded-md px-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
+                    {...register("oldpassword",{required:true})}
                 />
                 {
                 errors.oldpassword && (<span className=' text-tempPrimary text-xs'>Please Enter your current password!</span>)    
                 }
                 </div>
 
-                <div className='mb-5'>
+                <div className='mb-5 w-full'>
                     <input
                     type='password'
                     id='newpassword'
                     placeholder='Enter new password'
                     name='newpassword'
-                    className='w-full pr-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
+                    className='w-full rounded-md px-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
                     {...register("newpassword",{required:true})}
                     />
                     {
@@ -92,13 +93,13 @@ const ChangePassword = () => {
                     }
                 </div>
 
-                <div className='mb-5'>
+                <div className='mb-5 w-full'>
                     <input
                     type='password'
                     id='confirmpassword'
                     placeholder='Confirm password'
                     name='confirmpassword'
-                    className='w-full pr-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
+                    className='w-full rounded-md px-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer'
                     {...register("confirmpassword",{required:true})}
                     />
                     {
@@ -106,6 +107,7 @@ const ChangePassword = () => {
                     }
                 </div> 
             </div>
+
             <div className='w-full max-w-full flex justify-end gap-4'>
               <div 
                onClick={cancelDetails}

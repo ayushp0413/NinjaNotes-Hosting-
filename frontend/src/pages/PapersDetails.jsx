@@ -34,7 +34,7 @@ const PapersDetails = () => {
       setLoading(true);
       const result = await getPapersForSubject(course, examType, branch, sem , subject);
       if(result.length === 0){
-        toast.error("No data, We will upload soon..");
+        toast.error("We will upload resources soon...");
       }
       if(!result){
         toast.error("Unable to fetch notes");

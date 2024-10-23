@@ -32,7 +32,7 @@ const Home = () => {
       </div>
 
       {/*---------------------- SERVICES SECTION ----------------------*/}
-      <div id='services'></div>
+      <div id='services' className='mb-10'></div>
       <div  className='relative w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-10 border p-[2.3rem] rounded-md bg-[#f2f2f2]  z-10 text-tempDark'>
         
       <div className=' mx-auto flex items-center justify-center'>

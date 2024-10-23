@@ -20,7 +20,7 @@ const Blogs = () => {
 
   const handleSearch = () => {
     setQuery(query.trim());
-    console.log("handle search : ", query);
+    console.log("Handle search : ", query);
   };
 
   const handleReadMore = (blog) => {
@@ -33,7 +33,6 @@ const Blogs = () => {
     setLoading(true);
     try {
       const data = await getAllBlogs(query);
-      console.log("Data Fetched : ", data);
       setBlogs(data);
 
     } catch (error) {
