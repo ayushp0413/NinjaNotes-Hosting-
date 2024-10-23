@@ -1,14 +1,17 @@
 import React, { useRef } from 'react'
 import logo from '../../assets/images/tempLogo.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { ImCross } from "react-icons/im";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileDropdownComponent from '../core/Auth/ProfileDropdownComponent';
+import { logout } from '../../services/operations/authAPI';
 
 const Navbar = () => {
 
   const {token} = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
 
   const MenuRef = useRef(null)
@@ -42,9 +45,14 @@ const Navbar = () => {
               </Link>
               {
                 token ? 
-                (<Link to={'/dashboard/myProfile'}>
+                (<>
+                  <Link to={'/dashboard/myProfile'}>
                     <li className='navLink md:hidden'>Dashboard</li> 
-                  </Link>) : 
+                  </Link>
+                  <button onClick={() => dispatch(logout(navigate))} className='navLink md:hidden'>
+                    Logout
+                  </button>
+                </>) : 
                 (<Link to={'/login'}>
                   <li className='navLink md:hidden'>Login</li> 
                 </Link>)

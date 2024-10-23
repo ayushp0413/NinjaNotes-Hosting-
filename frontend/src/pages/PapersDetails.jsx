@@ -27,6 +27,9 @@ const PapersDetails = () => {
   const [save, setSave] = useState(false);
   const {token} = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const {user} = useSelector((state) => state.profile);
+  const userId = user?._id;
+
 
   const getAllPapers = async() => {  
     try
@@ -74,7 +77,7 @@ const PapersDetails = () => {
       subject : papers[0].subject,
       content : {link: papers[0].content[index].link , year:papers[0].content[index].year},  
     }
-    dispatch(addToCart(paperToSave));  
+    dispatch(addToCart({ item: paperToSave, userId }));  
 }
 
   useEffect(() => {

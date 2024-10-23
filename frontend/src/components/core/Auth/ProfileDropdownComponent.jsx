@@ -26,7 +26,7 @@ const ProfileDropdownComponent = () => {
   }
 
   return (
-    <div className='text-black flex flex-col justify-center items-center '>
+    <div className='text-black flex flex-col justify-center items-center  '>
         
         <div onClick={() => {setActive(true)}} className='flex justify-center items-center'  >
           <div className=' rounded-full border-4 border-tempPrimary cursor-pointer'>

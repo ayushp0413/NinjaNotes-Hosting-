@@ -8,15 +8,16 @@ import { LiaUserNinjaSolid } from "react-icons/lia";
 import { MdAccessTime } from "react-icons/md";
 import { MdLayers } from "react-icons/md";
 import { removeFromCart } from "../../../slices/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import HighlightText from "../../common/HighlightText";
 import { TYPE_OF_CONTENT } from "../../../utils/constants";
 import toast from "react-hot-toast";
+import { setUser } from "../../../slices/profileSlice";
 
-export default function CardSpotlightDemo({data}) {
+export default function CardSpotlightDemo({data, userId}) {
 
     const dispatch = useDispatch();
-
+    
   return (
    
     <CardSpotlight className="flex flex-col justify-start items-start">
@@ -75,7 +76,7 @@ export default function CardSpotlightDemo({data}) {
            
         }
         to access freely.
-        <span> or </span><span onClick={() => {dispatch(removeFromCart(data?._id))}} className="z-10 text-red-600 cursor-pointer font-semibold">Remove</span>
+        <span> or </span><span onClick={() => {dispatch(removeFromCart({id: data?._id, uid: userId}))}} className="z-10 text-red-600 cursor-pointer font-semibold">Remove</span>
       </p>
     </CardSpotlight>
 

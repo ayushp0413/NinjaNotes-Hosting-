@@ -1,12 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { TYPE_OF_CONTENT } from '../../../../utils/constants'
 import CardSpotlightDemo from '../../../aceternity/SpotlightCards/spotlightCardComponent'
 import { Link } from 'react-router-dom'
+import { loadCart } from '../../../../slices/cartSlice'
 
 const SavedPapers = ({partial}) => {
 
     const {cart} = useSelector((state) => state.cart);
+    const {user} = useSelector((state) => state.profile);
+    const userId = user?._id;
+    const dispatch = useDispatch();
     let savedPapers = [];
 
     if(cart && cart?.length>0)
@@ -16,8 +20,10 @@ const SavedPapers = ({partial}) => {
          savedPapers = savedPapers.splice(0,3);
         }
     }
-
-
+    
+    useEffect(() => {
+      dispatch(loadCart({userId}));
+    },[]);
 
   return (
     <>   
