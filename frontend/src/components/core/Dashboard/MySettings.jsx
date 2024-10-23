@@ -233,9 +233,9 @@ const MySettings = () => {
                   className='w-full pr-4 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer  '
                 >
                   Choose
-                  <option value='male'>Male</option>
-                  <option value='female'>Female</option>
-                  <option value='other'>Other</option>
+                  <option value='Male'>Male</option>
+                  <option value='Female'>Female</option>
+                  <option value='Other'>Other</option>
                 </select>
               </div>
 
@@ -341,7 +341,7 @@ const MySettings = () => {
                           btn2Handler: () => {setModalData(null)},
                   })} 
                     className='flex flex-row justify-start p-3 mt-4 border-2 rounded-lg border-black bg-red-500 hover:bg-red-300 hover:text-black transition-all duration-300 '>
-                    Logout Profile
+                    Delete Account
                 </button>
           </div>
 

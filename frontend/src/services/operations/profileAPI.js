@@ -172,12 +172,14 @@ export const deleteProfile = async(token, dispatch, navigate) => {
         if (!response.data.success) {
             throw new Error(response.data.message)
           }
-        
+          
+
           toast.success("Account Deleted!");
+          const user = JSON.parse(localStorage.getItem("user")); 
           navigate("/home");
           dispatch(setToken(null));
           dispatch(setUser(null));
-          dispatch(resetCart());
+          dispatch(resetCart({ userId: user._id, preserveLocalStorage: false }));
           localStorage.removeItem("token")
           localStorage.removeItem("user")
 

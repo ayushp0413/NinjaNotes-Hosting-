@@ -18,8 +18,11 @@ const NotesDetails = () => {
   const [loading, setLoading] = useState(false);
   const {course, branch, sem, subject } = useParams();  
   const [active, setActive] = useState(false);
-  const {token} = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const {token} = useSelector((state) => state.auth);
+  const {user} = useSelector((state) => state.profile);
+  const userId = user?._id;
+
 
   const getAllNotes = async() => {  
     try
@@ -48,7 +51,7 @@ const NotesDetails = () => {
           console.log("Invalid index");
           return;
       }
-      if(!token)
+      if(!token && !user)
       {
         toast.error("Please Login to Save Notes");
         return;
@@ -64,7 +67,7 @@ const NotesDetails = () => {
         subject : notes[0]?.subject,
         content : {link: notes[0]?.content[index].link , unit:notes[0]?.content[index].unit},  
       }
-      dispatch(addToCart(notesToSave)); 
+      dispatch(addToCart({ item: notesToSave, userId })); 
   }
 
   useEffect(() => {

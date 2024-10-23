@@ -161,7 +161,7 @@ html , body {
   box-sizing: border-box; /* Ensures padding does not affect width */
   position: fixed; /* Position relative for child absolute positioning */
   top: 4.2rem;
-  z-index: 30;
+  z-index: 10;
 }
 
 .news-ticker {
