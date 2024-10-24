@@ -5,10 +5,10 @@ import { TYPE_OF_CONTENT } from "../utils/constants";
 const user = JSON.parse(localStorage.getItem("user")); // parse the user 
 const userId = user?._id;
 const initialState = {
-   cart: localStorage.getItem("cart") ?
-        JSON.parse(localStorage.getItem(`cart_${userId}`)) :
-        [],
-    totalItems: localStorage.getItem("totalItems") ?
+  cart: userId && localStorage.getItem(`cart_${userId}`) ? 
+        JSON.parse(localStorage.getItem(`cart_${userId}`)) 
+        : [],
+    totalItems: userId && localStorage.getItem(`totalItems_${userId}`) ?
         JSON.parse(localStorage.getItem(`totalItems_${userId}`)) :
         0,
 }
@@ -67,11 +67,11 @@ const cartSlice = createSlice({
         {
             const { userId, preserveLocalStorage } = action.payload;  // receive userId and preserveLocalStorage flag
             // Clear Redux state
-            state.cart = [];
-            state.totalItems = 0;
             
             // If `preserveLocalStorage` is false, clear the data from localStorage
             if (!preserveLocalStorage) {
+                state.cart = [];
+                state.totalItems = 0;
                 localStorage.removeItem(`cart_${userId}`);
                 localStorage.removeItem(`totalItems_${userId}`);
             }
@@ -91,10 +91,11 @@ const cartSlice = createSlice({
         setCart: (state, action) => {
             state.cart = action.payload.cart;
             state.totalItems = action.payload.totalItems;
+            const {userId} = action.payload;
       
             // Optionally update localStorage as well to persist
-            localStorage.setItem("cart", JSON.stringify(state.cart));
-            localStorage.setItem("totalItems", JSON.stringify(state.totalItems));
+            localStorage.setItem(`cart_${userId}`, JSON.stringify(state.cart));
+            localStorage.setItem(`totalItems_${userId}`, JSON.stringify(state.totalItems));
         }
     },
 });
