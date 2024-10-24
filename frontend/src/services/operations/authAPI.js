@@ -59,18 +59,21 @@ export const login = async (formData, navigate, dispatch) => {
       
       // Retrieve cart data from localStorage using userId
       const userId = response?.data?.exsistingUser?._id;
-      const savedCart = localStorage.getItem(`cart_${userId}`)
+      console.log("USER DATA: " + userId);
+      if(userId)
+      {
+        const savedCart = localStorage.getItem(`cart_${userId}`)
         ? JSON.parse(localStorage.getItem(`cart_${userId}`))
         : [];
-      const savedTotalItems = localStorage.getItem(`totalItems_${userId}`)
+        const savedTotalItems = localStorage.getItem(`totalItems_${userId}`)
         ? JSON.parse(localStorage.getItem(`totalItems_${userId}`))
         : 0;
-  
-      // Restore cart in Redux
-      dispatch({
-        type: "cart/setCart", // Use your defined setCart action in your cart slice
-        payload: { cart: savedCart, totalItems: savedTotalItems },
-      });
+
+          dispatch({
+            type: "cart/setCart", // Use your defined setCart action in your cart slice
+            payload: {userId: userId, cart: savedCart, totalItems: savedTotalItems },
+          });
+      }
   
       // Navigate to user profile
       navigate("/dashboard/myProfile");

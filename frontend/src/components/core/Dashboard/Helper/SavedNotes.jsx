@@ -23,14 +23,15 @@ const SavedNotes = ({partial}) => {
     }
 
     useEffect(() => {
-      dispatch(loadCart({userId}));
-    },[]);
-
+      if (userId) {
+        dispatch(loadCart({ userId }));
+      }
+    }, [userId]); 
 
   return (
     <>   
        {
-         savedNotes?.length<=0 ? 
+         savedNotes?.length === 0 ? 
          (<div className='flex gap-2 items-center justify-center'>
             <p className='text-sm'>You haven't saved a notes yet!</p>
             <span className='text-sm underline text-blue-400'>

@@ -89,6 +89,7 @@ const SignUp = () => {
                 onChange={inputHandler}
                 className="w-full pr-4 py-3 border-b border-solid border-tempPrimary focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer"
                 required
+                minLength={6}
               />
             </div>
             <div className="mb-5">
