@@ -52,5 +52,5 @@ cloudinaryConnect();
 
 // default route
 app.get("/",(req, res) => {
-    res.send(`<h1>Ninja Notes Server is up and running.</h1>`)
+    res.send(`<h1>Ninja Notes Server is UP & running.</h1>`)
 })

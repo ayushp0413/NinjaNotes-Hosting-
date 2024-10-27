@@ -1,4 +1,6 @@
-const BASE_URL = "http://localhost:5500/api/v1"
+// const BASE_URL = "http://localhost:5500/api/v1"
+const BASE_URL = "https://ninjanotesv1.onrender.com"
+
 
 // AUTH 
 export const authEndpoints = {

@@ -16,7 +16,7 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 export const axiosInstance = axios.create({
-    baseURL: "http://localhost:5500/api/v1",
+    baseURL: "https://ninjanotesv1.onrender.com",
     // timeout: 10000, // 5 seconds timeout
     headers: {
       'Content-Type': 'application/json'
